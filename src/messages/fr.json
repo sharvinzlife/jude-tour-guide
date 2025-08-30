@@ -1,0 +1,629 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "portfolio": "Portfolio",
+    "packages": "Forfaits",
+    "about": "À propos",
+    "contact": "Contact",
+    "phone": "+91 8921384770",
+    "email": "contact@keralaguide.com",
+    "languageSwitcher": "Sélecteur de langue"
+  },
+  "branding": {
+    "title": "Guide Kerala",
+    "subtitle": "Professionnel certifié",
+    "tagline": "Services de guide touristique professionnel au Kerala, Inde"
+  },
+  "hero": {
+    "greeting": "Salut, je suis Jude",
+    "taglines": {
+      "professional": "Votre guide professionnel",
+      "curator": "Votre curateur d'expériences",
+      "storyteller": "Votre conteur culturel",
+      "companion": "Votre compagnon d'aventure",
+      "expert": "Votre expert du Kerala"
+    },
+    "location": "au Kerala",
+    "badge": "Guide touristique professionnel certifié",
+    "title": "Découvrez l'authentique Kerala",
+    "subtitle": "Votre porte d'entrée vers le pays de Dieu",
+    "welcomeText": "Bienvenue dans le pays de Dieu !",
+    "description": "Avec plus d'une décennie d'expertise, je transforme votre voyage au Kerala en une tapisserie inoubliable d'expériences authentiques. Des backwaters tranquilles d'Alleppey aux sommets brumeux de Munnar, des rituels de temples anciens aux plantations d'épices aromatiques – je crée des aventures personnalisées qui révèlent les trésors cachés et les traditions intemporelles du Kerala.",
+    "stats": {
+      "experience": "10+",
+      "experienceLabel": "Années d'expérience",
+      "travelers": "500+",
+      "travelersLabel": "Voyageurs satisfaits",
+      "rating": "4,9",
+      "ratingLabel": "Note moyenne"
+    },
+    "badges": {
+      "certified": "Certifié par le tourisme du Kerala",
+      "licensed": "Professionnel agréé"
+    },
+    "cta": {
+      "primary": "Voir tous les forfaits",
+      "secondary": "Planifiez votre voyage",
+      "contact": "Contactez Jude",
+      "learn": "En savoir plus sur moi"
+    },
+    "profileCard": {
+      "name": "Jude - Guide Kerala",
+      "yearsLabel": "Années",
+      "toursLabel": "Tours"
+    }
+  },
+  "services": {
+    "title": "Expériences authentiques du Kerala",
+    "subtitle": "Circuits organisés par un expert local",
+    "backwaters": {
+      "title": "Tours des backwaters",
+      "description": "Découvrez les fameux backwaters du Kerala sur des bateaux-maisons traditionnels à travers des canaux et lagons sereins."
+    },
+    "hillStations": {
+      "title": "Aventures en montagne",
+      "description": "Explorez les montagnes brumeuses, plantations de thé et escapades au climat frais à Munnar et au-delà."
+    },
+    "wildlife": {
+      "title": "Safaris animaliers",
+      "description": "Découvrez la riche biodiversité du Kerala à Thekkady, Wayanad et autres parcs nationaux préservés."
+    },
+    "cultural": {
+      "title": "Patrimoine culturel",
+      "description": "Visitez d'anciens temples, découvrez les formes d'art traditionnelles et plongez dans la riche culture du Kerala."
+    },
+    "spice": {
+      "title": "Tours des jardins d'épices",
+      "description": "Promenez-vous dans les plantations d'épices aromatiques et découvrez les épices célèbres du Kerala et leurs usages."
+    },
+    "beaches": {
+      "title": "Escapades à la plage",
+      "description": "Détendez-vous sur des plages immaculées, profitez des sports nautiques et admirez des couchers de soleil spectaculaires."
+    }
+  },
+  "portfolio": {
+    "title": "Souvenirs capturés",
+    "subtitle": "Histoires de mes circuits",
+    "viewAll": "Voir toutes les photos"
+  },
+  "testimonials": {
+    "title": "Ce que disent nos clients",
+    "subtitle": "Lisez les témoignages de voyageurs satisfaits qui ont découvert la magie du Kerala avec Jude comme guide.",
+    "badge": "Voyageurs satisfaits",
+    "reviews": [
+      {
+        "text": "Jude a rendu notre voyage au Kerala absolument magique ! Sa connaissance de la culture locale et des joyaux cachés a fait toute la différence. Le tour des backwaters était inoubliable !"
+      },
+      {
+        "text": "Professionnel, amical et incroyablement compétent. Jude nous a montré le vrai Kerala - des jardins d'épices aux villages traditionnels. Je le recommande vivement !"
+      },
+      {
+        "text": "Guide parfait pour notre voyage en famille ! Jude était patient avec nos questions et s'est assuré que tout le monde passe un bon moment. Le tour des stations de montagne était à couper le souffle !"
+      },
+      {
+        "text": "A dépassé toutes les attentes ! La passion de Jude pour le Kerala est contagieuse. Le tour du patrimoine culturel nous a ouvert les yeux sur la riche histoire et les traditions."
+      },
+      {
+        "text": "Service exceptionnel et attention aux détails. Jude a parfaitement personnalisé notre itinéraire. Le safari animalier était le point culminant de notre voyage !"
+      },
+      {
+        "text": "Jude n'est pas seulement un guide, c'est un conteur qui donne vie au Kerala. Le tour de la plage était relaxant et les recommandations culinaires locales étaient parfaites !"
+      }
+    ],
+    "stats": {
+      "rating": "4,9/5",
+      "ratingLabel": "Note moyenne",
+      "travelers": "500+",
+      "travelersLabel": "Voyageurs satisfaits",
+      "experience": "10+",
+      "experienceLabel": "Années d'expérience"
+    }
+  },
+  "callToAction": {
+    "title": "Prêt à explorer",
+    "subtitle": "le pays de Dieu ?",
+    "description": "Créons ensemble des souvenirs inoubliables. Des backwaters sereins aux stations de montagne brumeuses, des temples anciens aux jardins d'épices vibrants - le Kerala attend votre découverte.",
+    "buttons": {
+      "packages": "Explorer les forfaits",
+      "contact": "Contactez maintenant"
+    },
+    "trustIndicators": {
+      "travelers": "500+",
+      "travelersLabel": "Voyageurs satisfaits",
+      "rating": "4.9/5",
+      "ratingLabel": "Note moyenne",
+      "certified": "Agréé",
+      "certifiedLabel": "Guide certifié"
+    }
+  },
+  "readyToExplore": {
+    "title": "Prêt à explorer le Kerala ?",
+    "description": "Permettez-moi de créer un itinéraire personnalisé qui correspond à vos intérêts et votre budget. Contactez-moi aujourd'hui pour commencer à planifier votre aventure inoubliable au Kerala !",
+    "buttons": {
+      "packages": "Voir tous les forfaits",
+      "contact": "Contactez Jude"
+    }
+  },
+  "meta": {
+    "title": "Guide Kerala | Services de guide touristique professionnel au Kerala, Inde",
+    "description": "Découvrez l'authentique Kerala avec Jude, un guide touristique professionnel certifié. Vivez les backwaters, stations de montagne, faune et patrimoine culturel. 500+ voyageurs satisfaits, note 4.9/5.",
+    "keywords": "guide touristique Kerala, tourisme Kerala, circuits backwaters, circuits Munnar, bateau-maison Alleppey, guide voyage Kerala, tourisme Inde, guide certifié"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "close": "Fermer",
+    "open": "Ouvrir",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "readMore": "Lire plus",
+    "learnMore": "En savoir plus"
+  },
+  "about": {
+    "meta": {
+      "title": "À propos de Jude - Guide touristique professionnel du Kerala | Guide Kerala",
+      "description": "Rencontrez Jude, le guide touristique professionnel certifié du Kerala avec plus de 8 ans d'expérience. Licencié, formé aux premiers secours et passionné par la présentation de la beauté authentique et de la culture du Kerala.",
+      "keywords": "Guide touristique Jude Kerala, guide certifié, expert tourisme Kerala, guide professionnel Kerala, guide licencié Inde"
+    },
+    "hero": {
+      "badge": "Guide professionnel licencié",
+      "title": "Rencontrez votre",
+      "titleHighlight": "Expert du Kerala",
+      "description": "Guide touristique professionnel certifié avec plus de 8 ans d'expérience"
+    },
+    "introduction": {
+      "badge": "Guide professionnel licencié",
+      "title": "Votre expert Kerala de confiance",
+      "paragraphs": {
+        "greeting": "Namaste ! Je suis Jude K. Peter, et je partage la magie du Kerala avec des voyageurs du monde entier depuis plus de 8 ans. Né et élevé dans ce paradis tropical, j'ai une compréhension intime de notre riche culture, de nos joyaux cachés et des histoires qui rendent chaque destination spéciale.",
+        "journey": "Mon parcours en tant que guide professionnel a commencé par une passion simple : montrer aux visiteurs non seulement les attractions célèbres, mais l'âme du Kerala. Des doux murmures des brises des backwaters aux jardins d'épices aromatiques des Ghâts occidentaux, je crée des expériences qui vous connectent avec le cœur authentique du pays de Dieu.",
+        "commitment": "Ce qui me distingue, c'est mon engagement envers le tourisme durable et l'engagement communautaire. Je travaille directement avec les familles locales, les artisans et les petites entreprises pour m'assurer que votre expérience touristique contribue positivement à nos communautés tout en vous offrant des souvenirs authentiques et inoubliables.",
+        "quote": "Chaque invité devient famille, et chaque circuit devient une histoire qui mérite d'être racontée."
+      },
+      "certifications": {
+        "title": "Certifications et formation",
+        "items": {
+          "tourism": "Guide certifié par le tourisme du Kerala",
+          "firstAid": "Certifié premiers secours et RCR",
+          "wilderness": "Formé à la sécurité en milieu sauvage",
+          "cultural": "Spécialiste du patrimoine culturel",
+          "photography": "Guide de photographie animalière",
+          "hospitality": "Prix d'excellence en hospitalité"
+        }
+      },
+      "profileCard": {
+        "name": "Jude Thomas",
+        "title": "Guide certifié du Kerala",
+        "stats": {
+          "tours": "500+",
+          "toursLabel": "Circuits",
+          "rating": "4,9★",
+          "ratingLabel": "Note",
+          "years": "8+",
+          "yearsLabel": "Années"
+        }
+      }
+    },
+    "stats": {
+      "travelers": {
+        "value": "500+",
+        "label": "Voyageurs satisfaits",
+        "description": "Clients satisfaits du monde entier"
+      },
+      "destinations": {
+        "value": "50+",
+        "label": "Destinations",
+        "description": "Lieux uniques à travers le Kerala"
+      },
+      "experience": {
+        "value": "8+",
+        "label": "Années d'expérience",
+        "description": "Expérience de guide professionnel"
+      },
+      "rating": {
+        "value": "4,9",
+        "label": "Note moyenne",
+        "description": "Basé sur des avis vérifiés"
+      }
+    },
+    "expertise": {
+      "badge": "Expertise professionnelle",
+      "title": "Pourquoi choisir Jude ?",
+      "subtitle": "Découvrez le Kerala à travers les yeux d'un expert local qui combine expertise professionnelle et passion authentique pour partager notre culture.",
+      "areas": {
+        "localKnowledge": {
+          "title": "Connaissance locale approfondie",
+          "description": "Né et élevé au Kerala avec une connaissance intime des joyaux cachés, des coutumes locales et des expériences authentiques que la plupart des touristes ne découvrent jamais.",
+          "highlights": ["Cascades cachées et points de vue", "Festivals et traditions locaux", "Jardins d'épices familiaux", "Formes d'art traditionnelles"]
+        },
+        "personalized": {
+          "title": "Expériences personnalisées",
+          "description": "Chaque circuit est personnalisé selon vos intérêts, votre rythme et vos préférences. Des chercheurs d'aventure aux passionnés de culture, je crée des voyages uniques.",
+          "highlights": ["Itinéraires sur mesure", "Planification flexible", "Arrangements diététiques spéciaux", "Assistance photographique"]
+        },
+        "safety": {
+          "title": "Sécurité et professionnalisme",
+          "description": "Votre sécurité et votre confort sont mes priorités absolues. Certifié en premiers secours, préparé aux urgences et engagé dans l'excellence du service professionnel.",
+          "highlights": ["Certifié premiers secours", "Préparation aux urgences", "Support 24/7", "Couverture d'assurance"]
+        }
+      }
+    },
+    "story": {
+      "badge": "Parcours personnel",
+      "title": "Mon histoire",
+      "subtitle": "Des racines villageoises au guidage professionnel - découvrez le parcours qui a façonné ma passion pour partager la beauté du Kerala.",
+      "chapters": {
+        "childhood": {
+          "title": "Racines villageoises",
+          "content": "En grandissant dans un petit village près de Kochi, j'ai été entouré par la magie du Kerala dès le premier jour. Ma grand-mère me racontait des histoires d'anciens commerçants d'épices, et mon grand-père, un pêcheur, m'a appris à lire les nuages de mousson. Ces premières expériences ont planté la graine de ma connexion profonde avec notre terre."
+        },
+        "inspiration": {
+          "title": "L'étincelle",
+          "content": "Mon parcours en tant que guide a commencé à l'université quand j'ai aidé un routard étranger perdu à trouver son chemin vers les jardins de thé. Voir son émerveillement devant notre beauté quotidienne m'a fait réaliser à quel point notre maison est vraiment spéciale. Ce moment a changé la direction de ma vie."
+        },
+        "philosophy": {
+          "title": "Ma philosophie",
+          "content": "Je crois que chaque visiteur devrait découvrir le Kerala non pas comme un touriste, mais comme un local temporaire. Cela signifie partager des repas avec les familles, apprendre sur nos festivals des anciens, et découvrir des lieux qui ne sont pas dans les guides mais vivent dans nos cœurs."
+        },
+        "commitment": {
+          "title": "Mon engagement",
+          "content": "Chaque circuit que je conduis est une chance de construire des ponts entre les cultures. J'ai vu des amitiés se former, des perspectives changer et des cœurs touchés par la chaleur du Kerala. Cette responsabilité guide mon engagement envers des expériences authentiques, respectueuses et mémorables."
+        }
+      }
+    },
+    "testimonials": {
+      "badge": "Témoignages clients",
+      "title": "Ce que disent les voyageurs",
+      "subtitle": "Écoutez certaines des personnes formidables qui ont découvert le Kerala avec moi.",
+      "reviews": [
+        {
+          "author": "Sarah Miller",
+          "location": "Royaume-Uni",
+          "text": "Jude nous a montré un Kerala que les guides ne peuvent pas capturer. Sa connaissance, sa chaleur et ses soins authentiques ont rendu notre voyage extraordinaire."
+        },
+        {
+          "author": "Raj Kumar",
+          "location": "États-Unis",
+          "text": "Professionnel, compétent et incroyablement passionné. Les circuits de Jude sont des expériences, pas seulement des visites touristiques."
+        },
+        {
+          "author": "Maria Lopez",
+          "location": "Espagne",
+          "text": "Nous avions l'impression d'explorer avec un cher ami qui connaissait tout sur le Kerala. Absolument magique !"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Prêt pour votre aventure au Kerala ?",
+      "description": "Créons ensemble des souvenirs inoubliables. Contactez-moi aujourd'hui pour commencer à planifier votre expérience personnalisée au Kerala.",
+      "features": {
+        "support": "Support 24/7",
+        "licensed": "Entièrement licencié",
+        "personalized": "Personnalisé",
+        "rated": "Note 4,9★"
+      },
+      "buttons": {
+        "contact": "Contactez Jude",
+        "packages": "Voir les forfaits touristiques"
+      }
+    }
+  },
+  "packages": {
+    "meta": {
+      "title": "Forfaits Touristiques Kerala | Circuits Personnalisés avec Jude",
+      "description": "Explorez les forfaits touristiques du Kerala faits à la main avec le guide certifié Jude. Circuits backwaters, stations de montagne, safaris animaliers et expériences culturelles.",
+      "keywords": "forfaits touristiques Kerala, forfaits voyage Kerala, circuits Kerala personnalisés, forfaits vacances Kerala"
+    },
+    "hero": {
+      "badge": "Forfaits Touristiques Kerala",
+      "title": "Découvrez",
+      "titleHighlight": "le Pays de Dieu",
+      "description": "{count} expériences artisanales à travers {destinations} destinations",
+      "trustIndicators": {
+        "safe": "100% Sûr",
+        "bestPrices": "Meilleurs Prix",
+        "rating": "Note {rating}"
+      }
+    },
+    "filters": {
+      "searchPlaceholder": "Rechercher des destinations...",
+      "allCategories": "Toutes les Catégories",
+      "sortBy": {
+        "featured": "En Vedette",
+        "priceLow": "Prix : Croissant",
+        "priceHigh": "Prix : Décroissant",
+        "rating": "Mieux Notés",
+        "duration": "Durée"
+      },
+      "filtersButton": "Filtres",
+      "resultsFound": "{count} forfaits trouvés",
+      "resultsFoundInCategory": "{count} forfaits trouvés dans {category}",
+      "clearFilters": "Effacer les Filtres",
+      "priceRange": "Gamme de prix : ₹{min} - ₹{max}",
+      "destinations": "Destinations",
+      "difficulty": "Difficulté",
+      "difficultyLevels": {
+        "easy": "Facile",
+        "moderate": "Modéré",
+        "challenging": "Difficile"
+      }
+    },
+    "featured": {
+      "title": "Forfaits en Vedette",
+      "subtitle": "Expériences sélectionnées avec des prix spéciaux",
+      "badge": "Économisez jusqu'à 30%"
+    },
+    "packageItems": [
+      {
+        "id": "1",
+        "title": "Circuit Grand Tour Complet du Kerala",
+        "description": "Découvrez le meilleur du Kerala avec ce voyage complet de 10 jours couvrant toutes les destinations principales",
+        "duration": "10 Jours 9 Nuits",
+        "category": "Circuit Complet",
+        "destinations": ["Kochi", "Munnar", "Thekkady", "Alleppey", "Kumarakom"],
+        "highlights": [
+          "Exploration historique de Fort Kochi",
+          "Visites des plantations de thé de Munnar",
+          "Sanctuaire animalier de Thekkady",
+          "Expérience de bateau-maison à Alleppey",
+          "Sanctuaire d'oiseaux de Kumarakom",
+          "Cuisine traditionnelle du Kerala",
+          "Traitements de spa ayurvédiques",
+          "Spectacles culturels"
+        ]
+      },
+      {
+        "id": "2",
+        "title": "Évasion Romantique dans les Backwaters",
+        "description": "Forfait lune de miel parfait avec des backwaters sereins et des couchers de soleil romantiques",
+        "duration": "5 Jours 4 Nuits",
+        "category": "Lune de Miel",
+        "destinations": ["Alleppey", "Kumarakom", "Varkala"],
+        "highlights": [
+          "Croisière privée en bateau-maison",
+          "Traitements de spa en couple",
+          "Dîner aux chandelles",
+          "Observation du coucher de soleil sur la plage",
+          "Séance photo"
+        ]
+      }
+    ],
+    "noResults": {
+      "title": "Aucun forfait trouvé",
+      "description": "Essayez d'ajuster vos filtres ou termes de recherche pour trouver l'expérience Kerala parfaite.",
+      "button": "Voir Tous les Forfaits"
+    },
+    "tourTypes": {
+      "backwater": "Circuits Backwaters",
+      "hillStation": "Circuits Stations de Montagne",
+      "cultural": "Circuits Patrimoine Culturel",
+      "wildlife": "Circuits Safari Animalier",
+      "beach": "Circuits Plages",
+      "adventure": "Circuits Aventure",
+      "photography": "Circuits Photographie",
+      "honeymoon": "Forfaits Lune de Miel",
+      "family": "Forfaits Famille",
+      "custom": "Itinéraire Personnalisé"
+    },
+    "budgetRanges": {
+      "under5k": "Moins de ₹5 000",
+      "5kTo10k": "₹5 000 - ₹10 000",
+      "10kTo20k": "₹10 000 - ₹20 000",
+      "20kTo35k": "₹20 000 - ₹35 000",
+      "above35k": "Plus de ₹35 000"
+    },
+    "pagination": {
+      "previous": "Précédent",
+      "next": "Suivant"
+    }
+  },
+  "portfolioPage": {
+    "meta": {
+      "title": "Portfolio | Photos et Expériences de Circuits Kerala | Jude",
+      "description": "Découvrez des photos époustouflantes et des expériences mémorables de circuits Kerala avec le guide Jude. Backwaters, stations de montagne, faune et patrimoine culturel capturés.",
+      "keywords": "photos circuits Kerala, portfolio voyage Kerala, expériences touristiques, photos tourisme Kerala"
+    },
+    "hero": {
+      "badge": "Vitrine Portfolio",
+      "title": "Souvenirs",
+      "titleHighlight": "Capturés",
+      "description": "Soyez témoin de la magie du Kerala à travers notre objectif. Chaque photographie raconte une histoire d'aventure, de culture et de moments inoubliables dans le Pays de Dieu.",
+      "stats": {
+        "tours": "Circuits Terminés",
+        "countries": "Pays Servis",
+        "rating": "Note Moyenne",
+        "experience": "Années d'Expérience"
+      },
+      "buttons": {
+        "viewPortfolio": "Voir le Portfolio",
+        "clientStories": "Histoires Clients"
+      }
+    },
+    "categories": {
+      "badge": "Explorer par Catégorie",
+      "title": "Découvrez le Kerala à travers nos Expériences",
+      "description": "Filtrez notre portfolio pour voir des types spécifiques d'aventures et d'expériences",
+      "all": "Tout",
+      "backwaters": "Backwaters",
+      "hillStations": "Stations de Montagne",
+      "cultural": "Culturel",
+      "nature": "Nature",
+      "beaches": "Plages",
+      "wellness": "Bien-être"
+    },
+    "gallery": {
+      "badge": "Travaux en Vedette",
+      "title": "Nos Circuits les Plus Mémorables",
+      "description": "Chaque image capture un moment unique de nos expériences Kerala soigneusement conçues",
+      "viewDetails": "Voir les Détails",
+      "loadMore": "Charger Plus d'Expériences",
+      "happyClients": "Clients Satisfaits"
+    },
+    "testimonials": {
+      "badge": "Histoires Clients",
+      "title": "Ce que Disent nos Voyageurs",
+      "description": "Expériences réelles de vraies personnes qui ont découvert le Kerala avec nous"
+    },
+    "items": [
+      {
+        "id": 1,
+        "title": "Bonheur des backwaters",
+        "description": "Un voyage paisible à travers les backwaters sereins du Kerala avec des bateaux-maisons traditionnels et la nature immaculée.",
+        "location": "Alleppey, Kerala",
+        "category": "backwaters",
+        "duration": "2 jours",
+        "highlights": ["Séjour en bateau-maison", "Visites de villages", "Cuisine traditionnelle"],
+        "testimonial": "L'expérience la plus paisible de nos vies !"
+      },
+      {
+        "id": 2,
+        "title": "Aventure en station de montagne",
+        "description": "Explorer les collines brumeuses et les plantations de thé de Munnar avec des vues à couper le souffle sur les montagnes.",
+        "location": "Munnar, Kerala",
+        "category": "hillStations",
+        "duration": "3 jours",
+        "highlights": ["Plantations de thé", "Randonnée", "Observation de la faune"],
+        "testimonial": "Paysages époustouflants et faune incroyable !"
+      },
+      {
+        "id": 3,
+        "title": "Patrimoine culturel",
+        "description": "Découvrir les temples anciens, les formes d'art traditionnelles et le riche patrimoine culturel du Kerala.",
+        "location": "Kochi, Kerala",
+        "category": "cultural",
+        "duration": "4 jours",
+        "highlights": ["Temples anciens", "Formes d'art", "Marchés locaux"],
+        "testimonial": "Plongée profonde dans la culture authentique du Kerala !"
+      },
+      {
+        "id": 4,
+        "title": "Expérience du jardin d'épices",
+        "description": "Se promener dans les plantations d'épices aromatiques et apprendre sur les épices célèbres du Kerala.",
+        "location": "Thekkady, Kerala",
+        "category": "nature",
+        "duration": "2 jours",
+        "highlights": ["Jardins d'épices", "Safari d'éléphants", "Promenades en bateau"],
+        "testimonial": "Aventure éducative et aromatique !"
+      },
+      {
+        "id": 5,
+        "title": "Paradis de la plage",
+        "description": "Se détendre sur des plages immaculées avec du sable doré et des eaux cristallines.",
+        "location": "Kovalam, Kerala",
+        "category": "beaches",
+        "duration": "3 jours",
+        "highlights": ["Activités de plage", "Sports nautiques", "Vues du coucher du soleil"],
+        "testimonial": "Escapade parfaite à la plage !"
+      },
+      {
+        "id": 6,
+        "title": "Retraite bien-être",
+        "description": "Traitements ayurvédiques rajeunissants et séances de yoga dans un environnement serein.",
+        "location": "Varkala, Kerala",
+        "category": "wellness",
+        "duration": "5 jours",
+        "highlights": ["Spa ayurvédique", "Séances de yoga", "Méditation"],
+        "testimonial": "Expérience de bien-être qui change la vie !"
+      }
+    ],
+    "cta": {
+      "title": "Prêt à Créer Votre Propre Histoire Kerala ?",
+      "description": "Laissez-nous créer l'aventure Kerala parfaite pour vous. Nos guides experts et itinéraires soigneusement planifiés vous garantissent de vivre le meilleur du Pays de Dieu.",
+      "buttons": {
+        "planTrip": "Planifier Voyage Personnalisé",
+        "checkAvailability": "Vérifier Disponibilité"
+      }
+    }
+  },
+  "contactPage": {
+    "meta": {
+      "title": "Contacter Jude | Guide Touristique Kerala | Réservez Votre Voyage",
+      "description": "Contactez Jude pour des circuits Kerala personnalisés. Disponible 24h/24 et 7j/7 par téléphone, WhatsApp et email. Planifiez votre aventure Kerala parfaite aujourd'hui.",
+      "keywords": "contacter guide Kerala, réserver circuit Kerala, demande circuit Kerala, contacter Jude"
+    },
+    "hero": {
+      "badge": "Circuits Professionnels Kerala",
+      "title": "Restons en Contact",
+      "description": "Prêt à explorer le Kerala ? Contactez-nous pour des forfaits touristiques personnalisés.",
+      "quickContact": {
+        "call": "Appelez-nous",
+        "whatsapp": "WhatsApp",
+        "quickResponse": "Réponse Rapide",
+        "email": "Email"
+      },
+      "trustBadges": {
+        "rating": "Note",
+        "travelers": "Voyageurs",
+        "guide": "Guide",
+        "safe": "Sûr"
+      }
+    },
+    "form": {
+      "title": "Planifiez Votre Voyage au Kerala",
+      "subtitle": "Remplissez ce formulaire rapide pour un itinéraire personnalisé.",
+      "fields": {
+        "name": "Nom",
+        "namePlaceholder": "Votre nom",
+        "email": "Email",
+        "emailPlaceholder": "votre@email.com",
+        "phone": "Téléphone",
+        "phonePlaceholder": "+91 1234567890",
+        "tourType": "Type de Circuit",
+        "tourTypePlaceholder": "Sélectionnez le type de circuit",
+        "travelDate": "Date de Voyage",
+        "groupSize": "Taille du Groupe",
+        "groupSizePlaceholder": "Sélectionnez la taille du groupe",
+        "budget": "Budget (par personne)",
+        "budgetPlaceholder": "Sélectionnez la gamme budgétaire",
+        "message": "Votre Message",
+        "messagePlaceholder": "Parlez-moi de vos intérêts et préférences..."
+      },
+      "groupSizes": {
+        "solo": "Solo",
+        "couple": "Couple",
+        "small": "Petit (3-6)",
+        "large": "Grand (7+)"
+      },
+      "buttons": {
+        "send": "Envoyer Message",
+        "sending": "Envoi en cours..."
+      },
+      "success": {
+        "title": "Message Envoyé !",
+        "description": "Je vous répondrai dans les 2 heures.",
+        "button": "Envoyer un Autre Message"
+      },
+      "errors": {
+        "nameRequired": "Nom requis",
+        "emailRequired": "Email requis",
+        "emailInvalid": "Email invalide",
+        "phoneRequired": "Téléphone requis",
+        "messageRequired": "Message requis"
+      }
+    },
+    "sidebar": {
+      "emergency": {
+        "title": "Support 24h/24 et 7j/7",
+        "badge": "Urgence",
+        "button": "Appelez Maintenant"
+      },
+      "quickInquiries": {
+        "title": "Demandes Rapides",
+        "backwater": "Circuits Backwaters",
+        "hillStations": "Stations de Montagne",
+        "custom": "Forfait Personnalisé"
+      },
+      "location": {
+        "title": "Nous Rendre Visite",
+        "address": "Fort Kochi, Kerala, Inde",
+        "button": "Obtenir Itinéraire"
+      },
+      "hours": {
+        "title": "Heures de Disponibilité",
+        "days": "Lun - Dim",
+        "time": "8h - 22h",
+        "response": "Réponse moyenne : 30 minutes"
+      }
+    }
+  }
+}

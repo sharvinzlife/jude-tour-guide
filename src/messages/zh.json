@@ -1,0 +1,629 @@
+{
+  "nav": {
+    "home": "首页",
+    "portfolio": "作品集",
+    "packages": "套餐",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "phone": "+91 8921384770",
+    "email": "contact@keralaguide.com",
+    "languageSwitcher": "语言选择"
+  },
+  "branding": {
+    "title": "喀拉拉导游",
+    "subtitle": "认证专业导游",
+    "tagline": "印度喀拉拉邦专业导游服务"
+  },
+  "hero": {
+    "greeting": "您好，我是裘德",
+    "taglines": {
+      "professional": "您的专业导游",
+      "curator": "您的体验策划者",
+      "storyteller": "您的文化讲述者",
+      "companion": "您的冒险伙伴",
+      "expert": "您的喀拉拉邦专家"
+    },
+    "location": "在喀拉拉邦",
+    "badge": "认证专业导游",
+    "title": "发现真正的喀拉拉邦",
+    "subtitle": "您通往上帝之乡的门户",
+    "welcomeText": "欢迎来到上帝之乡！",
+    "description": "凭借超过十年的专业经验，我将把您的喀拉拉邦之旅转化为难忘的真实体验。从阿勒皮宁静的回水到穆纳尔薄雾缭绕的山峰，从古老的寺庙仪式到芳香的香料种植园——我精心策划个性化的冒险，揭示喀拉拉邦隐藏的宝藏和永恒的传统。",
+    "stats": {
+      "experience": "10+",
+      "experienceLabel": "年经验",
+      "travelers": "500+",
+      "travelersLabel": "满意游客",
+      "rating": "4.9",
+      "ratingLabel": "平均评分"
+    },
+    "badges": {
+      "certified": "喀拉拉邦旅游局认证",
+      "licensed": "持证专业导游"
+    },
+    "cta": {
+      "primary": "查看所有套餐",
+      "secondary": "规划您的旅程",
+      "contact": "联系裘德",
+      "learn": "了解更多关于我"
+    },
+    "profileCard": {
+      "name": "裘德 - 喀拉拉导游",
+      "yearsLabel": "年",
+      "toursLabel": "旅游"
+    }
+  },
+  "services": {
+    "title": "正宗喀拉拉邦体验",
+    "subtitle": "当地专家策划的旅游",
+    "backwaters": {
+      "title": "回水之旅",
+      "description": "乘坐传统船屋体验喀拉拉邦著名的回水，穿越宁静的运河和泻湖。"
+    },
+    "hillStations": {
+      "title": "山间车站探险",
+      "description": "在穆纳尔及其周边地区探索薄雾缭绕的山峦、茶园和凉爽的气候度假胜地。"
+    },
+    "wildlife": {
+      "title": "野生动物园",
+      "description": "在泰卡迪、瓦亚纳德和其他原始国家公园中探索喀拉拉邦丰富的生物多样性。"
+    },
+    "cultural": {
+      "title": "文化遗产",
+      "description": "参观古老的寺庙，体验传统艺术形式，沉浸在喀拉拉邦丰富的文化中。"
+    },
+    "spice": {
+      "title": "香料园之旅",
+      "description": "漫步芳香的香料种植园，了解喀拉拉邦著名的香料及其用途。"
+    },
+    "beaches": {
+      "title": "海滩度假",
+      "description": "在原始海滩放松身心，享受水上运动，观赏壮观的日落。"
+    }
+  },
+  "portfolio": {
+    "title": "捕捉的回忆",
+    "subtitle": "我的旅游故事",
+    "viewAll": "查看所有照片"
+  },
+  "testimonials": {
+    "title": "客人评价",
+    "subtitle": "阅读满意游客的推荐信，他们在朱德的带领下发现了喀拉拉邦的魅力。",
+    "badge": "满意游客",
+    "reviews": [
+      {
+        "text": "朱德让我们的喀拉拉邦之旅变得绝对神奇！他对当地文化和隐藏宝石的了解产生了重大影响。回水之旅令人难忘！"
+      },
+      {
+        "text": "专业、友善且知识渊博。朱德向我们展示了真正的喀拉拉邦——从香料园到传统村庄。强烈推荐！"
+      },
+      {
+        "text": "我们家庭旅行的完美导游！朱德对我们的问题很有耐心，确保每个人都玩得开心。山地度假村之旅令人叹为观止！"
+      },
+      {
+        "text": "超出了所有期望！朱德对喀拉拉邦的热情具有感染力。文化遗产之旅让我们看到了丰富的历史和传统。"
+      },
+      {
+        "text": "出色的服务和对细节的关注。朱德完美地定制了我们的行程。野生动物园是我们旅行的亮点！"
+      },
+      {
+        "text": "朱德不仅仅是一个导游，他是一个讲故事的人，让喀拉拉邦栩栩如生。海滩之旅很放松，当地美食推荐完美！"
+      }
+    ],
+    "stats": {
+      "rating": "4.9/5",
+      "ratingLabel": "平均评分",
+      "travelers": "500+",
+      "travelersLabel": "满意游客",
+      "experience": "10+",
+      "experienceLabel": "年经验"
+    }
+  },
+  "callToAction": {
+    "title": "准备好探索",
+    "subtitle": "上帝之乡了吗？",
+    "description": "让我们一起创造难忘的回忆。从宁静的回水到薄雾缭绕的山间车站，从古老的寺庙到充满活力的香料园 - 喀拉拉邦等待着您的发现。",
+    "buttons": {
+      "packages": "探索套餐",
+      "contact": "立即联系"
+    },
+    "trustIndicators": {
+      "travelers": "500+",
+      "travelersLabel": "满意游客",
+      "rating": "4.9/5",
+      "ratingLabel": "平均评分",
+      "certified": "持证",
+      "certifiedLabel": "认证导游"
+    }
+  },
+  "readyToExplore": {
+    "title": "准备探索喀拉拉邦了吗？",
+    "description": "让我为您创建符合您兴趣和预算的个性化行程。今天就联系我开始计划您难忘的喀拉拉邦冒险之旅！",
+    "buttons": {
+      "packages": "查看所有套餐",
+      "contact": "联系朱德"
+    }
+  },
+  "meta": {
+    "title": "喀拉拉导游 | 印度喀拉拉邦专业导游服务",
+    "description": "与认证专业导游朱德一起探索正宗的喀拉拉邦。体验回水、山间车站、野生动物和文化遗产。500+满意游客，4.9/5评分。",
+    "keywords": "喀拉拉导游, 喀拉拉旅游, 回水旅游, 穆纳尔旅游, 阿勒皮船屋, 喀拉拉旅游指南, 印度旅游, 认证导游"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "出现错误",
+    "close": "关闭",
+    "open": "打开",
+    "next": "下一个",
+    "previous": "上一个",
+    "readMore": "阅读更多",
+    "learnMore": "了解更多"
+  },
+  "about": {
+    "meta": {
+      "title": "关于朱德 - 专业喀拉拉邦导游 | 喀拉拉邦导游",
+      "description": "认识朱德，喀拉拉邦的认证专业导游，拥有8年以上经验。持证、急救培训，热衷于展示喀拉拉邦的真实之美和文化。",
+      "keywords": "朱德喀拉拉导游, 认证导游, 喀拉拉旅游专家, 专业喀拉拉导游, 持证印度导游"
+    },
+    "hero": {
+      "badge": "持证专业导游",
+      "title": "认识您的",
+      "titleHighlight": "喀拉拉专家",
+      "description": "认证专业导游，拥有8年以上经验"
+    },
+    "introduction": {
+      "badge": "持证专业导游",
+      "title": "您值得信赖的喀拉拉专家",
+      "paragraphs": {
+        "greeting": "您好！我是朱德·K·彼得，8年多来一直与来自世界各地的旅行者分享喀拉拉的魅力。在这个热带天堂出生长大，我对我们丰富的文化、隐藏的宝石以及让每个目的地特别的故事有着深入的了解。",
+        "journey": "我作为专业导游的旅程始于一个简单的热情：向游客展示的不仅仅是著名的景点，而是喀拉拉的灵魂。从回水微风的轻柔低语到西高止山脉芳香的香料花园，我创造的体验将您与上帝之乡的真实心脏连接起来。",
+        "commitment": "我的独特之处在于对可持续旅游和社区参与的承诺。我直接与当地家庭、工匠和小企业合作，确保您的旅游体验对我们的社区产生积极贡献，同时为您提供真实、难忘的回忆。",
+        "quote": "每位客人都成为家人，每次旅行都成为值得讲述的故事。"
+      },
+      "certifications": {
+        "title": "认证和培训",
+        "items": {
+          "tourism": "喀拉拉邦旅游局认证导游",
+          "firstAid": "急救和CPR认证",
+          "wilderness": "野外安全培训",
+          "cultural": "文化遗产专家",
+          "photography": "野生动物摄影导游",
+          "hospitality": "酒店服务卓越奖"
+        }
+      },
+      "profileCard": {
+        "name": "朱德·托马斯",
+        "title": "认证喀拉拉导游",
+        "stats": {
+          "tours": "500+",
+          "toursLabel": "旅游",
+          "rating": "4.9★",
+          "ratingLabel": "评分",
+          "years": "8+",
+          "yearsLabel": "年"
+        }
+      }
+    },
+    "stats": {
+      "travelers": {
+        "value": "500+",
+        "label": "满意旅行者",
+        "description": "来自世界各地的满意客户"
+      },
+      "destinations": {
+        "value": "50+",
+        "label": "目的地",
+        "description": "喀拉拉邦各地独特景点"
+      },
+      "experience": {
+        "value": "8+",
+        "label": "年经验",
+        "description": "专业导游经验"
+      },
+      "rating": {
+        "value": "4.9",
+        "label": "平均评分",
+        "description": "基于已验证评价"
+      }
+    },
+    "expertise": {
+      "badge": "专业技能",
+      "title": "为什么选择朱德？",
+      "subtitle": "通过一位将专业技能与分享我们文化的真正热情相结合的当地专家的眼睛体验喀拉拉邦。",
+      "areas": {
+        "localKnowledge": {
+          "title": "深度当地知识",
+          "description": "在喀拉拉邦出生长大，对隐藏宝石、当地习俗和大多数游客从未发现的真实体验有着深入了解。",
+          "highlights": ["隐藏瀑布和观景点", "当地节日和传统", "家庭经营香料园", "传统艺术形式"]
+        },
+        "personalized": {
+          "title": "个性化体验",
+          "description": "每次旅行都根据您的兴趣、节奏和偏好定制。从冒险寻求者到文化爱好者，我创造独特的旅程。",
+          "highlights": ["量身定制行程", "灵活安排", "特殊饮食安排", "摄影协助"]
+        },
+        "safety": {
+          "title": "安全与专业",
+          "description": "您的安全和舒适是我的首要任务。急救认证，应急准备，致力于专业服务卓越。",
+          "highlights": ["急救认证", "应急准备", "24/7支持", "保险覆盖"]
+        }
+      }
+    },
+    "story": {
+      "badge": "个人旅程",
+      "title": "我的故事",
+      "subtitle": "从乡村根源到专业导游 - 发现塑造我分享喀拉拉之美热情的旅程。",
+      "chapters": {
+        "childhood": {
+          "title": "乡村根源",
+          "content": "在科钦附近的一个小村庄长大，从第一天起就被喀拉拉的魔力包围。我的祖母会告诉我古老香料商人的故事，我的祖父是一名渔夫，教我读懂季风云。这些早期经历播下了我与这片土地深厚联系的种子。"
+        },
+        "inspiration": {
+          "title": "火花",
+          "content": "我作为导游的旅程始于大学时代，当时我帮助一名迷路的外国背包客找到去茶园的路。看到他对我们日常之美的惊叹让我意识到我们的家园是多么特别。那一刻改变了我人生的方向。"
+        },
+        "philosophy": {
+          "title": "我的理念",
+          "content": "我相信每位游客都应该体验喀拉拉，不是作为游客，而是作为临时本地人。这意味着与家庭分享用餐，从长辈那里了解我们的节日，发现那些不在指南书中但活在我们心中的地方。"
+        },
+        "commitment": {
+          "title": "我的承诺",
+          "content": "我进行的每次旅行都是建立文化桥梁的机会。我见证了友谊的形成、观点的改变和被喀拉拉温暖触动的心灵。这种责任驱动着我对真实、尊重和难忘体验的承诺。"
+        }
+      }
+    },
+    "testimonials": {
+      "badge": "客户见证",
+      "title": "旅行者怎么说",
+      "subtitle": "听听一些与我一起体验喀拉拉的精彩人们的声音。",
+      "reviews": [
+        {
+          "author": "萨拉·米勒",
+          "location": "英国",
+          "text": "朱德向我们展示了指南书无法捕捉的喀拉拉。他的知识、温暖和真诚的关怀使我们的旅行变得非凡。"
+        },
+        {
+          "author": "拉杰·库马尔",
+          "location": "美国",
+          "text": "专业、知识丰富且极其热情。朱德的旅游是体验，不仅仅是观光旅行。"
+        },
+        {
+          "author": "玛丽亚·洛佩兹",
+          "location": "西班牙",
+          "text": "我们感觉像是在与一个恰好了解喀拉拉一切的亲密朋友一起探索。绝对神奇！"
+        }
+      ]
+    },
+    "cta": {
+      "title": "准备好您的喀拉拉冒险了吗？",
+      "description": "让我们一起创造难忘的回忆。今天就联系我，开始规划您的个性化喀拉拉体验。",
+      "features": {
+        "support": "24/7支持",
+        "licensed": "完全持证",
+        "personalized": "个性化",
+        "rated": "4.9★评分"
+      },
+      "buttons": {
+        "contact": "联系朱德",
+        "packages": "查看旅游套餐"
+      }
+    }
+  },
+  "packages": {
+    "meta": {
+      "title": "喀拉拉邦旅游套餐 | 与裘德的定制旅游",
+      "description": "与认证导游裘德一起探索手工制作的喀拉拉邦旅游套餐。回水旅游、山间车站、野生动物园和文化体验。",
+      "keywords": "喀拉拉邦旅游套餐, 喀拉拉邦旅行套餐, 定制喀拉拉邦旅游, 喀拉拉邦度假套餐"
+    },
+    "hero": {
+      "badge": "喀拉拉邦旅游套餐",
+      "title": "发现",
+      "titleHighlight": "上帝之乡",
+      "description": "在{destinations}个目的地提供{count}种手工制作的体验",
+      "trustIndicators": {
+        "safe": "100%安全",
+        "bestPrices": "最优价格",
+        "rating": "{rating}评分"
+      }
+    },
+    "filters": {
+      "searchPlaceholder": "搜索目的地...",
+      "allCategories": "所有类别",
+      "sortBy": {
+        "featured": "推荐",
+        "priceLow": "价格：低到高",
+        "priceHigh": "价格：高到低",
+        "rating": "最高评分",
+        "duration": "持续时间"
+      },
+      "filtersButton": "筛选",
+      "resultsFound": "找到{count}个套餐",
+      "resultsFoundInCategory": "在{category}中找到{count}个套餐",
+      "clearFilters": "清除筛选",
+      "priceRange": "价格范围：₹{min} - ₹{max}",
+      "destinations": "目的地",
+      "difficulty": "难度",
+      "difficultyLevels": {
+        "easy": "简单",
+        "moderate": "中等",
+        "challenging": "挑战性"
+      }
+    },
+    "featured": {
+      "title": "推荐套餐",
+      "subtitle": "特价精选体验",
+      "badge": "节省高达30%"
+    },
+    "packageItems": [
+      {
+        "id": "1",
+        "title": "喀拉拉邦完整大环游",
+        "description": "通过这个涵盖所有主要目的地的综合性10天旅程，体验喀拉拉邦的精华",
+        "duration": "10天9夜",
+        "category": "完整之旅",
+        "destinations": ["Kochi", "Munnar", "Thekkady", "Alleppey", "Kumarakom"],
+        "highlights": [
+          "历史悠久的科钦堡探索",
+          "穆纳尔茶园之旅",
+          "泰卡迪野生动物保护区",
+          "阿勒皮船屋体验",
+          "库玛拉孔鸟类保护区",
+          "传统喀拉拉邦美食",
+          "阿育吠陀水疗护理",
+          "文化表演"
+        ]
+      },
+      {
+        "id": "2",
+        "title": "浪漫回水度假",
+        "description": "完美的蜜月套餐，拥有宁静的回水和浪漫的日落",
+        "duration": "5天4夜",
+        "category": "蜜月",
+        "destinations": ["Alleppey", "Kumarakom", "Varkala"],
+        "highlights": [
+          "私人船屋巡游",
+          "情侣水疗护理",
+          "烛光晚餐",
+          "海滩日落观赏",
+          "摄影会话"
+        ]
+      }
+    ],
+    "noResults": {
+      "title": "未找到套餐",
+      "description": "尝试调整您的筛选条件或搜索词以找到完美的喀拉拉邦体验。",
+      "button": "查看所有套餐"
+    },
+    "tourTypes": {
+      "backwater": "回水旅游",
+      "hillStation": "山间车站旅游",
+      "cultural": "文化遗产旅游",
+      "wildlife": "野生动物园旅游",
+      "beach": "海滩旅游",
+      "adventure": "冒险旅游",
+      "photography": "摄影旅游",
+      "honeymoon": "蜜月套餐",
+      "family": "家庭套餐",
+      "custom": "定制行程"
+    },
+    "budgetRanges": {
+      "under5k": "₹5,000以下",
+      "5kTo10k": "₹5,000 - ₹10,000",
+      "10kTo20k": "₹10,000 - ₹20,000",
+      "20kTo35k": "₹20,000 - ₹35,000",
+      "above35k": "₹35,000以上"
+    },
+    "pagination": {
+      "previous": "上一页",
+      "next": "下一页"
+    }
+  },
+  "portfolioPage": {
+    "meta": {
+      "title": "作品集 | 喀拉拉邦旅游照片与体验 | 裘德",
+      "description": "查看导游裘德的喀拉拉邦旅游令人惊叹的照片和难忘体验。回水、山间车站、野生动物和文化遗产尽收眼底。",
+      "keywords": "喀拉拉邦旅游照片, 喀拉拉邦旅行作品集, 旅游体验, 喀拉拉邦旅游摄影"
+    },
+    "hero": {
+      "badge": "作品集展示",
+      "title": "捕捉的",
+      "titleHighlight": "回忆",
+      "description": "通过我们的镜头见证喀拉拉邦的魔力。每张照片都讲述着在上帝之乡冒险、文化和难忘时刻的故事。",
+      "stats": {
+        "tours": "完成的旅游",
+        "countries": "服务国家",
+        "rating": "平均评分",
+        "experience": "年经验"
+      },
+      "buttons": {
+        "viewPortfolio": "查看作品集",
+        "clientStories": "客户故事"
+      }
+    },
+    "categories": {
+      "badge": "按类别探索",
+      "title": "通过我们的体验发现喀拉拉邦",
+      "description": "筛选我们的作品集以查看特定类型的冒险和体验",
+      "all": "全部",
+      "backwaters": "回水",
+      "hillStations": "山间车站",
+      "cultural": "文化",
+      "nature": "自然",
+      "beaches": "海滩",
+      "wellness": "健康"
+    },
+    "gallery": {
+      "badge": "精选作品",
+      "title": "我们最难忘的旅游",
+      "description": "每张图片都捕捉了我们精心制作的喀拉拉邦体验中的独特时刻",
+      "viewDetails": "查看详情",
+      "loadMore": "加载更多体验",
+      "happyClients": "满意的客户"
+    },
+    "testimonials": {
+      "badge": "客户故事",
+      "title": "旅行者说什么",
+      "description": "与我们一起发现喀拉拉邦的真实人员的真实体验"
+    },
+    "items": [
+      {
+        "id": 1,
+        "title": "回水之福",
+        "description": "乘坐传统船屋穿越喀拉拉邦宁静的回水，享受原始自然的宁静之旅。",
+        "location": "阿勒皮，喀拉拉邦",
+        "category": "backwaters",
+        "duration": "2天",
+        "highlights": ["船屋住宿", "村庄游览", "传统美食"],
+        "testimonial": "我们生命中最宁静的体验！"
+      },
+      {
+        "id": 2,
+        "title": "山间车站探险",
+        "description": "探索穆纳尔雾气缭绕的山丘和茶园，欣赏壮观的山景。",
+        "location": "穆纳尔，喀拉拉邦",
+        "category": "hillStations",
+        "duration": "3天",
+        "highlights": ["茶园", "徒步旅行", "野生动物观察"],
+        "testimonial": "令人惊叹的风景和奇妙的野生动物！"
+      },
+      {
+        "id": 3,
+        "title": "文化遗产",
+        "description": "发现古代寺庙、传统艺术形式和喀拉拉邦丰富的文化遗产。",
+        "location": "科钦，喀拉拉邦",
+        "category": "cultural",
+        "duration": "4天",
+        "highlights": ["古代寺庙", "艺术形式", "本地市场"],
+        "testimonial": "深度体验正宗喀拉拉邦文化！"
+      },
+      {
+        "id": 4,
+        "title": "香料园体验",
+        "description": "漫步芳香的香料种植园，了解喀拉拉邦著名的香料。",
+        "location": "泰卡迪，喀拉拉邦",
+        "category": "nature",
+        "duration": "2天",
+        "highlights": ["香料园", "大象野生动物园", "船游"],
+        "testimonial": "教育性且芳香的冒险！"
+      },
+      {
+        "id": 5,
+        "title": "海滩天堂",
+        "description": "在拥有金色沙滩和碧绿海水的原始海滩放松身心。",
+        "location": "科瓦兰，喀拉拉邦",
+        "category": "beaches",
+        "duration": "3天",
+        "highlights": ["海滩活动", "水上运动", "日落美景"],
+        "testimonial": "完美的海滩度假！"
+      },
+      {
+        "id": 6,
+        "title": "健康疗养",
+        "description": "在宁静的环境中享受恢复活力的阿育吠陀治疗和瑜伽课程。",
+        "location": "瓦尔卡拉，喀拉拉邦",
+        "category": "wellness",
+        "duration": "5天",
+        "highlights": ["阿育吠陀水疗", "瑜伽课程", "冥想"],
+        "testimonial": "改变人生的健康体验！"
+      }
+    ],
+    "cta": {
+      "title": "准备创造您自己的喀拉拉邦故事了吗？",
+      "description": "让我们为您打造完美的喀拉拉邦冒险。我们的专家导游和精心规划的行程确保您体验上帝之乡的最佳之处。",
+      "buttons": {
+        "planTrip": "规划定制旅行",
+        "checkAvailability": "检查可用性"
+      }
+    }
+  },
+  "contactPage": {
+    "meta": {
+      "title": "联系裘德 | 喀拉拉邦导游 | 预订您的旅行",
+      "description": "联系裘德进行个性化喀拉拉邦旅游。通过电话、WhatsApp和电子邮件24/7可联系。今天就规划您完美的喀拉拉邦冒险。",
+      "keywords": "联系喀拉拉邦导游, 预订喀拉拉邦旅游, 喀拉拉邦旅游咨询, 联系裘德"
+    },
+    "hero": {
+      "badge": "专业喀拉拉邦旅游",
+      "title": "让我们联系",
+      "description": "准备探索喀拉拉邦了吗？联系我们获取个性化旅游套餐。",
+      "quickContact": {
+        "call": "致电",
+        "whatsapp": "WhatsApp",
+        "quickResponse": "快速响应",
+        "email": "电子邮件"
+      },
+      "trustBadges": {
+        "rating": "评分",
+        "travelers": "旅行者",
+        "guide": "导游",
+        "safe": "安全"
+      }
+    },
+    "form": {
+      "title": "规划您的喀拉拉邦之旅",
+      "subtitle": "填写此快速表格获取个性化行程。",
+      "fields": {
+        "name": "姓名",
+        "namePlaceholder": "您的姓名",
+        "email": "电子邮件",
+        "emailPlaceholder": "your@email.com",
+        "phone": "电话",
+        "phonePlaceholder": "+91 1234567890",
+        "tourType": "旅游类型",
+        "tourTypePlaceholder": "选择旅游类型",
+        "travelDate": "旅行日期",
+        "groupSize": "团队规模",
+        "groupSizePlaceholder": "选择团队规模",
+        "budget": "预算（每人）",
+        "budgetPlaceholder": "选择预算范围",
+        "message": "您的留言",
+        "messagePlaceholder": "告诉我您的兴趣和偏好..."
+      },
+      "groupSizes": {
+        "solo": "单人",
+        "couple": "情侣",
+        "small": "小团体（3-6人）",
+        "large": "大团体（7人以上）"
+      },
+      "buttons": {
+        "send": "发送消息",
+        "sending": "发送中..."
+      },
+      "success": {
+        "title": "消息已发送！",
+        "description": "我将在2小时内回复您。",
+        "button": "发送另一条消息"
+      },
+      "errors": {
+        "nameRequired": "姓名必填",
+        "emailRequired": "电子邮件必填",
+        "emailInvalid": "无效的电子邮件",
+        "phoneRequired": "电话必填",
+        "messageRequired": "留言必填"
+      }
+    },
+    "sidebar": {
+      "emergency": {
+        "title": "24/7支持",
+        "badge": "紧急情况",
+        "button": "立即致电"
+      },
+      "quickInquiries": {
+        "title": "快速咨询",
+        "backwater": "回水旅游",
+        "hillStations": "山间车站",
+        "custom": "定制套餐"
+      },
+      "location": {
+        "title": "拜访我们",
+        "address": "福特柯钦，喀拉拉邦，印度",
+        "button": "获取路线"
+      },
+      "hours": {
+        "title": "可用时间",
+        "days": "周一 - 周日",
+        "time": "上午8点 - 晚上10点",
+        "response": "平均响应时间：30分钟"
+      }
+    }
+  }
+}
