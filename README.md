@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/TypeScript-5.9.2-blue?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
     <img src="https://img.shields.io/badge/Tailwind_CSS-4.1.12-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind"/>
     <img src="https://img.shields.io/badge/Framer_Motion-12.23-FF0055?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion"/>
-    <img src="https://img.shields.io/badge/Version-1.1.0-success?style=for-the-badge" alt="Version"/>
+<img src="https://img.shields.io/badge/Version-1.1.1-success?style=for-the-badge" alt="Version"/>
     <img src="https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=for-the-badge" alt="Status"/>
   </p>
 

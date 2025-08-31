@@ -24,6 +24,8 @@ export function Header() {
   const params = useParams()
   const t = useTranslations('nav')
   const brandingT = useTranslations('branding')
+  const rawPhone = t('phone')
+  const telHref = `tel:${rawPhone.replace(/[^+\d]/g, '')}`
 
   // Handle hydration
   useEffect(() => {
@@ -154,12 +156,12 @@ export function Header() {
           {/* Compact Right Side */}
           <div className="flex items-center space-x-3">
             {/* Compact Phone Button */}
-            <div className="hidden md:flex items-center space-x-2 bg-gradient-to-r from-cyan-50/50 to-teal-50/40 backdrop-blur-2xl px-3 py-2 rounded-xl border border-cyan-200/50 hover:scale-105 hover:shadow-lg hover:border-cyan-300/70 transition-all duration-500 hover:bg-gradient-to-r hover:from-cyan-100/60 hover:to-teal-100/50 group cursor-pointer glassmorphism-waves">
+            <a href={telHref} className="hidden md:flex items-center space-x-2 bg-gradient-to-r from-cyan-50/50 to-teal-50/40 backdrop-blur-2xl px-3 py-2 rounded-xl border border-cyan-200/50 hover:scale-105 hover:shadow-lg hover:border-cyan-300/70 transition-all duration-500 hover:bg-gradient-to-r hover:from-cyan-100/60 hover:to-teal-100/50 group cursor-pointer glassmorphism-waves">
               <Phone className="w-4 h-4 text-teal-700 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500" />
               <span className="text-sm font-semibold text-teal-800 group-hover:text-teal-900 transition-colors duration-500 font-sans">
                 {t('phone')}
               </span>
-            </div>
+            </a>
             
             {/* Enhanced Language Switcher */}
             <div className="hover:scale-105 transition-transform duration-500">
@@ -234,12 +236,12 @@ export function Header() {
             
             {/* Compact Mobile Phone Section */}
             <div className="pt-3 mt-3 border-t border-gray-200/50">
-              <div className="flex items-center space-x-3 px-4 py-3 bg-gradient-to-r from-cyan-50/50 to-teal-50/40 rounded-xl border border-cyan-200/50 glassmorphism-waves">
+              <a href={telHref} className="flex items-center space-x-3 px-4 py-3 bg-gradient-to-r from-cyan-50/50 to-teal-50/40 rounded-xl border border-cyan-200/50 glassmorphism-waves">
                 <Phone className="w-5 h-5 text-teal-700" />
                 <span className="text-base font-semibold text-teal-800 font-sans">
                   {t('phone')}
                 </span>
-              </div>
+              </a>
             </div>
           </div>
         </div>

@@ -5,6 +5,28 @@ All notable changes to the Jude Tour Guide project will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2025-08-31
+
+### Fixes, UX Polish and Improvements
+
+- Packages: Fixed duplicate React key warning by deduplicating combined package lists and using stable keys
+- Packages: Destination filtering now works reliably (case-insensitive, punctuation/spacing/diacritics handled)
+- Packages: Redesigned filter toolbar
+  - 3-column responsive layout (Search+Category | Sort+Layout | Filters)
+  - Consistent control height (h-10) and text size (text-sm)
+  - Full rounded container, internal horizontal padding and spacing
+  - Truncated results label to avoid overflow on narrow screens
+- Home: Increased spacing and added subtle shimmer/float animation to the "Certified Professional Tour Guide" badge; tuned for mobile and desktop
+- Header: Phone number converted to tel: link (desktop + mobile)
+- Portfolio: Outline button hover contrast fixed; "Client Stories" remains visible on hover; "Check Availability" links to Contact → Plan Your Kerala Journey
+- About: Top intro section now animates in on mount (no scroll needed) by enhancing the scroll animation utility
+- Footer: Replaced mid emoji between sun and palm with an ocean wave icon and added subtle bob animation
+
+### Code Quality
+
+- Introduced a small normalization helper for robust string comparison (used in destination matching)
+- Generalized button and layout classes for consistent sizing in filter controls
+
 ## [1.1.0] - 2025-01-30
 
 ### 🌟 Major Features Added
@@ -201,6 +223,6 @@ For support, please create an issue in our GitHub repository or contact the deve
 
 ---
 
-*Last Updated: January 30, 2025*  
-*Project Version: 1.1.0*  
+*Last Updated: August 31, 2025*  
+*Project Version: 1.1.1*  
 *Next.js Version: 15.5.2*

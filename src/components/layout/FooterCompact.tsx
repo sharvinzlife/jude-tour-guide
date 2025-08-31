@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { MapPin, Phone, Mail, Award, Clock, Heart, Sun, Palmtree } from 'lucide-react'
+import { MapPin, Phone, Mail, Award, Clock, Heart, Sun, Palmtree, Waves } from 'lucide-react'
 import { 
   FaFacebook, 
   FaWhatsapp,
@@ -317,19 +317,16 @@ export function FooterCompact() {
 
               <motion.div
                 animate={{ 
-                  y: [0, -8, 0],
-                  rotate: [0, 5, -5, 0]
+                  y: [0, -4, 0],
+                  rotate: [0, 2, -2, 0]
                 }}
                 transition={{ 
-                  duration: 4, 
+                  duration: 3.5, 
                   repeat: Infinity, 
                   ease: "easeInOut" 
                 }}
               >
-                <svg className="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.5 3a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM2 9.5a7.5 7.5 0 1115 0 7.5 7.5 0 01-15 0z"/>
-                  <path d="M8 6a1 1 0 00-2 0v4a1 1 0 002 0V6zM12 8a1 1 0 00-2 0v2a1 1 0 002 0V8z"/>
-                </svg>
+                <Waves className="w-6 h-6 text-blue-400" />
               </motion.div>
 
               <motion.div

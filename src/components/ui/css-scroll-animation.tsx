@@ -8,18 +8,26 @@ interface CSSScrollAnimationProps {
   delay?: number
   duration?: number
   className?: string
+  mountVisible?: boolean
 }
 export default function CSSScrollAnimation({ 
   children, 
   variant = 'fadeUp', 
   delay = 0, 
   duration = 0.8,
-  className = ''
+  className = '',
+  mountVisible = false,
 }: CSSScrollAnimationProps) {
   const ref = useRef<HTMLDivElement | null>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(mountVisible)
 
   useEffect(() => {
+    // If already visible on mount, skip observer setup
+    if (mountVisible) {
+      setIsVisible(true)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -42,7 +50,7 @@ export default function CSSScrollAnimation({
         observer.unobserve(node)
       }
     }
-  }, [])
+  }, [mountVisible])
 
   const animationClasses: Record<string, string> = {
     fadeUp: 'translate-y-16 opacity-0',

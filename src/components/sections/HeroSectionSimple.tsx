@@ -52,7 +52,7 @@ export function HeroSectionSimple() {
   }, [typewriterText, currentPhraseIndex, isDeleting, phrases])
 
   return (
-    <section className="min-h-screen lg:flex lg:items-center lg:justify-center relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20 lg:pt-0">
+    <section className="min-h-screen lg:flex lg:items-center lg:justify-center relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-8 sm:pt-10 lg:pt-0">
       {/* Coconut Tree Background Effects */}
       <FloatingCoconutTrees className="z-0" />
       
@@ -79,11 +79,30 @@ export function HeroSectionSimple() {
             transition={{ duration: 0.8 }}
           >
             {/* Professional Badge */}
-            <div className="inline-flex items-center">
-              <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200 px-3 md:px-4 py-2 text-xs md:text-sm font-semibold">
-                ✨ {t('badge')}
-              </Badge>
-            </div>
+            <motion.div
+              className="inline-flex items-center mt-2 sm:mt-3 md:mt-4 lg:mt-6"
+              initial={{ opacity: 0, y: -10, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.5, type: 'spring', stiffness: 260, damping: 20, delay: 0.05 }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.04, y: -2, rotate: 0.2 }}
+                whileTap={{ scale: 0.98 }}
+                animate={{ y: [0, -1.5, 0], scale: [1, 1.005, 1] }}
+                transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <Badge className="relative overflow-hidden bg-emerald-100 text-emerald-700 border-emerald-200 px-3 md:px-4 py-2 text-xs md:text-sm font-semibold shadow-sm ring-1 ring-emerald-300/40 backdrop-blur supports-[backdrop-filter]:backdrop-blur">
+                  ✨ {t('badge')}
+                  {/* Shimmer sweep */}
+                  <motion.span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                    animate={{ x: ['-120%', '130%'] }}
+                    transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 2 }}
+                  />
+                </Badge>
+              </motion.div>
+            </motion.div>
 
             {/* Mobile Jude Photo Section */}
             <div className="block lg:hidden mt-4 mb-6">

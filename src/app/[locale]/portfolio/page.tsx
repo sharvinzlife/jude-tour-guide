@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
+import Link from 'next/link'
 // Removed framer-motion for Next.js 15 compatibility
 import { 
   Award, 
@@ -139,8 +140,8 @@ export default function PortfolioPage() {
         />
       </div>
       
-      {/* Hero Section - Matching packages page style */}
-      <section className="relative py-24 px-4 overflow-hidden z-10">
+      {/* Hero Section - Compact professional style */}
+      <section className="relative py-12 px-4 overflow-hidden z-10">
         {/* Additional hero-specific coconut trees */}
         <BackgroundCoconutTree
           size={120}
@@ -180,25 +181,25 @@ export default function PortfolioPage() {
             
             
           >
-            <Badge className="mb-6 bg-white/20 backdrop-blur text-white border-white/30 text-lg px-6 py-2">
-              <Camera className="w-4 h-4 mr-2" />
+            <Badge className="mb-4 bg-white/20 backdrop-blur text-white border-white/30 text-sm px-4 py-1.5">
+              <Camera className="w-3.5 h-3.5 mr-1.5" />
               {t('hero.badge')}
             </Badge>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white leading-tight">
               {t('hero.title')}
-              <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+              <span className="inline-block ml-2 bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
                 {t('hero.titleHighlight')}
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-white/90 mb-6 leading-relaxed max-w-2xl mx-auto">
               {t('hero.description')}
             </p>
             
             {/* Quick Stats */}
             <div 
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-8"
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-6"
               
               
               
@@ -208,34 +209,34 @@ export default function PortfolioPage() {
                 return (
                   <div 
                     key={index}
-                    className="text-center glassmorphism-professional p-4 rounded-xl"
+                    className="text-center glassmorphism-professional p-3 rounded-lg"
                     
                   >
-                    <Icon className="w-6 h-6 text-white mx-auto mb-2" />
-                    <div className="text-2xl md:text-3xl font-bold text-white">{stat.number}</div>
-                    <div className="text-white/80 text-sm">{stat.label}</div>
+                    <Icon className="w-5 h-5 text-white mx-auto mb-1" />
+                    <div className="text-xl md:text-2xl font-bold text-white">{stat.number}</div>
+                    <div className="text-white/80 text-xs">{stat.label}</div>
                   </div>
                 )
               })}
             </div>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button 
-                size="lg" 
-                className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold"
+                size="default" 
+                className="bg-white text-emerald-600 hover:bg-gray-100 px-6 py-2.5 text-sm font-semibold"
                 onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                <Sparkles className="w-5 h-5 mr-2" />
+                <Sparkles className="w-4 h-4 mr-1.5" />
                 View Portfolio
               </Button>
               <Button 
-                size="lg" 
+                size="default" 
                 variant="outline" 
-                className="border-white text-white hover:bg-white/10 px-8 py-3 text-lg font-semibold"
+                className="bg-transparent border-white text-white hover:bg-white/10 hover:text-white px-6 py-2.5 text-sm font-semibold"
                 onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                <Heart className="w-5 h-5 mr-2" />
+                <Heart className="w-4 h-4 mr-1.5" />
                 Client Stories
               </Button>
             </div>
@@ -244,7 +245,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Category Filter Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-10 px-4 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto">
           <div 
             className="text-center mb-12"
@@ -252,14 +253,14 @@ export default function PortfolioPage() {
             
             
           >
-            <Badge className="mb-4 bg-emerald-100 text-emerald-700 border-emerald-200">
-              <Compass className="w-4 h-4 mr-2" />
+            <Badge className="mb-3 bg-emerald-100 text-emerald-700 border-emerald-200 text-xs px-3 py-1">
+              <Compass className="w-3 h-3 mr-1.5" />
               {t('categories.badge')}
             </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
               {t('categories.title')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base text-gray-600 max-w-2xl mx-auto">
               {t('categories.description')}
             </p>
           </div>
@@ -275,7 +276,7 @@ export default function PortfolioPage() {
                 key={category.key}
                 
                 onClick={() => setSelectedCategory(category.key)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
                   selectedCategory === category.key
                     ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-500/25'
                     : 'bg-white text-gray-700 hover:bg-emerald-50 border border-gray-200'
@@ -289,7 +290,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Main Portfolio Gallery */}
-      <section id="portfolio" className="py-20 px-4 bg-white">
+      <section id="portfolio" className="py-12 px-4 bg-white">
         <div className="container mx-auto">
           <div 
             className="text-center mb-12"
@@ -297,14 +298,14 @@ export default function PortfolioPage() {
             
             
           >
-            <Badge className="mb-4 bg-amber-100 text-amber-700 border-amber-200">
-              <Award className="w-4 h-4 mr-2" />
+            <Badge className="mb-3 bg-amber-100 text-amber-700 border-amber-200 text-xs px-3 py-1">
+              <Award className="w-3 h-3 mr-1.5" />
               {t('gallery.badge')}
             </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
               {t('gallery.title')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base text-gray-600 max-w-3xl mx-auto">
               {t('gallery.description')}
             </p>
           </div>
@@ -435,7 +436,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Enhanced Testimonials Section */}
-      <section id="testimonials" className="py-20 px-4 bg-gradient-to-br from-gray-50 to-white">
+      <section id="testimonials" className="py-12 px-4 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto">
           <div 
             className="text-center mb-16"
@@ -443,14 +444,14 @@ export default function PortfolioPage() {
             
             
           >
-            <Badge className="mb-4 bg-purple-100 text-purple-700 border-purple-200">
-              <Heart className="w-4 h-4 mr-2" />
+            <Badge className="mb-3 bg-purple-100 text-purple-700 border-purple-200 text-xs px-3 py-1">
+              <Heart className="w-3 h-3 mr-1.5" />
               {t('testimonials.badge')}
             </Badge>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
               {t('testimonials.title')}
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base text-gray-600 max-w-2xl mx-auto">
               {t('testimonials.description')}
             </p>
           </div>
@@ -461,14 +462,14 @@ export default function PortfolioPage() {
             
             
           >
-            <div className="relative glassmorphism-professional p-8 md:p-12 rounded-3xl">
+            <div className="relative glassmorphism-professional p-6 md:p-8 rounded-2xl">
               <div className="flex justify-center mb-6">
                 {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
                 ))}
               </div>
               
-              <blockquote className="text-xl md:text-2xl text-gray-700 italic mb-8 text-center leading-relaxed">
+              <blockquote className="text-lg md:text-xl text-gray-700 italic mb-6 text-center leading-relaxed">
                 &quot;{testimonials[currentTestimonial].text}&quot;
               </blockquote>
               
@@ -519,7 +520,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
+      <section className="py-12 px-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
         <div className="container mx-auto text-center">
           <div 
             className="max-w-3xl mx-auto"
@@ -527,28 +528,30 @@ export default function PortfolioPage() {
             
             
           >
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
               {t('cta.title')}
             </h2>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-base md:text-lg text-white/90 mb-6">
               {t('cta.description')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
               <Button 
-                size="lg" 
-                className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold w-full sm:w-auto"
+                size="default" 
+                className="bg-white text-emerald-600 hover:bg-gray-100 px-6 py-2.5 text-sm font-semibold w-full sm:w-auto"
               >
-                <Users className="w-5 h-5 mr-2" />
+                <Users className="w-4 h-4 mr-1.5" />
                 {t('cta.buttons.planTrip')}
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white/10 px-8 py-3 text-lg font-semibold w-full sm:w-auto"
-              >
-                <Calendar className="w-5 h-5 mr-2" />
-                {t('cta.buttons.checkAvailability')}
-              </Button>
+              <Link href={`/${locale}/contact#plan-your-journey`}>
+                <Button 
+                  size="default" 
+                  variant="outline" 
+                  className="bg-transparent border-white text-white hover:bg-white/10 hover:text-white px-6 py-2.5 text-sm font-semibold w-full sm:w-auto"
+                >
+                  <Calendar className="w-4 h-4 mr-1.5" />
+                  {t('cta.buttons.checkAvailability')}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

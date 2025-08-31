@@ -28,20 +28,23 @@ export function LanguageSwitcher() {
     setMounted(true)
   }, [])
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
   // Use params.locale to get the current locale from URL to prevent hydration mismatch
   const currentLocale = (params.locale as string) || locale || 'en'
   const currentLanguage = languages.find(lang => lang.code === currentLocale) || languages[0]
-
-  // Don't render until mounted to prevent hydration mismatch
-  if (!mounted) {
-    return (
-      <div className="flex items-center space-x-2 px-3 py-2">
-        <Globe className="w-4 h-4 text-gray-700" />
-        <span className="hidden sm:block text-sm font-medium">🌍 Loading...</span>
-        <span className="block sm:hidden text-sm">🌍</span>
-      </div>
-    )
-  }
 
   const handleLanguageChange = (newLocale: string) => {
     // Remove the current locale from the pathname
@@ -58,19 +61,16 @@ export function LanguageSwitcher() {
     setIsOpen(false)
   }
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsOpen(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
+  // Don't render until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return (
+      <div className="flex items-center space-x-2 px-3 py-2">
+        <Globe className="w-4 h-4 text-gray-700" />
+        <span className="hidden sm:block text-sm font-medium">🌍 Loading...</span>
+        <span className="block sm:hidden text-sm">🌍</span>
+      </div>
+    )
+  }
 
   return (
     <div className="relative" ref={dropdownRef}>

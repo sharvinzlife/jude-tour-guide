@@ -99,8 +99,23 @@ export default function PackagesPage() {
   const categories = getAllCategories()
   const featuredPackages = getFeaturedPackages()
   
-  // Combine translated packages with existing hardcoded ones
-  const allPackages: TourPackage[] = [...translatedPackages, ...tourPackages]
+  // Combine translated packages with existing hardcoded ones (dedup by id; prefer translated content)
+  const allPackages: TourPackage[] = useMemo(() => {
+    const map = new Map<string, TourPackage>()
+    // Seed with hardcoded packages
+    tourPackages.forEach((p) => map.set(p.id, p))
+    // Override/add with translated versions
+    translatedPackages.forEach((p) => map.set(p.id, p))
+    return Array.from(map.values())
+  }, [translatedPackages])
+
+  // String normalizer for robust destination matching (handles case, spaces, diacritics)
+  const normalize = (s: string) =>
+    (s || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '')
+      .replace(/[^a-z0-9]/g, '')
 
   // Apply all filters
   const filteredPackages = useMemo(() => {
@@ -128,12 +143,12 @@ export default function PackagesPage() {
     packages = filterPackagesByPrice(packages, priceRange[0], priceRange[1])
     
     if (selectedDestinations.length > 0) {
-      packages = packages.filter(pkg => 
-        pkg.destinations?.some(dest => 
-          selectedDestinations.some(selected => 
-            dest.toLowerCase().includes(selected.toLowerCase())
-          )
-        )
+      const selectedNorm = selectedDestinations.map(normalize)
+      packages = packages.filter(pkg =>
+        (pkg.destinations || []).some(dest => {
+          const d = normalize(dest)
+          return selectedNorm.some(sn => d.includes(sn))
+        })
       )
     }
     
@@ -226,25 +241,25 @@ export default function PackagesPage() {
         <motion.section 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-gray-200 -mt-8 rounded-t-3xl shadow-lg"
+          className="sticky top-0 z-40 bg-white/95 backdrop-blur-xl border-b border-gray-200 -mt-8 rounded-3xl shadow-lg"
         >
-          <div className="py-6">
+          <div className="py-6 px-4 sm:px-6">
             {/* Top Filter Row */}
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-4 mb-4">
               {/* Search & Category */}
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3 min-w-0 md:col-span-1">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                   <Input
                     placeholder={t('filters.searchPlaceholder')}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10 pr-4 py-2 w-64 border-gray-200 rounded-xl focus:border-emerald-500 bg-white/70 backdrop-blur"
+                    className="pl-10 pr-4 py-2 w-44 sm:w-64 text-sm h-10 border-gray-200 rounded-xl focus:border-emerald-500 bg-white/70 backdrop-blur"
                   />
                 </div>
                 
                 <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger className="w-48 border-gray-200 rounded-xl focus:border-emerald-500 bg-white/70 backdrop-blur">
+                  <SelectTrigger className="w-36 sm:w-48 h-10 text-sm border-gray-200 rounded-xl focus:border-emerald-500 bg-white/70 backdrop-blur">
                     <SelectValue placeholder={t('filters.allCategories')} />
                   </SelectTrigger>
                   <SelectContent className="bg-white/95 backdrop-blur-xl border border-gray-200 shadow-2xl rounded-xl z-50">
@@ -258,9 +273,9 @@ export default function PackagesPage() {
               </div>
 
               {/* Sort & Layout Controls */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 min-w-0 md:justify-center">
                 <Select value={sortBy} onValueChange={setSortBy}>
-                  <SelectTrigger className="w-40 border-gray-200 rounded-xl focus:border-emerald-500 bg-white/70 backdrop-blur">
+                  <SelectTrigger className="w-32 sm:w-40 h-10 text-sm border-gray-200 rounded-xl focus:border-emerald-500 bg-white/70 backdrop-blur">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent className="bg-white/95 backdrop-blur-xl border border-gray-200 shadow-2xl rounded-xl z-50">
@@ -272,7 +287,7 @@ export default function PackagesPage() {
                   </SelectContent>
                 </Select>
 
-                <div className="flex items-center gap-1 bg-white/70 backdrop-blur rounded-xl border border-gray-200 p-1">
+                <div className="flex items-center gap-1 bg-white/70 backdrop-blur rounded-xl border border-gray-200 p-1 h-10">
                   <Button
                     size="sm"
                     variant={layout === 'grid' ? 'default' : 'ghost'}
@@ -291,22 +306,26 @@ export default function PackagesPage() {
                   </Button>
                 </div>
 
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setShowFilters(!showFilters)}
-                  className="border-gray-200 hover:bg-gray-50 rounded-xl"
-                >
-                  <Filter className="w-4 h-4 mr-2" />
-                  Filters
-                  <ChevronDown className={`w-4 h-4 ml-2 transform transition-transform ${showFilters ? 'rotate-180' : ''}`} />
-                </Button>
               </div>
             </div>
 
+            {/* Filters Toggle */}
+            <div className="flex md:justify-end">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setShowFilters(!showFilters)}
+                className="border-gray-200 hover:bg-gray-50 rounded-xl h-10"
+              >
+                <Filter className="w-4 h-4 mr-2" />
+                Filters
+                <ChevronDown className={`w-4 h-4 ml-2 transform transition-transform ${showFilters ? 'rotate-180' : ''}`} />
+              </Button>
+            </div>
+
             {/* Results Count */}
-            <div className="flex items-center justify-between">
-              <p className="text-sm text-gray-600">
+            <div className="flex items-center justify-between min-w-0">
+              <p className="text-sm text-gray-600 truncate">
                 {filteredPackages.length} packages found
                 {selectedCategory !== 'All' && ` in ${selectedCategory}`}
               </p>
