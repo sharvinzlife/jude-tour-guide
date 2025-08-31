@@ -36,6 +36,7 @@ import {
   CheckCircle2
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useSearchParams } from 'next/navigation'
 
 export default function PackagesPage() {
   const t = useTranslations('packages')
@@ -86,7 +87,9 @@ export default function PackagesPage() {
   
   // Filter states
   const [selectedCategory, setSelectedCategory] = useState('All')
-  const [searchQuery, setSearchQuery] = useState('')
+  const searchParams = useSearchParams()
+  const initialQuery = searchParams?.get('q') || ''
+  const [searchQuery, setSearchQuery] = useState(initialQuery)
   const [sortBy, setSortBy] = useState('featured')
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 60000])
   const [selectedDestinations, setSelectedDestinations] = useState<string[]>([])

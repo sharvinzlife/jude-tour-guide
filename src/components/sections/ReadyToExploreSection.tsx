@@ -28,7 +28,7 @@ export function ReadyToExploreSection() {
               {t('description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={`/${locale}/contact#plan-your-journey`}>
+              <Link href={`/${locale}/packages`}>
                 <motion.button 
                   className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm border border-emerald-500/20"
                   whileHover={{ scale: 1.05, y: -2 }}

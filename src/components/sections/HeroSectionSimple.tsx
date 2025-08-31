@@ -254,7 +254,7 @@ export function HeroSectionSimple() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href={`/${locale}/contact`}>
+              <Link href={`/${locale}/packages`}>
                 <Button size="lg" className="w-full sm:w-auto glassmorphism-button">
                   {t('cta.primary')} →
                 </Button>
