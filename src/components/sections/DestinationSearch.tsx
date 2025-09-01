@@ -85,12 +85,12 @@ export function DestinationSearch() {
 
             {/* Coconut tree (subtle sway) */}
             <motion.div
-              className="absolute top-0 right-3 pointer-events-none select-none drop-shadow-sm"
-              style={{ transform: 'translateZ(-20px)', transformOrigin: 'bottom center' }}
-              animate={{ rotate: [-2, 1.5, -2] }}
+              className="absolute bottom-[120px] right-8 pointer-events-none select-none drop-shadow-sm"
+              style={{ transform: 'translateZ(-20px) rotate(-4deg)', transformOrigin: 'bottom center' }}
+              animate={{ rotate: [-5, -1, -5] }}
               transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <TwemojiIcon code="1f334" alt="coconut tree" size={54} />
+              <TwemojiIcon code="1f334" alt="coconut tree" size={62} />
             </motion.div>
 
             {/* Ocean waves at bottom */}
@@ -162,11 +162,11 @@ export function DestinationSearch() {
 
               {/* Boat */}
               <motion.svg
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 transform h-8 w-16 text-amber-700"
+                className="absolute bottom-16 left-[22%] h-8 w-16 text-amber-700"
                 viewBox="0 0 120 60"
                 preserveAspectRatio="xMidYMid meet"
                 initial={{ x: 0, y: 0 }}
-                animate={{ x: [-8, 8, -8], y: [0, -1.6, 0] }}
+                animate={{ x: [-6, 6, -6], y: [0, -1.6, 0] }}
                 transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
               >
                 <g>

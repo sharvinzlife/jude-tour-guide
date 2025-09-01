@@ -5,6 +5,11 @@ All notable changes to the Jude Tour Guide project will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.3] - 2025-09-01
+
+### Home polish
+- DestinationSearch scene: raised coconut tree onto the sand and lifted the boat so it sits clearly in the ocean under the sun. Positions fine-tuned for visibility above wave layers.
+
 ## [1.1.2] - 2025-09-01
 
 ### UI Polish – Scenic Headers and Animation
@@ -244,5 +249,5 @@ For support, please create an issue in our GitHub repository or contact the deve
 ---
 
 *Last Updated: September 1, 2025*  
-*Project Version: 1.1.2*  
+*Project Version: 1.1.3*  
 *Next.js Version: 15.5.2*
