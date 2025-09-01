@@ -5,6 +5,26 @@ All notable changes to the Jude Tour Guide project will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] - 2025-09-01
+
+### UI Polish – Scenic Headers and Animation
+
+- Packages: Removed yellow tint from ocean and refined scenic header
+  - Added subtle rotating sun rays
+  - Introduced elegant bird flock animations (including a migrating group)
+  - Coconut tree now gently sways
+  - Beach covers the right half with feathered blend into the ocean
+  - Layered parallax waves with a lightly bobbing boat
+- Home: DestinationSearch now mirrors the Packages scenic design
+  - Sky gradient, animated sun + rays
+  - Matching birds, right-half beach with feathered shoreline and foam
+  - Parallax waves and a small canoe with gentle bob
+  - Swaying coconut tree for a cohesive look
+- Components: Added TwemojiIcon usage where needed for crisp emoji rendering
+
+### Performance & Accessibility
+- All decorative layers are pointer-events-none and sit behind form controls; inputs remain fully interactive.
+
 ## [1.1.1] - 2025-08-31
 
 ### Fixes, UX Polish and Improvements
@@ -223,6 +243,6 @@ For support, please create an issue in our GitHub repository or contact the deve
 
 ---
 
-*Last Updated: August 31, 2025*  
-*Project Version: 1.1.1*  
+*Last Updated: September 1, 2025*  
+*Project Version: 1.1.2*  
 *Next.js Version: 15.5.2*
