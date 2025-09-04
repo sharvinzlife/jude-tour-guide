@@ -109,52 +109,11 @@ export default function PortfolioPage() {
 
   return (
     <div className="min-h-screen relative">
-      {/* Coconut Tree Background Effects for entire page */}
-      <div className="fixed inset-0 -z-20 overflow-hidden">
-        <FloatingCoconutTrees className="z-0" />
-        
-        {/* Additional strategic coconut trees */}
-        <BackgroundCoconutTree
-          size={200}
-          opacity={0.03}
-          className="top-32 right-20 animate-float-slow delay-800"
-          position="absolute"
-        />
-        <BackgroundCoconutTree
-          size={160}
-          opacity={0.04}
-          className="bottom-40 left-16 animate-float-slow delay-1300"
-          position="absolute"
-        />
-        <BackgroundCoconutTree
-          size={180}
-          opacity={0.05}
-          className="top-2/3 right-12 animate-float-slow delay-2100"
-          position="absolute"
-        />
-        <BackgroundCoconutTree
-          size={140}
-          opacity={0.06}
-          className="bottom-1/4 left-1/4 animate-float-slow delay-600"
-          position="absolute"
-        />
-      </div>
+      {/* Page-scoped background removed: using universal AnimatedBackground */}
       
       {/* Hero Section - Compact professional style */}
       <section className="relative py-12 px-4 overflow-hidden z-10">
-        {/* Additional hero-specific coconut trees */}
-        <BackgroundCoconutTree
-          size={120}
-          opacity={0.08}
-          className="top-20 left-1/5 animate-float-slow delay-400"
-          position="absolute"
-        />
-        <BackgroundCoconutTree
-          size={100}
-          opacity={0.07}
-          className="bottom-16 right-1/4 animate-float-slow delay-1700"
-          position="absolute"
-        />
+        {/* Hero coconut trees removed: universal background provides floating trees */}
         {/* Background with Kerala-themed gradients */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600"></div>
         <div className="absolute inset-0 bg-black/20"></div>

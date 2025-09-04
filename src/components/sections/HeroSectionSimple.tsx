@@ -6,7 +6,6 @@ import { useLocale, useTranslations } from 'next-intl'
 import { Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { FloatingCoconutTrees, BackgroundCoconutTree } from '@/components/ui/StaticCoconutTree'
 import { CSSMotion } from '@/components/ui/css-motion'
 import StaggerContainer from '@/components/ui/stagger-container'
 import { useState, useEffect } from 'react'
@@ -53,22 +52,7 @@ export function HeroSectionSimple() {
 
   return (
     <section className="min-h-screen lg:flex lg:items-center lg:justify-center relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-8 sm:pt-10 lg:pt-0">
-      {/* Coconut Tree Background Effects */}
-      <FloatingCoconutTrees className="z-0" />
-      
-      {/* Additional strategic coconut trees */}
-      <BackgroundCoconutTree
-        size={200}
-        opacity={0.04}
-        className="top-10 right-10 animate-float-slow delay-500"
-        position="absolute"
-      />
-      <BackgroundCoconutTree
-        size={150}
-        opacity={0.06}
-        className="bottom-20 left-20 animate-float-slow delay-1500"
-        position="absolute"
-      />
+      {/* Background trees removed: using universal AnimatedBackground */}
       <div className="hero-content relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}

@@ -7,6 +7,7 @@ import { locales } from '@/i18n'
 import '../globals.css'
 import { Header } from '@/components/layout/Header'
 import { FooterCompact } from '@/components/layout/FooterCompact'
+import { AnimatedBackground } from '@/components/layout/AnimatedBackground'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -172,9 +173,11 @@ export default async function LocaleLayout({
       <body 
         className={`${inter.className} antialiased bg-gradient-to-br from-kerala-ivory via-white to-kerala-coconut`}
       >
+        {/* Site-wide animated background behind all content */}
+        <AnimatedBackground />
         <NextIntlClientProvider messages={messages}>
           <Header />
-          <main className="min-h-screen" style={{ paddingTop: '4rem' }}>
+          <main className="min-h-screen relative z-10" style={{ paddingTop: '4rem' }}>
             {children}
           </main>
           <FooterCompact />

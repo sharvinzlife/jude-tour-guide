@@ -72,7 +72,7 @@ export function FooterCompact() {
   }
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-900 to-black">
+    <footer className="relative z-20 overflow-hidden bg-gradient-to-b from-gray-900 via-gray-900 to-black">
       {/* Vibrant Aquatic Animation Background */}
       <div className="absolute inset-0 opacity-85 pointer-events-none">
         <UnderwaterOceanAnimation />

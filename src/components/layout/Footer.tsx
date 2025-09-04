@@ -67,7 +67,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="footer relative">
+    <footer className="footer relative z-20">
       {/* Aquatic Background Animation */}
       <UnderwaterOceanAnimation />
       
