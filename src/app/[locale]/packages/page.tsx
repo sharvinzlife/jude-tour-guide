@@ -38,6 +38,7 @@ import {
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import { useSearchParams } from 'next/navigation'
 import { TwemojiIcon } from '@/components/ui/TwemojiIcon'
+import { TropicalCardBackground } from '@/components/effects/TropicalCardBackground'
 
 function PackagesPageContent() {
   const t = useTranslations('packages')
@@ -248,43 +249,48 @@ function PackagesPageContent() {
           className="relative z-40 bg-white/95 backdrop-blur-xl border border-gray-200/60 -mt-8 rounded-2xl shadow-md overflow-hidden"
           style={{ perspective: 800 }}
         >
+          {/* Local tropical animated background for the filters panel */}
+          <TropicalCardBackground />
           <div className="py-6 px-3 sm:px-4 relative z-10">
             {/* Top Filter Row */}
             <div className="space-y-4 mb-4">
               {/* Search Centered */}
-              <div className="flex justify-center">
+              <div className="flex justify-center px-2">
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="relative flex items-center"
+                  className="relative flex items-center w-full max-w-2xl md:max-w-3xl gap-2"
                 >
-                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-emerald-600 w-5 h-5" />
-                  <Input
-                    placeholder={t('filters.searchPlaceholder')}
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-12 pr-4 py-3 w-[92vw] max-w-2xl md:max-w-3xl h-12 text-base rounded-2xl border-emerald-100 focus:border-emerald-500 bg-white/85 backdrop-blur"
-                  />
+                  <div className="relative flex-1">
+                    <Search className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 text-emerald-600 w-4 h-4 sm:w-5 sm:h-5 z-10" />
+                    <Input
+                      placeholder={t('filters.searchPlaceholder')}
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="pl-10 sm:pl-12 pr-3 sm:pr-4 py-2.5 sm:py-3 w-full h-11 sm:h-12 text-sm sm:text-base rounded-xl sm:rounded-2xl border-emerald-100 focus:border-emerald-500 bg-white/85 backdrop-blur"
+                    />
+                  </div>
                   <Button
                     onClick={() => setCurrentPage(1)}
-                    className="ml-3 h-12 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-base"
+                    className="h-11 sm:h-12 px-3 sm:px-6 rounded-xl sm:rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm sm:text-base flex items-center justify-center min-w-[60px] sm:min-w-[100px]"
                   >
-                    <Search className="w-5 h-5 mr-2" /> Search
+                    <Search className="w-4 h-4 sm:w-5 sm:h-5 sm:mr-2" /> 
+                    <span className="hidden sm:inline">Search</span>
                   </Button>
                 </motion.div>
               </div>
 
               {/* Secondary controls */}
-              <div className="flex flex-wrap items-center justify-center gap-3">
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-2">
                 {/* Category */}
                 <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger className="w-40 sm:w-48 h-10 text-sm border-gray-200 rounded-xl focus:border-emerald-500 bg-white/70 backdrop-blur">
+                  <SelectTrigger className="w-32 sm:w-40 md:w-48 h-9 sm:h-10 text-xs sm:text-sm border-gray-200 rounded-lg sm:rounded-xl focus:border-emerald-500 bg-white/70 backdrop-blur">
                     <SelectValue placeholder={t('filters.allCategories')} />
                   </SelectTrigger>
                   <SelectContent className="bg-white/95 backdrop-blur-xl border border-gray-200 shadow-2xl rounded-xl z-50">
                     {categories.map((cat) => (
-                      <SelectItem key={cat} value={cat} className="hover:bg-emerald-50 cursor-pointer">
+                      <SelectItem key={cat} value={cat} className="hover:bg-emerald-50 cursor-pointer text-xs sm:text-sm">
                         {cat}
                       </SelectItem>
                     ))}
@@ -293,57 +299,57 @@ function PackagesPageContent() {
 
                 {/* Sort */}
                 <Select value={sortBy} onValueChange={setSortBy}>
-                  <SelectTrigger className="w-36 sm:w-40 h-10 text-sm border-gray-200 rounded-xl focus:border-emerald-500 bg-white/70 backdrop-blur">
+                  <SelectTrigger className="w-28 sm:w-36 md:w-40 h-9 sm:h-10 text-xs sm:text-sm border-gray-200 rounded-lg sm:rounded-xl focus:border-emerald-500 bg-white/70 backdrop-blur">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent className="bg-white/95 backdrop-blur-xl border border-gray-200 shadow-2xl rounded-xl z-50">
-                    <SelectItem value="featured">{t('filters.sortBy.featured')}</SelectItem>
-                    <SelectItem value="price-low">{t('filters.sortBy.priceLow')}</SelectItem>
-                    <SelectItem value="price-high">{t('filters.sortBy.priceHigh')}</SelectItem>
-                    <SelectItem value="rating">{t('filters.sortBy.rating')}</SelectItem>
-                    <SelectItem value="duration">{t('filters.sortBy.duration')}</SelectItem>
+                    <SelectItem value="featured" className="text-xs sm:text-sm">{t('filters.sortBy.featured')}</SelectItem>
+                    <SelectItem value="price-low" className="text-xs sm:text-sm">{t('filters.sortBy.priceLow')}</SelectItem>
+                    <SelectItem value="price-high" className="text-xs sm:text-sm">{t('filters.sortBy.priceHigh')}</SelectItem>
+                    <SelectItem value="rating" className="text-xs sm:text-sm">{t('filters.sortBy.rating')}</SelectItem>
+                    <SelectItem value="duration" className="text-xs sm:text-sm">{t('filters.sortBy.duration')}</SelectItem>
                   </SelectContent>
                 </Select>
 
                 {/* Layout */}
-                <div className="flex items-center gap-1 bg-white/70 backdrop-blur rounded-xl border border-gray-200 p-1 h-10">
+                <div className="flex items-center gap-0.5 sm:gap-1 bg-white/70 backdrop-blur rounded-lg sm:rounded-xl border border-gray-200 p-0.5 sm:p-1 h-9 sm:h-10">
                   <Button
                     size="sm"
                     variant={layout === 'grid' ? 'default' : 'ghost'}
                     onClick={() => setLayout('grid')}
-                    className={`p-2 ${layout === 'grid' ? 'bg-emerald-600 text-white' : 'hover:bg-gray-100'}`}
+                    className={`p-1.5 sm:p-2 h-8 sm:h-auto ${layout === 'grid' ? 'bg-emerald-600 text-white' : 'hover:bg-gray-100'}`}
                   >
-                    <Grid3x3 className="w-4 h-4" />
+                    <Grid3x3 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </Button>
                   <Button
                     size="sm"
                     variant={layout === 'list' ? 'default' : 'ghost'}
                     onClick={() => setLayout('list')}
-                    className={`p-2 ${layout === 'list' ? 'bg-emerald-600 text-white' : 'hover:bg-gray-100'}`}
+                    className={`p-1.5 sm:p-2 h-8 sm:h-auto ${layout === 'list' ? 'bg-emerald-600 text-white' : 'hover:bg-gray-100'}`}
                   >
-                    <List className="w-4 h-4" />
+                    <List className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </Button>
                 </div>
               </div>
             </div>
 
             {/* Filters Toggle */}
-            <div className="flex md:justify-end">
+            <div className="flex justify-center md:justify-end px-2">
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => setShowFilters(!showFilters)}
-                className="border-gray-200 hover:bg-gray-50 rounded-xl h-10"
+                className="border-gray-200 hover:bg-gray-50 rounded-lg sm:rounded-xl h-9 sm:h-10 text-xs sm:text-sm"
               >
-                <Filter className="w-4 h-4 mr-2" />
+                <Filter className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
                 Filters
-                <ChevronDown className={`w-4 h-4 ml-2 transform transition-transform ${showFilters ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ml-1.5 sm:ml-2 transform transition-transform ${showFilters ? 'rotate-180' : ''}`} />
               </Button>
             </div>
 
             {/* Results Count */}
-            <div className="flex items-center justify-between min-w-0">
-              <p className="text-sm text-gray-600 truncate">
+            <div className="flex items-center justify-between min-w-0 px-2 mt-3">
+              <p className="text-xs sm:text-sm text-gray-600 truncate">
                 {filteredPackages.length} packages found
                 {selectedCategory !== 'All' && ` in ${selectedCategory}`}
               </p>
