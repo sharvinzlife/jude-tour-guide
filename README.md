@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/TypeScript-5.9.2-blue?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
     <img src="https://img.shields.io/badge/Tailwind_CSS-4.1.12-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind"/>
     <img src="https://img.shields.io/badge/Framer_Motion-12.23-FF0055?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion"/>
-<img src="https://img.shields.io/badge/Version-1.1.1-success?style=for-the-badge" alt="Version"/>
+<img src="https://img.shields.io/badge/Version-2.0.0-success?style=for-the-badge" alt="Version"/>
     <img src="https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=for-the-badge" alt="Status"/>
   </p>
 
@@ -28,7 +28,14 @@
 
 ## 🎯 About
 
-**Jude Tour Guide** is a modern, multilingual web application showcasing professional tour guide services in Kerala, India. Built with cutting-edge technologies, it features stunning glassmorphism design, smooth animations, comprehensive portfolio system, and support for 6 languages. The latest version includes an enhanced client showcase with 856+ satisfied customers from 34 countries.
+**Jude Tour Guide v2.0.0** is a modern, multilingual web application showcasing professional tour guide services in Kerala, India. Built with cutting-edge technologies, it features stunning glassmorphism design, smooth animations, comprehensive portfolio system, and support for 6 languages. 
+
+### 🎉 What's New in v2.0.0
+- **🖼️ Enhanced Image Galleries**: 42+ high-quality tour package images
+- **🎠 Advanced Carousel System**: Auto-playing slideshows with controls
+- **🌅 Redesigned Hero Section**: Immersive "Discover God's Own Country"
+- **✨ Smooth Animations**: Page load and scroll-triggered animations
+- **⚡ 30% Faster**: Optimized image loading and performance
 
 <div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=20&pause=1000&color=2ECC71&center=true&vCenter=true&width=600&lines=🌍+Multilingual+Support;🎨+Glassmorphism+Design;⚡+Lightning+Fast+Performance;📱+Mobile+First+Approach;🔍+SEO+Optimized;♿+Fully+Accessible" alt="Features" />

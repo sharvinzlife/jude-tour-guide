@@ -56,21 +56,25 @@ function PackagesPageContent() {
   }>
   
   // Convert translated packages to match existing format for now
-  const translatedPackages: TourPackage[] = translatedPackagesRaw.map(pkg => ({
-    ...pkg,
-    price: pkg.id === '1' ? 35000 : 25000,
-    originalPrice: pkg.id === '1' ? 42000 : 30000,
-    maxPeople: 8,
-    rating: 4.9,
-    reviewCount: 150,
-    featured: true,
-    difficulty: 'Easy' as const,
-    tags: ['Best Seller', 'Popular'],
-    image: `/media/portifolio/Portifolio-${pkg.id}.jpeg`,
-    images: [
-      `/media/portifolio/Portifolio-${pkg.id}.jpeg`,
-      '/media/portifolio/Portifolio-2.jpeg'
-    ],
+  const translatedPackages: TourPackage[] = translatedPackagesRaw.map(pkg => {
+    // Find the corresponding package from tourPackages to get the correct images
+    const existingPkg = tourPackages.find(p => p.id === pkg.id)
+    
+    return {
+      ...pkg,
+      price: pkg.id === '1' ? 35000 : 25000,
+      originalPrice: pkg.id === '1' ? 42000 : 30000,
+      maxPeople: 8,
+      rating: 4.9,
+      reviewCount: 150,
+      featured: true,
+      difficulty: 'Easy' as const,
+      tags: ['Best Seller', 'Popular'],
+      // Use the existing package images if available, otherwise use defaults
+      image: existingPkg?.image || `/media/Tour packages/cover.jpg`,
+      images: existingPkg?.images || [
+        `/media/Tour packages/cover.jpg`
+      ],
     // Add required TourPackage fields
     itinerary: [
       {
@@ -82,10 +86,11 @@ function PackagesPageContent() {
         highlights: ['Welcome ceremony']
       }
     ],
-    inclusions: ['Accommodation', 'Meals', 'Transportation', 'Guide services'],
-    exclusions: ['Personal expenses', 'Travel insurance'],
-    bestTimeToVisit: ['October to March']
-  }))
+      inclusions: ['Accommodation', 'Meals', 'Transportation', 'Guide services'],
+      exclusions: ['Personal expenses', 'Travel insurance'],
+      bestTimeToVisit: ['October to March']
+    }
+  })
   
   // Filter states
   const [selectedCategory, setSelectedCategory] = useState('All')
@@ -104,15 +109,11 @@ function PackagesPageContent() {
   const categories = getAllCategories()
   const featuredPackages = getFeaturedPackages()
   
-  // Combine translated packages with existing hardcoded ones (dedup by id; prefer translated content)
+  // Use hardcoded packages directly - translations are only for text content
   const allPackages: TourPackage[] = useMemo(() => {
-    const map = new Map<string, TourPackage>()
-    // Seed with hardcoded packages
-    tourPackages.forEach((p) => map.set(p.id, p))
-    // Override/add with translated versions
-    translatedPackages.forEach((p) => map.set(p.id, p))
-    return Array.from(map.values())
-  }, [translatedPackages])
+    // Use the hardcoded packages from tours.ts which have the correct images
+    return tourPackages
+  }, [])
 
   // String normalizer for robust destination matching (handles case, spaces, diacritics)
   const normalize = (s: string) =>
@@ -192,62 +193,137 @@ function PackagesPageContent() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      {/* Compact Hero Section */}
-      <section className="relative py-10 px-4 overflow-hidden bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600">
-        <div className="absolute inset-0 bg-black/10"></div>
+      {/* Main Hero Section - Discover God's Own Country */}
+      <motion.section 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative min-h-[70vh] flex items-center overflow-hidden">
+        {/* Background Image with reduced blur */}
+        <div 
+          className="absolute inset-0"
+          style={{ 
+            backgroundImage: `url('/media/Tour packages/cover.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            imageRendering: '-webkit-optimize-contrast',
+          }}
+        >
+          {/* Gradient overlays for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+        </div>
+        
+        {/* Animated decorative elements */}
         <motion.div 
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-full blur-3xl"
+        />
+        <motion.div 
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.7, duration: 0.8 }}
+          className="absolute bottom-10 right-20 w-24 h-24 bg-gradient-to-tr from-yellow-400/20 to-orange-400/20 rounded-full blur-2xl"
+        />
+        
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                <Badge className="inline-flex bg-emerald-500/20 backdrop-blur text-white border-white/30 mb-6 px-4 py-2">
+                <MapPin className="w-4 h-4 mr-2" />
+                Kerala Tourism
+                </Badge>
+              </motion.div>
+              
+              <motion.h1 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="text-5xl md:text-6xl font-bold text-white mb-6"
+              >
+                Discover God's Own Country
+              </motion.h1>
+              
+              <motion.p 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                className="text-xl text-white/90 mb-8 leading-relaxed max-w-2xl"
+              >
+                Immerse yourself in the enchanting beauty of Kerala - where emerald backwaters meet golden beaches, 
+                misty mountains embrace aromatic tea gardens, and ancient traditions blend seamlessly with modern comfort.
+              </motion.p>
+              
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.7, duration: 0.8 }}
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10"
+              >
+                {[
+                  { value: '14', label: 'Districts' },
+                  { value: '600km', label: 'Coastline' },
+                  { value: '44', label: 'Rivers' },
+                  { value: '100%', label: 'Literacy' }
+                ].map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 0.8 + index * 0.1, duration: 0.5 }}
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all"
+                  >
+                    <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                    <div className="text-sm text-white/80">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </motion.div>
+              
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 1.2, duration: 0.8 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button 
+                  size="lg" 
+                  className="bg-white text-emerald-700 hover:bg-white/90 font-semibold px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all"
+                  onClick={() => {
+                    const packagesSection = document.getElementById('packages-list')
+                    packagesSection?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                >
+                  Explore All Packages
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Search and Filters Section */}
+      <div className="container mx-auto px-4 py-8">
+        <motion.section 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="container mx-auto text-center relative z-10"
-        >
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-6 py-2 rounded-full mb-6"
-            >
-              <Award className="w-4 h-4 text-white" />
-              <span className="text-white font-medium">{t('hero.badge')}</span>
-            </motion.div>
-            
-            <h1 className="text-3xl md:text-4xl font-bold mb-3 text-white">
-              {t('hero.title')}
-              <span className="block bg-gradient-to-r from-yellow-200 to-orange-200 bg-clip-text text-transparent">
-                {t('hero.titleHighlight')}
-              </span>
-            </h1>
-            
-            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-              {t('hero.description', { count: stats.totalPackages, destinations: stats.destinations })}
-            </p>
-
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center gap-6 text-white/90">
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4" />
-                <span className="text-sm">{t('hero.trustIndicators.safe')}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4" />
-                <span className="text-sm">{t('hero.trustIndicators.bestPrices')}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Star className="w-4 h-4 fill-current" />
-                <span className="text-sm">{t('hero.trustIndicators.rating', { rating: stats.avgRating })}</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      <div className="container mx-auto px-4">
-        {/* Filters Bar - Compact */}
-        <motion.section 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="relative z-40 bg-white/95 backdrop-blur-xl border border-gray-200/60 -mt-8 rounded-2xl shadow-md overflow-hidden"
-          style={{ perspective: 800 }}
+          transition={{ delay: 0.3 }}
+          className="bg-white/95 backdrop-blur-xl border border-gray-200/60 rounded-3xl shadow-xl overflow-hidden"
         >
           {/* Local tropical animated background for the filters panel */}
           <TropicalCardBackground />
@@ -457,13 +533,16 @@ function PackagesPageContent() {
           {/* Background removed: using universal AnimatedBackground */}
         </motion.section>
 
-        {/* Featured Packages Banner */}
-        {selectedCategory === 'All' && !searchQuery && featuredPackages.length > 0 && (
-          <motion.section 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="py-8"
-          >
+        {/* Packages List Container */}
+        <div id="packages-list" className="mt-12">
+
+          {/* Featured Packages Banner */}
+          {selectedCategory === 'All' && !searchQuery && featuredPackages.length > 0 && (
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="py-8"
+            >
             <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-6 mb-8">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
@@ -486,11 +565,11 @@ function PackagesPageContent() {
                 ))}
               </div>
             </div>
-          </motion.section>
-        )}
+            </motion.section>
+          )}
 
-        {/* Packages Grid/List */}
-        <section className="py-8">
+          {/* Packages Grid/List */}
+          <section className="py-8">
           {currentPackages.length > 0 ? (
             <>
               <motion.div
@@ -585,7 +664,8 @@ function PackagesPageContent() {
               </Card>
             </motion.div>
           )}
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   )

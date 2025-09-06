@@ -1,6 +1,6 @@
 'use client'
 
-import { use, useState } from 'react'
+import { use, useState, useEffect, useRef } from 'react'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { motion, AnimatePresence } from 'framer-motion'
 import { 
   ArrowLeft,
   Star,
@@ -33,7 +34,11 @@ import {
   Building,
   Sparkles,
   Shield,
-  Headphones
+  Headphones,
+  ChevronLeft,
+  ChevronRight,
+  ZoomIn,
+  Maximize2
 } from 'lucide-react'
 
 export default function PackageDetailPage({ params }: { params: Promise<{ id: string; locale: string }> }) {
@@ -41,12 +46,38 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
   const [selectedPricingTier, setSelectedPricingTier] = useState(0)
   const [isLiked, setIsLiked] = useState(false)
   const [selectedImageIndex, setSelectedImageIndex] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [isFullscreen, setIsFullscreen] = useState(false)
+  const carouselRef = useRef<HTMLDivElement>(null)
   
   const pkg = getPackageById(id)
   
   if (!pkg) {
     notFound()
     return null
+  }
+
+  // Auto-play carousel
+  useEffect(() => {
+    if (!isAutoPlaying || !pkg.images || pkg.images.length <= 1) return
+    
+    const interval = setInterval(() => {
+      setSelectedImageIndex((prev) => (prev + 1) % pkg.images!.length)
+    }, 5000) // Change image every 5 seconds
+    
+    return () => clearInterval(interval)
+  }, [isAutoPlaying, pkg.images])
+
+  const handlePrevImage = () => {
+    if (!pkg.images) return
+    setIsAutoPlaying(false)
+    setSelectedImageIndex((prev) => (prev - 1 + pkg.images!.length) % pkg.images!.length)
+  }
+
+  const handleNextImage = () => {
+    if (!pkg.images) return
+    setIsAutoPlaying(false)
+    setSelectedImageIndex((prev) => (prev + 1) % pkg.images!.length)
   }
 
   const getDiscountPercentage = () => {
@@ -132,50 +163,180 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Hero Image Gallery */}
+            {/* Enhanced Hero Image Gallery with Smooth Scrolling */}
             <Card className="overflow-hidden bg-white/80 backdrop-blur border-0 shadow-xl rounded-2xl">
-              <div className="relative aspect-[16/10]">
-                <Image
-                  src={pkg.images?.[selectedImageIndex] || pkg.image}
-                  alt={pkg.title}
-                  fill
-                  className="object-cover"
-                />
+              <div className="relative aspect-[16/10] group" ref={carouselRef}>
+                {/* Main Image with Animation */}
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={selectedImageIndex}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.5 }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={pkg.images?.[selectedImageIndex] || pkg.image}
+                      alt={pkg.title}
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </motion.div>
+                </AnimatePresence>
+                
+                {/* Gradient Overlays for better text visibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent pointer-events-none" />
+                
+                {/* Navigation Arrows */}
+                {pkg.images && pkg.images.length > 1 && (
+                  <>
+                    <button
+                      onClick={handlePrevImage}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all opacity-0 group-hover:opacity-100 transform hover:scale-110"
+                      aria-label="Previous image"
+                    >
+                      <ChevronLeft className="w-6 h-6" />
+                    </button>
+                    <button
+                      onClick={handleNextImage}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all opacity-0 group-hover:opacity-100 transform hover:scale-110"
+                      aria-label="Next image"
+                    >
+                      <ChevronRight className="w-6 h-6" />
+                    </button>
+                  </>
+                )}
                 
                 {/* Overlay badges */}
-                <div className="absolute top-6 left-6 flex flex-col space-y-3">
+                <div className="absolute top-6 left-6 flex flex-col space-y-3 z-10">
                   {pkg.featured && (
-                    <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white border-0 px-3 py-2">
-                      <Award className="w-4 h-4 mr-2" />
-                      Featured Package
-                    </Badge>
+                    <motion.div
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white border-0 px-3 py-2 shadow-lg">
+                        <Award className="w-4 h-4 mr-2" />
+                        Featured Package
+                      </Badge>
+                    </motion.div>
                   )}
-                  <Badge className="bg-white/90 backdrop-blur text-gray-900 border-0 px-3 py-2">
-                    <CategoryIcon className="w-4 h-4 mr-2" />
-                    {pkg.category}
-                  </Badge>
+                  <motion.div
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    <Badge className="bg-white/90 backdrop-blur text-gray-900 border-0 px-3 py-2 shadow-lg">
+                      <CategoryIcon className="w-4 h-4 mr-2" />
+                      {pkg.category}
+                    </Badge>
+                  </motion.div>
                 </div>
 
                 {getDiscountPercentage() > 0 && (
-                  <Badge className="absolute top-6 right-6 bg-red-500 text-white border-0 px-3 py-2">
-                    {getDiscountPercentage()}% OFF
-                  </Badge>
+                  <motion.div
+                    initial={{ x: 20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="absolute top-6 right-6"
+                  >
+                    <Badge className="bg-red-500 text-white border-0 px-3 py-2 shadow-lg">
+                      {getDiscountPercentage()}% OFF
+                    </Badge>
+                  </motion.div>
                 )}
 
-                {/* Image thumbnails */}
+                {/* Image Counter and Controls */}
                 {pkg.images && pkg.images.length > 1 && (
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="flex space-x-2 overflow-x-auto">
+                  <div className="absolute top-6 right-6 flex items-center gap-2">
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.5 }}
+                      className="bg-black/50 backdrop-blur-md rounded-full px-3 py-1 flex items-center gap-2"
+                    >
+                      <Camera className="w-4 h-4 text-white" />
+                      <span className="text-white text-sm font-medium">
+                        {selectedImageIndex + 1} / {pkg.images.length}
+                      </span>
+                    </motion.div>
+                    <button
+                      onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+                      className="w-8 h-8 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-black/60 transition-all"
+                      aria-label={isAutoPlaying ? 'Pause slideshow' : 'Play slideshow'}
+                    >
+                      {isAutoPlaying ? (
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <rect x="6" y="4" width="4" height="16" />
+                          <rect x="14" y="4" width="4" height="16" />
+                        </svg>
+                      ) : (
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
+                )}
+
+                {/* Enhanced Image Thumbnails with Smooth Scrolling */}
+                {pkg.images && pkg.images.length > 1 && (
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+                    <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
                       {pkg.images.map((image, index) => (
+                        <motion.button
+                          key={index}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.1 * index }}
+                          onClick={() => {
+                            setSelectedImageIndex(index)
+                            setIsAutoPlaying(false)
+                          }}
+                          className={`relative flex-shrink-0 rounded-lg overflow-hidden transition-all transform hover:scale-105 ${
+                            selectedImageIndex === index 
+                              ? 'ring-2 ring-white ring-offset-2 ring-offset-black/20' 
+                              : 'ring-1 ring-white/30'
+                          }`}
+                          style={{
+                            width: selectedImageIndex === index ? '80px' : '60px',
+                            height: selectedImageIndex === index ? '80px' : '60px',
+                          }}
+                        >
+                          <Image 
+                            src={image} 
+                            alt={`${pkg.title} ${index + 1}`} 
+                            fill 
+                            className="object-cover"
+                          />
+                          {selectedImageIndex === index && (
+                            <div className="absolute inset-0 bg-white/20 flex items-center justify-center">
+                              <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                            </div>
+                          )}
+                        </motion.button>
+                      ))}
+                    </div>
+                    
+                    {/* Progress Indicators */}
+                    <div className="flex justify-center gap-1 mt-3">
+                      {pkg.images.map((_, index) => (
                         <button
                           key={index}
-                          onClick={() => setSelectedImageIndex(index)}
-                          className={`relative w-16 h-16 flex-shrink-0 rounded-lg overflow-hidden border-2 transition-all ${
-                            selectedImageIndex === index ? 'border-white shadow-lg' : 'border-white/50'
-                          }`}
-                        >
-                          <Image src={image} alt={`${pkg.title} ${index + 1}`} fill className="object-cover" />
-                        </button>
+                          onClick={() => {
+                            setSelectedImageIndex(index)
+                            setIsAutoPlaying(false)
+                          }}
+                          className={`transition-all duration-300 ${
+                            selectedImageIndex === index
+                              ? 'w-8 h-1 bg-white'
+                              : 'w-1 h-1 bg-white/50 hover:bg-white/70'
+                          } rounded-full`}
+                          aria-label={`Go to image ${index + 1}`}
+                        />
                       ))}
                     </div>
                   </div>

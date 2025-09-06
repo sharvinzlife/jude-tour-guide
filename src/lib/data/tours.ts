@@ -5,7 +5,7 @@ export const tourPackages: TourPackage[] = [
     id: '1',
     title: 'Complete Kerala Grand Tour',
     description: 'Experience the best of Kerala with this comprehensive 10-day journey covering all major destinations',
-    image: '/media/portifolio/Portifolio-1.jpeg',
+    image: '/media/Tour packages/cover.jpg',
     price: 35000,
     originalPrice: 42000,
     duration: '10 Days 9 Nights',
@@ -18,9 +18,12 @@ export const tourPackages: TourPackage[] = [
     destinations: ['Kochi', 'Munnar', 'Thekkady', 'Alleppey', 'Kumarakom'],
     tags: ['Best Seller', 'Honeymoon Special', 'Family Friendly', 'Cultural'],
     images: [
-      '/media/portifolio/Portifolio-1.jpeg',
-      '/media/portifolio/Portifolio-2.jpeg',
-      '/media/portifolio/Portifolio-3.jpeg'
+      '/media/Tour packages/cover.jpg',
+      '/media/Tour packages/Fort Kochi Heritage Walk/francis-church.jpg',
+      '/media/Tour packages/Miunnar Hill Station Escape/munnar-hill-station.jpg',
+      '/media/Tour packages/Thekkady Wildlife Safari/Periyar-Wildlife-Sanctuary-1.jpg',
+      '/media/Tour packages/Romantic Backwater Escape/Kerala-1.avif',
+      '/media/Tour packages/Kumarakom Bird Paradise/birds.jpg'
     ],
     bestTimeToVisit: ['October to March', 'Pleasant weather', 'Ideal for sightseeing'],
     highlights: [
@@ -232,9 +235,9 @@ export const tourPackages: TourPackage[] = [
   },
   {
     id: '2',
-    title: 'Alleppey Backwater Bliss',
+    title: 'Romantic Backwater Escape',
     description: 'Immerse yourself in the serene backwaters of Alleppey with luxury houseboat stays',
-    image: '/media/portifolio/Portifolio-2.jpeg',
+    image: '/media/Tour packages/Romantic Backwater Escape/GettyImages-522478216-5ab12c4e3de4230036949cee.jpg',
     price: 12500,
     originalPrice: 15000,
     duration: '3 Days 2 Nights',
@@ -246,7 +249,14 @@ export const tourPackages: TourPackage[] = [
     difficulty: 'Easy',
     destinations: ['Alleppey', 'Kumarakom'],
     tags: ['Honeymoon', 'Romantic', 'Peaceful', 'Photography'],
-    images: ['/media/portifolio/Portifolio-2.jpeg'],
+    images: [
+      '/media/Tour packages/Romantic Backwater Escape/GettyImages-522478216-5ab12c4e3de4230036949cee.jpg',
+      '/media/Tour packages/Romantic Backwater Escape/Kerala-Honeymoon-special.jpg',
+      '/media/Tour packages/Romantic Backwater Escape/2883057.webp',
+      '/media/Tour packages/Romantic Backwater Escape/Backwaters-for-pre-wedding-shoot.jpg',
+      '/media/Tour packages/Romantic Backwater Escape/Kerala-1.avif',
+      '/media/Tour packages/Romantic Backwater Escape/Kerala-2-1.avif'
+    ],
     bestTimeToVisit: ['November to February', 'Post-monsoon freshness', 'Clear skies'],
     highlights: [
       'Luxury houseboat with all amenities',
@@ -327,7 +337,7 @@ export const tourPackages: TourPackage[] = [
     id: '3',
     title: 'Munnar Hill Station Escape',
     description: 'Discover the misty mountains, tea gardens, and cool climate of Munnar',
-    image: '/media/portifolio/Portifolio-3.jpeg',
+    image: '/media/Tour packages/Miunnar Hill Station Escape/munnar-hill-station.jpg',
     price: 18000,
     originalPrice: 22000,
     duration: '4 Days 3 Nights',
@@ -339,7 +349,11 @@ export const tourPackages: TourPackage[] = [
     difficulty: 'Moderate',
     destinations: ['Munnar', 'Marayoor'],
     tags: ['Adventure', 'Nature', 'Tea Gardens', 'Trekking'],
-    images: ['/media/portifolio/Portifolio-3.jpeg'],
+    images: [
+      '/media/Tour packages/Miunnar Hill Station Escape/munnar-hill-station.jpg',
+      '/media/Tour packages/Miunnar Hill Station Escape/30f2ed97-32b.jpeg',
+      '/media/Tour packages/Miunnar Hill Station Escape/visit-vaguvarai-viewpoint-on-munnar-sightseeing-tour-with-eravikulam-national-park-by-cab.jpg'
+    ],
     bestTimeToVisit: ['September to May', 'Pleasant weather', 'Clear mountain views'],
     highlights: [
       'Extensive tea plantation tours',
@@ -436,7 +450,7 @@ export const tourPackages: TourPackage[] = [
     id: '4',
     title: 'Thekkady Wildlife Safari',
     description: 'Adventure into Kerala\'s premier wildlife sanctuary for an unforgettable safari experience',
-    image: '/media/portifolio/Portifolio-4.jpeg',
+    image: '/media/Tour packages/Thekkady Wildlife Safari/Periyar-Wildlife-Sanctuary-1.jpg',
     price: 15500,
     originalPrice: 19000,
     duration: '3 Days 2 Nights',
@@ -448,7 +462,13 @@ export const tourPackages: TourPackage[] = [
     difficulty: 'Moderate',
     destinations: ['Thekkady', 'Kumily'],
     tags: ['Wildlife', 'Adventure', 'Nature', 'Photography'],
-    images: ['/media/portifolio/Portifolio-4.jpeg'],
+    images: [
+      '/media/Tour packages/Thekkady Wildlife Safari/Periyar-Wildlife-Sanctuary-1.jpg',
+      '/media/Tour packages/Thekkady Wildlife Safari/1622395398835.webp',
+      '/media/Tour packages/Thekkady Wildlife Safari/maxresdefault.jpg',
+      '/media/Tour packages/Thekkady Wildlife Safari/thekkady-bamboo-rafting.jpg',
+      '/media/Tour packages/Thekkady Wildlife Safari/Thekkady-Mountain-Adventure-Jeep-Safari.jpg'
+    ],
     bestTimeToVisit: ['October to April', 'Dry season', 'Best wildlife sighting'],
     highlights: [
       'Periyar Wildlife Sanctuary boat safari',
@@ -529,7 +549,7 @@ export const tourPackages: TourPackage[] = [
     id: '5',
     title: 'Fort Kochi Heritage Walk',
     description: 'Step back in time and explore the colonial heritage and vibrant culture of Fort Kochi',
-    image: '/media/hero/Hero.jpeg',
+    image: '/media/Tour packages/Fort Kochi Heritage Walk/cover.png',
     price: 8500,
     originalPrice: 11000,
     duration: '2 Days 1 Night',
@@ -541,7 +561,19 @@ export const tourPackages: TourPackage[] = [
     difficulty: 'Easy',
     destinations: ['Fort Kochi', 'Mattancherry'],
     tags: ['Heritage', 'Culture', 'History', 'Art'],
-    images: ['/media/hero/Hero.jpeg'],
+    images: [
+      '/media/Tour packages/Fort Kochi Heritage Walk/cover.png',
+      '/media/Tour packages/Fort Kochi Heritage Walk/francis-church.jpg',
+      '/media/Tour packages/Fort Kochi Heritage Walk/fort-kochi-beach-1.jpg',
+      '/media/Tour packages/Fort Kochi Heritage Walk/108232-cqrpgxzduv-1544958116.jpg',
+      '/media/Tour packages/Fort Kochi Heritage Walk/12301181773_96580aa30a_h.jpg',
+      '/media/Tour packages/Fort Kochi Heritage Walk/IMG_6484-min-1024x768.jpeg',
+      '/media/Tour packages/Fort Kochi Heritage Walk/IMG_6609-min-1024x768.jpeg',
+      '/media/Tour packages/Fort Kochi Heritage Walk/kochi-by-cyclee.jpg',
+      '/media/Tour packages/Fort Kochi Heritage Walk/mattancherry-palace-1.jpg',
+      '/media/Tour packages/Fort Kochi Heritage Walk/sunset-time-in-chinese.jpg',
+      '/media/Tour packages/Fort Kochi Heritage Walk/things-to-do-in-fort-kochi.jpg'
+    ],
     bestTimeToVisit: ['October to March', 'Pleasant weather', 'Ideal for walking'],
     highlights: [
       'Historic Chinese Fishing Nets',
@@ -608,7 +640,7 @@ export const tourPackages: TourPackage[] = [
     id: '6',
     title: 'Kumarakom Bird Paradise',
     description: 'A birder\'s paradise featuring exotic migratory birds and serene backwater life',
-    image: '/media/portifolio/Portifolio-1.jpeg',
+    image: '/media/Tour packages/Kumarakom Bird Paradise/birds.jpg',
     price: 13500,
     originalPrice: 16500,
     duration: '3 Days 2 Nights',
@@ -620,7 +652,16 @@ export const tourPackages: TourPackage[] = [
     difficulty: 'Easy',
     destinations: ['Kumarakom', 'Vembanad Lake'],
     tags: ['Bird Watching', 'Photography', 'Peaceful', 'Nature'],
-    images: ['/media/portifolio/Portifolio-1.jpeg'],
+    images: [
+      '/media/Tour packages/Kumarakom Bird Paradise/birds.jpg',
+      '/media/Tour packages/Kumarakom Bird Paradise/white-breasted-kingfisher-kumarakom-shiju.jpg',
+      '/media/Tour packages/Kumarakom Bird Paradise/pathiramanal-1721153335_5f95dad0d24ce53af736.jpeg',
+      '/media/Tour packages/Kumarakom Bird Paradise/heritage-2.jpg',
+      '/media/Tour packages/Kumarakom Bird Paradise/dutch-palace-1920x1080-20230419193434705199.webp',
+      '/media/Tour packages/Kumarakom Bird Paradise/jew-street-20220115152456859760.jpg',
+      '/media/Tour packages/Kumarakom Bird Paradise/kakkathuruthu_in_nat_geo_s_must_visit_list20161101050212_1868_1.jpg',
+      '/media/Tour packages/Kumarakom Bird Paradise/f2163eb2e0897c1b58175bd780327afe7d50be35c65555a837057d5aedf350a4.jpeg'
+    ],
     bestTimeToVisit: ['November to February', 'Migratory season', 'Perfect weather'],
     highlights: [
       'Kumarakom Bird Sanctuary exploration',
@@ -701,7 +742,7 @@ export const tourPackages: TourPackage[] = [
     id: '7',
     title: 'Kerala Beach Hopping',
     description: 'Explore the pristine beaches of Kerala from Kovalam to Varkala',
-    image: '/media/portifolio/Portifolio-2.jpeg',
+    image: '/media/Tour packages/Kerala Beach Hopping/varkala-beach.jpg',
     price: 16500,
     originalPrice: 20000,
     duration: '4 Days 3 Nights',
@@ -713,7 +754,13 @@ export const tourPackages: TourPackage[] = [
     difficulty: 'Easy',
     destinations: ['Kovalam', 'Varkala', 'Poovar'],
     tags: ['Beach', 'Relaxation', 'Ayurveda', 'Sunset'],
-    images: ['/media/portifolio/Portifolio-2.jpeg'],
+    images: [
+      '/media/Tour packages/Kerala Beach Hopping/varkala-beach.jpg',
+      '/media/Tour packages/Kerala Beach Hopping/01KovalamBeach&Kerala.jpg',
+      '/media/Tour packages/Kerala Beach Hopping/2435199045.webp',
+      '/media/Tour packages/Kerala Beach Hopping/Kovalam_beach_trivandrum_kerala.jpg',
+      '/media/Tour packages/Kerala Beach Hopping/Sun-view-Beach -resort-Varkala.jpg'
+    ],
     bestTimeToVisit: ['October to March', 'Pleasant sea breeze', 'Clear skies'],
     highlights: [
       'Kovalam\'s three beautiful beaches',
@@ -814,7 +861,7 @@ export const tourPackages: TourPackage[] = [
     id: '8',
     title: 'Kerala Ayurveda Wellness Retreat',
     description: 'Rejuvenate your mind, body, and soul with authentic Ayurvedic treatments',
-    image: '/media/portifolio/Portifolio-3.jpeg',
+    image: '/media/Tour packages/Kerala Ayurveda Wellness Retreat/Avail-best-of-Ayurveda-treatments.jpg',
     price: 25000,
     originalPrice: 32000,
     duration: '5 Days 4 Nights',
@@ -826,7 +873,12 @@ export const tourPackages: TourPackage[] = [
     difficulty: 'Easy',
     destinations: ['Kovalam', 'Varkala'],
     tags: ['Ayurveda', 'Wellness', 'Detox', 'Meditation'],
-    images: ['/media/portifolio/Portifolio-3.jpeg'],
+    images: [
+      '/media/Tour packages/Kerala Ayurveda Wellness Retreat/Avail-best-of-Ayurveda-treatments.jpg',
+      '/media/Tour packages/Kerala Ayurveda Wellness Retreat/1486099286.jpg',
+      '/media/Tour packages/Kerala Ayurveda Wellness Retreat/mano-prasadanam.jpg',
+      '/media/Tour packages/Kerala Ayurveda Wellness Retreat/Rejuvenation-Therapy.jpg'
+    ],
     bestTimeToVisit: ['Year-round', 'Monsoon excellent for Ayurveda', 'October-March ideal'],
     highlights: [
       'Authentic Panchakarma treatments',
