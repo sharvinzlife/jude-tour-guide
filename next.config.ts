@@ -8,7 +8,6 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['lucide-react'],
   },
   transpilePackages: ['framer-motion'],
-  outputFileTracingRoot: '/Users/sharvin/jude-tour-guide',
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -23,6 +22,13 @@ const nextConfig: NextConfig = {
       },
     ],
     qualities: [75, 100],
+  },
+  webpack: (config: any) => {
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      'source-map': require.resolve('source-map'),
+    }
+    return config
   },
 }
 
