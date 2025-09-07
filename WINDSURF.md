@@ -3,7 +3,7 @@
 This file provides guidance to Windsurf IDE when working with code in this repository.
 
 Repository summary
-- Project: Jude Tour Guide v2.0.1 - Professional Kerala Tourism Platform
+- Project: Jude Tour Guide v2.1.0 - Professional Kerala Tourism Platform
 - Stack: Next.js 15.5.2 (App Router), TypeScript 5.9.2, Tailwind CSS 4.1.12, Framer Motion 12.23.12, next-intl 4.3.5 for i18n
 - UI: Radix UI primitives + shadcn/ui components with Kerala-themed glassmorphism design
 - Node: 18.17+ recommended
@@ -77,7 +77,16 @@ Gotchas and operational tips
 - Carousel auto-play can conflict with manual navigation - test thoroughly
 - Animation performance should be optimized for mobile devices with reduced motion support
 
-Recent Updates (v2.0.1)
+Recent Updates (v2.1.0)
+- Enhanced page loading animations with smooth entry effects and staggered component appearance
+- Vibrant color palette with emerald-to-teal gradients and catchy color schemes throughout
+- Scroll-triggered animations for content sections with proper timing and delays
+- Interactive hover effects with scaling, rotation, glow, and pulse animations
+- Premium visual experience with upgraded glassmorphism design and multi-layered gradient overlays
+- Enhanced slideshow with gradient borders and smooth transitions
+- Comprehensive Framer Motion integration with performance-optimized animations
+
+Previous Updates (v2.0.1)
 - Mobile layout improvements with better spacing and reduced clutter
 - Fixed "Kerala Tourism" badge spacing from navigation header on mobile
 - Optimized individual package page mobile layouts by removing overlapping elements

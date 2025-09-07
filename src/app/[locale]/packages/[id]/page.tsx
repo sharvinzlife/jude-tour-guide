@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef, useEffect, use } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -42,8 +42,8 @@ import {
   Maximize2
 } from 'lucide-react'
 
-export default function PackageDetailPage({ params }: { params: Promise<{ id: string; locale: string }> }) {
-  const { id } = use(params)
+export default function PackageDetailPage({ params }: { params: { id: string; locale: string } }) {
+  const { id } = params
   const [selectedPricingTier, setSelectedPricingTier] = useState(0)
   const [isLiked, setIsLiked] = useState(false)
   const [selectedImageIndex, setSelectedImageIndex] = useState(0)

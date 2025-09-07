@@ -5,6 +5,56 @@ All notable changes to the Jude Tour Guide project will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2025-01-07
+
+### 🎬 Enhanced Animation & Visual Experience
+
+#### ✨ Page Loading Animations
+- **Smooth Page Entry**: Main container fades in with scale animation (1.2s duration)
+- **Staggered Background Elements**: Four animated gradient orbs appear sequentially with scale animations
+- **Component Cascade**: Slideshow, booking component, and content sections animate in with staggered delays (0.2s to 0.6s)
+- **Enhanced Background**: Added animated gradient backgrounds with emerald, teal, cyan, purple, and amber colors
+
+#### 📜 Scroll-Triggered Animations
+- **Package Header**: Slides up from bottom with fade-in effect (0.8s duration, 0.2s delay)
+- **Content Tabs**: Animated entry with delay for smooth progression (0.8s duration, 0.4s delay)
+- **Related Packages**: Enhanced with individual card animations and staggered timing (0.5s duration, 0.8s + index * 0.1s delay)
+- **Interactive Elements**: All sections now have smooth entrance animations with proper timing
+
+#### 🎯 Enhanced Hover Effects & Interactions
+- **Slideshow Interactions**: Added hover shadow enhancements (shadow-3xl) and color transitions
+- **Booking Buttons**: Gradient backgrounds with pulse, bounce, and glow effects
+- **Contact Cards**: Scaling (hover:scale-105), rotation, and icon pulse animations on hover
+- **Related Package Cards**: Scale (hover:scale-110), lift (hover:-translate-y-2), and color transition effects with spinning icons
+- **Navigation Elements**: Smooth color transitions and interactive feedback
+
+#### 🌈 Vibrant Color Palette Enhancement
+- **Enhanced Slideshow**: Upgraded with gradient borders (from-emerald-200/50 to-teal-200/50) and glassmorphism effects
+- **Multi-layered Gradients**: Enhanced backdrop blur effects with multi-layered gradient overlays
+- **Catchy Color Scheme**: Applied emerald-to-teal gradients throughout buttons, cards, and interactive elements
+- **Professional Glassmorphism**: Enhanced backdrop blur effects with gradient overlays from emerald-100/20 to teal-100/20
+
+#### 🎨 Visual Design Improvements
+- **Enhanced Background**: Changed from slate-50 to emerald-50 via white to teal-50 gradient
+- **Animated Orbs**: Four floating gradient orbs with different colors and animation delays
+- **Card Enhancements**: Improved card designs with gradient backgrounds and hover effects
+- **Icon Animations**: Added pulse, spin, and scale animations to various icons throughout the interface
+
+### 🔧 Technical Improvements
+- **Framer Motion Integration**: Comprehensive animation system with proper timing and easing
+- **Performance Optimized**: Efficient animation sequences with proper delays and transitions
+- **Responsive Design**: All animations work seamlessly across devices and breakpoints
+- **Accessibility Maintained**: Animations enhance UX without compromising usability
+- **React Integration**: Added proper React imports and fixed JSX syntax issues
+
+### 🐛 Bug Fixes
+- Fixed JSX syntax errors with proper motion.div closing tags
+- Resolved CategoryIcon references by using React.createElement with getCategoryIcon
+- Added missing React import for proper component rendering
+- Fixed motion.div nesting and closing tag issues
+
+---
+
 ## [2.0.1] - 2025-01-07
 
 ### 📱 Mobile Layout Improvements

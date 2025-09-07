@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/TypeScript-5.9.2-blue?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
     <img src="https://img.shields.io/badge/Tailwind_CSS-4.1.12-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind"/>
     <img src="https://img.shields.io/badge/Framer_Motion-12.23-FF0055?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion"/>
-<img src="https://img.shields.io/badge/Version-2.0.1-success?style=for-the-badge" alt="Version"/>
+<img src="https://img.shields.io/badge/Version-2.1.0-success?style=for-the-badge" alt="Version"/>
     <img src="https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=for-the-badge" alt="Status"/>
   </p>
 
@@ -28,14 +28,15 @@
 
 ## 🎯 About
 
-**Jude Tour Guide v2.0.1** is a modern, multilingual web application showcasing professional tour guide services in Kerala, India. Built with cutting-edge technologies, it features stunning glassmorphism design, smooth animations, comprehensive portfolio system, and support for 6 languages. 
+**Jude Tour Guide v2.1.0** is a modern, multilingual web application showcasing professional tour guide services in Kerala, India. Built with cutting-edge technologies, it features stunning glassmorphism design, smooth animations, comprehensive portfolio system, and support for 6 languages. 
 
-### 🎉 What's New in v2.0.1
-- **📱 Enhanced Mobile Experience**: Optimized mobile layouts with better spacing
-- **🖼️ Cleaner Image Carousels**: Removed overlapping elements on mobile package pages
-- **🎯 Better Touch Interactions**: Simplified controls for mobile users
-- **📐 Improved Responsive Design**: Fixed navigation spacing and content overlap issues
-- **⚡ Mobile Performance**: Faster loading and smoother interactions on mobile devices
+### 🎉 What's New in v2.1.0
+- **🎬 Enhanced Page Animations**: Smooth page loading animations with staggered element entrance
+- **🌈 Vibrant Color Palette**: Enhanced emerald-to-teal gradients and catchy color schemes throughout
+- **📜 Scroll-Triggered Animations**: Content sections animate smoothly as users scroll down
+- **🎯 Interactive Hover Effects**: Enhanced hover animations with scaling, rotation, and glow effects
+- **✨ Premium Visual Experience**: Upgraded glassmorphism design with multi-layered gradient overlays
+- **🎨 Enhanced Slideshow**: Improved image carousels with gradient borders and smooth transitions
 
 ### 🌟 Previous Major Updates (v2.0.0)
 - **🖼️ Enhanced Image Galleries**: 42+ high-quality tour package images
