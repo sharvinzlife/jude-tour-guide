@@ -5,6 +5,43 @@ All notable changes to the Jude Tour Guide project will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2025-01-07
+
+### 📱 Mobile Layout Improvements
+
+#### ✨ Enhanced Mobile Experience
+- **Packages Page Mobile Fixes**
+  - Fixed "Kerala Tourism" badge spacing from navigation header on mobile
+  - Added proper top padding (`pt-8 sm:pt-0`) to hero section for mobile spacing
+  - Increased bottom margin for "Explore All Packages" button to prevent overlap with content below
+  - Added responsive margin (`mt-8 sm:mt-0`) to search/filters section
+
+- **Individual Package Page Mobile Optimization**
+  - **Cleaner Image Carousel**: Removed overlapping elements that cluttered mobile scroll images
+  - **Hidden Desktop-Only Elements**: Featured package badges, category labels, and discount badges now hidden on mobile (`hidden sm:flex/block`)
+  - **Simplified Controls**: Reduced image counter and play/pause button sizes for mobile (`w-5 h-5` vs `w-8 h-8`)
+  - **Mobile Badge Section**: Added dedicated badge area below image carousel for mobile users
+  - **Removed Thumbnail Navigation**: Hidden image thumbnails on mobile for cleaner interface
+
+#### 🎨 Mobile-First Design Improvements
+- **Better Visual Hierarchy**: Important information now properly organized for mobile viewing
+- **Reduced Clutter**: Eliminated overlapping UI elements that made images hard to see
+- **Touch-Optimized**: Smaller, appropriately sized controls for mobile interaction
+- **Responsive Spacing**: Consistent spacing across all mobile breakpoints
+
+#### 🐛 Bug Fixes
+- Fixed navigation header overlap with "Kerala Tourism" text on mobile
+- Resolved "Explore All Packages" button proximity to content below
+- Eliminated visual clutter from overlapping badges on package detail images
+- Improved mobile carousel usability by removing unnecessary elements
+
+### 🔧 Technical Improvements
+- Enhanced responsive design utilities with better mobile breakpoint handling
+- Improved CSS class organization for mobile-specific styling
+- Better separation of desktop and mobile UI elements
+
+---
+
 ## [2.0.0] - 2024-09-06
 
 ### 🎨 Major UI/UX Overhaul

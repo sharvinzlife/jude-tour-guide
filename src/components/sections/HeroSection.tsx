@@ -152,7 +152,7 @@ export function HeroSection() {
                         <div className="grid grid-cols-2 gap-1 text-xs">
                           <span className="flex items-center text-emerald-600 font-medium">
                             <Award className="w-3 h-3 mr-1 flex-shrink-0" />
-                            <span className="truncate">10+ Years</span>
+                            <span className="truncate">12+ Years</span>
                           </span>
                           <span className="flex items-center text-amber-600 font-medium">
                             <Star className="w-3 h-3 mr-1 fill-current flex-shrink-0" />
@@ -232,7 +232,7 @@ export function HeroSection() {
                   style={{ perspective: 1000 }}
                 >
                   <div className="text-xl lg:text-3xl font-bold text-emerald-600 mb-1 drop-shadow-sm">
-                    <AnimatedCounter to={10} suffix="+" />
+                    <AnimatedCounter to={12} suffix="+" />
                   </div>
                   <div className="text-xs lg:text-sm text-gray-700 font-semibold">Years Experience</div>
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald-400/5 to-teal-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

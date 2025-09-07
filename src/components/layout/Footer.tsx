@@ -28,7 +28,7 @@ export function Footer() {
   const socialLinks = [
     { 
       name: 'Facebook', 
-      href: 'https://facebook.com/tourguidejude', 
+      href: 'https://www.facebook.com/judekpeter', 
       icon: Facebook, 
       color: 'hover:text-blue-400',
       followers: '8.2K'

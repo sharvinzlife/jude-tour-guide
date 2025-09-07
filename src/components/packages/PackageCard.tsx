@@ -19,7 +19,8 @@ import {
   TrendingUp,
   Award,
   Camera,
-  Info
+  Info,
+  Sparkles
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { TourPackage } from '@/types'
@@ -34,6 +35,7 @@ export function PackageCard({
 }: PackageCardProps) {
   const [isLiked, setIsLiked] = useState(false)
   const [showItinerary, setShowItinerary] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
 
   const handleShare = () => {
     if (navigator.share) {
@@ -61,6 +63,8 @@ export function PackageCard({
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         className="mb-6"
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
       >
         <Card className="group overflow-hidden bg-white/90 backdrop-blur-xl border-2 border-white/50 shadow-2xl rounded-2xl hover:shadow-3xl hover:scale-[1.02] transition-all duration-500 relative">
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/5 to-teal-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
@@ -276,7 +280,7 @@ export function PackageCard({
             </div>
 
             {/* Price and CTA */}
-            <div className="flex items-center justify-between pt-6 border-t border-gray-200">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between pt-6 border-t border-gray-200 space-y-4 lg:space-y-0">
               <div className="flex-1">
                 <div className="flex items-baseline space-x-2">
                   {pkg.originalPrice && (
@@ -290,16 +294,26 @@ export function PackageCard({
                 </div>
                 <span className="text-sm text-gray-600">per person</span>
               </div>
-              <div className="flex space-x-3">
-                <Link href={`/packages/${pkg.id}`}>
-                  <Button variant="outline" size="lg" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
+              <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 lg:ml-4">
+                <Link href={`/packages/${pkg.id}`} className="flex-1 sm:flex-none">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="w-full sm:w-auto border-2 border-emerald-600 text-emerald-600 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 hover:border-emerald-700 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold"
+                  >
                     <Info className="w-4 h-4 mr-2" />
                     View Details
                   </Button>
                 </Link>
-                <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 px-8">
-                  Book Now
-                </Button>
+                <Link href={`/booking/${pkg.id}`} className="flex-1 sm:flex-none">
+                  <Button 
+                    size="lg" 
+                    className="w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold shadow-xl shadow-emerald-500/25 hover:shadow-2xl hover:shadow-emerald-500/30 transform hover:scale-105 transition-all duration-300"
+                  >
+                    <Sparkles className="w-4 h-4 mr-2" />
+                    Book Now
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -326,7 +340,9 @@ export function PackageCard({
               src={pkg.image}
               alt={pkg.title}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              priority
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           </div>
         
@@ -378,21 +394,44 @@ export function PackageCard({
         <div className="absolute top-4 right-4 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <Button
             size="sm"
-            variant="outline"
-            className="bg-white/90 backdrop-blur border-0 p-2"
-            onClick={() => setIsLiked(!isLiked)}
+            variant="secondary"
+            className="bg-white/90 backdrop-blur-sm hover:bg-white p-2"
+            onClick={(e) => {
+              e.preventDefault()
+              setIsLiked(!isLiked)
+            }}
           >
-            <Heart className={`w-4 h-4 ${isLiked ? 'fill-red-500 text-red-500' : ''}`} />
+            <Heart className={`w-3 h-3 sm:w-4 sm:h-4 ${isLiked ? 'fill-red-500 text-red-500' : ''}`} />
           </Button>
           <Button
             size="sm"
-            variant="outline"
-            className="bg-white/90 backdrop-blur border-0 p-2"
-            onClick={handleShare}
+            variant="secondary"
+            className="bg-white/90 backdrop-blur-sm hover:bg-white p-2"
+            onClick={(e) => {
+              e.preventDefault()
+              handleShare()
+            }}
           >
-            <Share2 className="w-4 h-4" />
+            <Share2 className="w-3 h-3 sm:w-4 sm:h-4" />
           </Button>
         </div>
+
+        {/* Animated Book Now Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ 
+            opacity: isHovered ? 1 : 0, 
+            y: isHovered ? 0 : 20 
+          }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="absolute bottom-4 left-4 right-4"
+        >
+          <Link href={`/booking/${pkg.id}`}>
+            <Button className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-2 sm:py-3 text-sm sm:text-base rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+              Book Now
+            </Button>
+          </Link>
+        </motion.div>
 
         {/* Bottom Info Overlay */}
         <div className="absolute bottom-4 left-4 right-4">
@@ -500,29 +539,34 @@ export function PackageCard({
         </div>
 
         {/* Price and CTA */}
-        <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+        <div className="flex flex-col space-y-4 pt-4 border-t border-gray-200">
           <div>
-            <div className="flex items-baseline space-x-2">
+            <div className="flex items-baseline space-x-2 mb-2">
               {pkg.originalPrice && (
-                <span className="text-sm text-gray-500 line-through">
-                  ₹{pkg.originalPrice.toLocaleString()}
-                </span>
+                <span className="text-lg text-gray-500 line-through">₹{pkg.originalPrice.toLocaleString()}</span>
               )}
-              <span className="text-2xl font-bold text-emerald-600">
-                ₹{pkg.price.toLocaleString()}
-              </span>
+              <span className="text-2xl font-bold text-emerald-600">₹{pkg.price.toLocaleString()}</span>
             </div>
-            <span className="text-xs text-gray-600">per person</span>
+            <span className="text-sm text-gray-600">per person</span>
           </div>
-          <div className="flex space-x-2">
-            <Link href={`/packages/${pkg.id}`}>
-              <Button variant="outline" size="sm" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
-                Details
+          
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+            <Link href={`/packages/${pkg.id}`} className="flex-1">
+              <Button 
+                variant="outline" 
+                className="w-full border-2 border-emerald-600 text-emerald-600 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 hover:border-emerald-700 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold py-3"
+              >
+                <Eye className="w-4 h-4 mr-2" />
+                View Details
               </Button>
             </Link>
-            <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700">
-              Book Now
-            </Button>
+            <Link href={`/booking/${pkg.id}`} className="flex-1">
+              <Button className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold shadow-xl shadow-emerald-500/25 hover:shadow-2xl hover:shadow-emerald-500/30 transform hover:scale-105 transition-all duration-300 py-3">
+                <Sparkles className="w-4 h-4 mr-2" />
+                Book Now
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

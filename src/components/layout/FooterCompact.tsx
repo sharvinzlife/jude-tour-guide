@@ -5,7 +5,7 @@ import { MapPin, Phone, Mail, Award, Clock, Heart, Sun, Palmtree, Waves } from '
 import { 
   FaFacebook, 
   FaWhatsapp,
-  FaLinkedin 
+  FaInstagram 
 } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
@@ -18,7 +18,7 @@ export function FooterCompact() {
   const socialLinks = [
     { 
       name: 'Facebook', 
-      href: 'https://facebook.com/tourguidejude', 
+      href: 'https://www.facebook.com/judekpeter', 
       icon: FaFacebook,
       gradient: 'from-blue-600 to-blue-400',
       hoverScale: 1.2,
@@ -33,12 +33,12 @@ export function FooterCompact() {
       followers: 'Direct'
     },
     { 
-      name: 'LinkedIn', 
-      href: 'https://linkedin.com/in/tourguidejude', 
-      icon: FaLinkedin,
-      gradient: 'from-blue-700 to-blue-500',
+      name: 'Instagram', 
+      href: 'https://www.instagram.com/judekpeter/', 
+      icon: FaInstagram,
+      gradient: 'from-pink-500 via-red-500 to-yellow-500',
       hoverScale: 1.2,
-      followers: '2.1K'
+      followers: 'Follow'
     }
   ]
 
@@ -258,7 +258,7 @@ export function FooterCompact() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
               >
-                - Your Kerala Explorer
+                Jude K Peter
               </motion.div>
             </motion.div>
           </motion.div>

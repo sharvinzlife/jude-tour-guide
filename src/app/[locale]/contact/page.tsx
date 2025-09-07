@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -88,6 +88,39 @@ export default function ContactPage() {
     budget: '',
     message: ''
   })
+
+  // Auto-select tour type from sessionStorage when coming from package quote request
+  useEffect(() => {
+    const selectedTourType = sessionStorage.getItem('selectedTourType')
+    if (selectedTourType) {
+      // Convert kebab-case back to proper format
+      const tourTypeMap: { [key: string]: string } = {
+        'backwater-tours': 'Backwater Tours',
+        'hill-station-tours': 'Hill Station Tours', 
+        'cultural-heritage-tours': 'Cultural Heritage Tours',
+        'wildlife-safari-tours': 'Wildlife Safari Tours',
+        'beach-tours': 'Beach Tours',
+        'adventure-tours': 'Adventure Tours',
+        'photography-tours': 'Photography Tours',
+        'honeymoon-packages': 'Honeymoon Packages',
+        'family-packages': 'Family Packages'
+      }
+      
+      const mappedTourType = tourTypeMap[selectedTourType] || 'Custom Itinerary'
+      setFormData(prev => ({ ...prev, tourType: mappedTourType }))
+      
+      // Clear the sessionStorage after using it
+      sessionStorage.removeItem('selectedTourType')
+      
+      // Scroll to the form section
+      setTimeout(() => {
+        const formSection = document.getElementById('plan-your-journey')
+        if (formSection) {
+          formSection.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+    }
+  }, [])
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)

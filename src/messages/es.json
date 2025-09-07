@@ -115,7 +115,7 @@
       "ratingLabel": "Calificación promedio",
       "travelers": "500+",
       "travelersLabel": "Viajeros felices",
-      "experience": "10+",
+      "experience": "12+",
       "experienceLabel": "Años de experiencia"
     }
   },
@@ -162,14 +162,14 @@
   "about": {
     "meta": {
       "title": "Acerca de Jude - Guía Turístico Profesional de Kerala | Guía Kerala",
-      "description": "Conoce a Jude, el guía turístico profesional certificado de Kerala con más de 8 años de experiencia. Licenciado, entrenado en primeros auxilios y apasionado por mostrar la belleza auténtica y la cultura de Kerala.",
+      "description": "Conoce a Jude, el guía turístico profesional certificado de Kerala con más de 12 años de experiencia. Licenciado, entrenado en primeros auxilios y apasionado por mostrar la belleza auténtica y la cultura de Kerala.",
       "keywords": "Jude guía turístico Kerala, guía certificado, experto turismo Kerala, guía profesional Kerala, guía licenciado India"
     },
     "hero": {
       "badge": "Guía profesional licenciado",
       "title": "Conoce a tu",
       "titleHighlight": "Experto en Kerala",
-      "description": "Guía turístico profesional certificado con más de 8 años de experiencia"
+      "description": "Guía turístico profesional certificado con más de 12 años de experiencia"
     },
     "introduction": {
       "badge": "Guía profesional licenciado",
@@ -199,7 +199,7 @@
           "toursLabel": "Tours",
           "rating": "4,9★",
           "ratingLabel": "Calificación",
-          "years": "8+",
+          "years": "12+",
           "yearsLabel": "Años"
         }
       }
@@ -216,7 +216,7 @@
         "description": "Ubicaciones únicas en todo Kerala"
       },
       "experience": {
-        "value": "8+",
+        "value": "12+",
         "label": "Años de experiencia",
         "description": "Experiencia profesional como guía"
       },

@@ -115,7 +115,7 @@
       "ratingLabel": "Durchschnittsbewertung",
       "travelers": "500+",
       "travelersLabel": "Zufriedene Reisende",
-      "experience": "10+",
+      "experience": "12+",
       "experienceLabel": "Jahre Erfahrung"
     }
   },
@@ -162,14 +162,14 @@
   "about": {
     "meta": {
       "title": "Über Jude - Professioneller Kerala-Reiseführer | Kerala Guide",
-      "description": "Lernen Sie Jude kennen, Keralas zertifizierten professionellen Reiseführer mit über 8 Jahren Erfahrung. Lizenziert, erste-Hilfe-geschult und leidenschaftlich dabei, Keralas authentische Schönheit und Kultur zu präsentieren.",
+      "description": "Lernen Sie Jude kennen, Keralas zertifizierten professionellen Reiseführer mit über 12 Jahren Erfahrung. Lizenziert, erste-Hilfe-geschult und leidenschaftlich dabei, Keralas authentische Schönheit und Kultur zu präsentieren.",
       "keywords": "Jude Reiseführer Kerala, zertifizierter Reiseführer, Kerala Tourismus Experte, professioneller Guide Kerala, lizenzierter Reiseführer Indien"
     },
     "hero": {
       "badge": "Lizenzierter professioneller Guide",
       "title": "Treffen Sie Ihren",
       "titleHighlight": "Kerala-Experten",
-      "description": "Zertifizierter professioneller Reiseführer mit über 8 Jahren Erfahrung"
+      "description": "Zertifizierter professioneller Reiseführer mit über 12 Jahren Erfahrung"
     },
     "introduction": {
       "badge": "Lizenzierter professioneller Guide",
@@ -199,7 +199,7 @@
           "toursLabel": "Touren",
           "rating": "4,9★",
           "ratingLabel": "Bewertung",
-          "years": "8+",
+          "years": "12+",
           "yearsLabel": "Jahre"
         }
       }
@@ -216,7 +216,7 @@
         "description": "Einzigartige Orte in ganz Kerala"
       },
       "experience": {
-        "value": "8+",
+        "value": "12+",
         "label": "Jahre Erfahrung",
         "description": "Professionelle Führungserfahrung"
       },

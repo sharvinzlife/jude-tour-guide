@@ -198,21 +198,21 @@ function PackagesPageContent() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative min-h-[70vh] flex items-center overflow-hidden">
-        {/* Background Image with reduced blur */}
+        className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center overflow-hidden pt-8 sm:pt-0">
+        {/* Background Image with mobile optimization */}
         <div 
           className="absolute inset-0"
           style={{ 
             backgroundImage: `url('/media/Tour packages/cover.jpg')`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat',
             imageRendering: '-webkit-optimize-contrast',
           }}
         >
           {/* Gradient overlays for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40 sm:from-black/70 sm:via-black/50 sm:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         </div>
         
         {/* Animated decorative elements */}
@@ -230,8 +230,8 @@ function PackagesPageContent() {
         />
         
         {/* Content */}
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-4xl">
             <motion.div
               initial={{ x: -50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -241,9 +241,10 @@ function PackagesPageContent() {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.4 }}
+                className="mt-4 sm:mt-0"
               >
-                <Badge className="inline-flex bg-emerald-500/20 backdrop-blur text-white border-white/30 mb-6 px-4 py-2">
-                <MapPin className="w-4 h-4 mr-2" />
+                <Badge className="inline-flex bg-emerald-500/20 backdrop-blur text-white border-white/30 mb-4 sm:mb-6 px-3 sm:px-4 py-1.5 sm:py-2 text-sm">
+                <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                 Kerala Tourism
                 </Badge>
               </motion.div>
@@ -252,7 +253,7 @@ function PackagesPageContent() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
-                className="text-5xl md:text-6xl font-bold text-white mb-6"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight"
               >
                 Discover God's Own Country
               </motion.h1>
@@ -261,7 +262,7 @@ function PackagesPageContent() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
-                className="text-xl text-white/90 mb-8 leading-relaxed max-w-2xl"
+                className="text-base sm:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed max-w-2xl"
               >
                 Immerse yourself in the enchanting beauty of Kerala - where emerald backwaters meet golden beaches, 
                 misty mountains embrace aromatic tea gardens, and ancient traditions blend seamlessly with modern comfort.
@@ -299,6 +300,7 @@ function PackagesPageContent() {
                 transition={{ delay: 1.2, duration: 0.8 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="mb-8 sm:mb-0"
               >
                 <Button 
                   size="lg" 
@@ -318,7 +320,7 @@ function PackagesPageContent() {
       </motion.section>
 
       {/* Search and Filters Section */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 mt-8 sm:mt-0">
         <motion.section 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

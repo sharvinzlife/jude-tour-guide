@@ -50,6 +50,9 @@ export async function generateMetadata({
     creator: 'Kerala Guide',
     publisher: 'Kerala Guide',
     robots: 'index, follow',
+    icons: {
+      icon: '/media/favicon/Green Modern Personal Logo.svg'
+    },
     alternates: {
       canonical: `https://keralaguide.com/${locale}`,
       languages: languageAlternates
@@ -95,7 +98,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/media/favicon/Green Modern Personal Logo.svg" />
         <link rel="canonical" href={`https://keralaguide.com/${locale}`} />
         <meta name="theme-color" content="#FFD700" />
         <meta name="msapplication-TileColor" content="#FFD700" />

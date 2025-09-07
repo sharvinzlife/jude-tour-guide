@@ -115,7 +115,7 @@
       "ratingLabel": "平均评分",
       "travelers": "500+",
       "travelersLabel": "满意游客",
-      "experience": "10+",
+      "experience": "12+",
       "experienceLabel": "年经验"
     }
   },
@@ -162,14 +162,14 @@
   "about": {
     "meta": {
       "title": "关于朱德 - 专业喀拉拉邦导游 | 喀拉拉邦导游",
-      "description": "认识朱德，喀拉拉邦的认证专业导游，拥有8年以上经验。持证、急救培训，热衷于展示喀拉拉邦的真实之美和文化。",
+      "description": "认识朱德，喀拉拉邦的认证专业导游，拥有12年以上经验。持证、急救培训，热衷于展示喀拉拉邦的真实之美和文化。",
       "keywords": "朱德喀拉拉导游, 认证导游, 喀拉拉旅游专家, 专业喀拉拉导游, 持证印度导游"
     },
     "hero": {
       "badge": "持证专业导游",
       "title": "认识您的",
       "titleHighlight": "喀拉拉专家",
-      "description": "认证专业导游，拥有8年以上经验"
+      "description": "认证专业导游，拥有12年以上经验"
     },
     "introduction": {
       "badge": "持证专业导游",
@@ -199,7 +199,7 @@
           "toursLabel": "旅游",
           "rating": "4.9★",
           "ratingLabel": "评分",
-          "years": "8+",
+          "years": "12+",
           "yearsLabel": "年"
         }
       }
@@ -216,7 +216,7 @@
         "description": "喀拉拉邦各地独特景点"
       },
       "experience": {
-        "value": "8+",
+        "value": "12+",
         "label": "年经验",
         "description": "专业导游经验"
       },

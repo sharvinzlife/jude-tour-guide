@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/TypeScript-5.9.2-blue?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
     <img src="https://img.shields.io/badge/Tailwind_CSS-4.1.12-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind"/>
     <img src="https://img.shields.io/badge/Framer_Motion-12.23-FF0055?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion"/>
-<img src="https://img.shields.io/badge/Version-2.0.0-success?style=for-the-badge" alt="Version"/>
+<img src="https://img.shields.io/badge/Version-2.0.1-success?style=for-the-badge" alt="Version"/>
     <img src="https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=for-the-badge" alt="Status"/>
   </p>
 
@@ -28,9 +28,16 @@
 
 ## 🎯 About
 
-**Jude Tour Guide v2.0.0** is a modern, multilingual web application showcasing professional tour guide services in Kerala, India. Built with cutting-edge technologies, it features stunning glassmorphism design, smooth animations, comprehensive portfolio system, and support for 6 languages. 
+**Jude Tour Guide v2.0.1** is a modern, multilingual web application showcasing professional tour guide services in Kerala, India. Built with cutting-edge technologies, it features stunning glassmorphism design, smooth animations, comprehensive portfolio system, and support for 6 languages. 
 
-### 🎉 What's New in v2.0.0
+### 🎉 What's New in v2.0.1
+- **📱 Enhanced Mobile Experience**: Optimized mobile layouts with better spacing
+- **🖼️ Cleaner Image Carousels**: Removed overlapping elements on mobile package pages
+- **🎯 Better Touch Interactions**: Simplified controls for mobile users
+- **📐 Improved Responsive Design**: Fixed navigation spacing and content overlap issues
+- **⚡ Mobile Performance**: Faster loading and smoother interactions on mobile devices
+
+### 🌟 Previous Major Updates (v2.0.0)
 - **🖼️ Enhanced Image Galleries**: 42+ high-quality tour package images
 - **🎠 Advanced Carousel System**: Auto-playing slideshows with controls
 - **🌅 Redesigned Hero Section**: Immersive "Discover God's Own Country"
