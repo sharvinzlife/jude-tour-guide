@@ -43,13 +43,28 @@ import {
 } from 'lucide-react'
 
 export default function PackageDetailPage({ params }: { params: Promise<{ id: string; locale: string }> }) {
-  const [resolvedParams, setResolvedParams] = React.useState<{ id: string; locale: string } | null>(null)
+  const [packageData, setPackageData] = React.useState<any>(null)
+  const [loading, setLoading] = React.useState(true)
+  const [selectedPricingTier, setSelectedPricingTier] = useState(0)
+  const [isLiked, setIsLiked] = useState(false)
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [isFullscreen, setIsFullscreen] = useState(false)
+  const carouselRef = useRef<HTMLDivElement>(null)
   
   React.useEffect(() => {
-    params.then(setResolvedParams)
+    params.then(({ id }) => {
+      const pkg = getPackageById(id)
+      if (!pkg) {
+        notFound()
+        return
+      }
+      setPackageData(pkg)
+      setLoading(false)
+    })
   }, [params])
   
-  if (!resolvedParams) {
+  if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 flex items-center justify-center">
         <div className="text-center">
@@ -60,25 +75,12 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
     )
   }
   
-  return <PackageContent resolvedParams={resolvedParams} />
-}
-
-function PackageContent({ resolvedParams }: { resolvedParams: { id: string; locale: string } }) {
-  const { id } = resolvedParams
-  const [selectedPricingTier, setSelectedPricingTier] = useState(0)
-  const [isLiked, setIsLiked] = useState(false)
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-  const [isFullscreen, setIsFullscreen] = useState(false)
-  const carouselRef = useRef<HTMLDivElement>(null)
-  
-  const pkg = getPackageById(id)
-  
-  if (!pkg) {
-    notFound()
-    return null
+  if (!packageData) {
+    return notFound()
   }
-
+  
+  const pkg = packageData
+  
   // Auto-play carousel
   useEffect(() => {
     if (!isAutoPlaying || !pkg.images || pkg.images.length <= 1) return
@@ -355,7 +357,7 @@ function PackageContent({ resolvedParams }: { resolvedParams: { id: string; loca
                 {pkg.images && pkg.images.length > 1 && (
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2 sm:p-4 hidden sm:block">
                     <div className="flex gap-1 sm:gap-1.5 overflow-x-auto pb-1 sm:pb-2 scrollbar-hide justify-center">
-                      {pkg.images.map((image, index) => (
+                      {pkg.images.map((image: string, index: number) => (
                         <motion.button
                           key={index}
                           initial={{ opacity: 0, y: 15 }}
@@ -417,7 +419,7 @@ function PackageContent({ resolvedParams }: { resolvedParams: { id: string; loca
                     <div className="space-y-3 mb-6">
                       <h4 className="font-bold text-gray-900 text-center mb-4">Select Package</h4>
                       <div className="space-y-3">
-                        {pkg.pricingTiers.map((tier, index) => (
+                        {pkg.pricingTiers.map((tier: any, index: number) => (
                           <div
                             key={index}
                             className={`p-3 rounded-2xl border-2 cursor-pointer transition-all duration-300 ${
@@ -600,7 +602,7 @@ function PackageContent({ resolvedParams }: { resolvedParams: { id: string; loca
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Destinations Covered</h3>
                 <div className="flex flex-wrap gap-2">
-                  {pkg.destinations.map((destination, index) => (
+                      {pkg.destinations.map((destination: string, index: number) => (
                     <Badge key={index} variant="outline" className="bg-gray-50 px-3 py-2">
                       <MapPin className="w-3 h-3 mr-1" />
                       {destination}
@@ -613,7 +615,7 @@ function PackageContent({ resolvedParams }: { resolvedParams: { id: string; loca
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Tour Tags</h3>
                 <div className="flex flex-wrap gap-2">
-                  {pkg.tags.map((tag, index) => (
+                    {pkg.tags.map((tag: string, index: number) => (
                     <Badge key={index} variant="secondary" className="px-3 py-2">
                       {tag}
                     </Badge>
@@ -685,7 +687,7 @@ function PackageContent({ resolvedParams }: { resolvedParams: { id: string; loca
                     </CardHeader>
                     <CardContent className="p-6">
                       <div className="space-y-4">
-                        {pkg.inclusions.map((inclusion, index) => (
+                        {pkg.inclusions.map((inclusion: string, index: number) => (
                           <motion.div 
                             key={index} 
                             initial={{ opacity: 0, x: -20 }}
@@ -710,7 +712,7 @@ function PackageContent({ resolvedParams }: { resolvedParams: { id: string; loca
                     </CardHeader>
                     <CardContent className="p-6">
                       <div className="space-y-4">
-                        {pkg.exclusions.map((exclusion, index) => (
+                        {pkg.exclusions.map((exclusion: string, index: number) => (
                           <motion.div 
                             key={index} 
                             initial={{ opacity: 0, x: -20 }}
@@ -743,7 +745,7 @@ function PackageContent({ resolvedParams }: { resolvedParams: { id: string; loca
                     </CardHeader>
                     <CardContent className="p-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
-                        {pkg.highlights.map((highlight, index) => (
+                        {pkg.highlights.map((highlight: string, index: number) => (
                           <motion.div 
                             key={index} 
                             initial={{ opacity: 0, scale: 0.9 }}
@@ -778,7 +780,7 @@ function PackageContent({ resolvedParams }: { resolvedParams: { id: string; loca
                     </CardHeader>
                     <CardContent className="p-6">
                       <div className="space-y-4">
-                        {pkg.bestTimeToVisit.map((info, index) => (
+                        {pkg.travelInfo.map((info: any, index: number) => (
                           <motion.p 
                             key={index} 
                             initial={{ opacity: 0, x: -20 }}
