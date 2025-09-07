@@ -1,6 +1,6 @@
 'use client'
 
-import { use, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -55,13 +55,8 @@ interface BookingFormData {
 }
 
 export default function BookingPage({ params }: { params: Promise<{ id: string; locale: string }> }) {
-  const { id } = use(params)
-  const pkg = getPackageById(id)
-  
-  if (!pkg) {
-    notFound()
-  }
-
+  const [packageData, setPackageData] = React.useState<any>(null)
+  const [loading, setLoading] = React.useState(true)
   const [formData, setFormData] = useState<BookingFormData>({
     firstName: '',
     lastName: '',
@@ -79,6 +74,35 @@ export default function BookingPage({ params }: { params: Promise<{ id: string; 
   const [paymentMethod, setPaymentMethod] = useState<'razorpay' | 'dodopayments'>('razorpay')
   const [isProcessing, setIsProcessing] = useState(false)
 
+  // All useEffect hooks must be at the top level
+  React.useEffect(() => {
+    params.then(({ id }) => {
+      const pkg = getPackageById(id)
+      if (!pkg) {
+        notFound()
+        return
+      }
+      setPackageData(pkg)
+      setLoading(false)
+    })
+  }, [params])
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading booking details...</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (!packageData) {
+    return notFound()
+  }
+
+  const pkg = packageData
   const selectedPricing = pkg.pricingTiers?.[formData.selectedTier] || { price: pkg.price, name: 'Standard Package' }
   const totalAmount = selectedPricing.price * formData.groupSize
   const advanceAmount = Math.round(totalAmount * 0.3) // 30% advance
@@ -250,7 +274,7 @@ export default function BookingPage({ params }: { params: Promise<{ id: string; 
                           </div>
                           <p className="text-gray-700">{pkg.description}</p>
                           <div className="flex flex-wrap gap-2">
-                            {pkg.tags.slice(0, 4).map((tag, index) => (
+                            {pkg.tags?.slice(0, 4).map((tag: string, index: number) => (
                               <Badge key={index} variant="secondary" className="bg-emerald-100 text-emerald-700">
                                 {tag}
                               </Badge>
@@ -272,7 +296,7 @@ export default function BookingPage({ params }: { params: Promise<{ id: string; 
                       </CardHeader>
                       <CardContent className="p-6">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                          {pkg.pricingTiers.map((tier, index) => (
+                          {pkg.pricingTiers?.map((tier: any, index: number) => (
                             <div
                               key={index}
                               onClick={() => handleInputChange('selectedTier', index)}
@@ -291,7 +315,7 @@ export default function BookingPage({ params }: { params: Promise<{ id: string; 
                                   ₹{tier.price.toLocaleString()}
                                 </div>
                                 <div className="space-y-1 text-xs sm:text-sm text-gray-600">
-                                  {tier.features.slice(0, 3).map((feature, idx) => (
+                                  {tier.features?.slice(0, 3).map((feature: string, idx: number) => (
                                     <div key={idx} className="flex items-center justify-center">
                                       <CheckCircle className="w-3 h-3 text-emerald-600 mr-1 flex-shrink-0" />
                                       <span className="text-left">{feature}</span>
