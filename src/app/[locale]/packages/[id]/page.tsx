@@ -1,6 +1,6 @@
 'use client'
 
-import { use, useState, useEffect, useRef } from 'react'
+import React, { useState, useRef, useEffect, use } from 'react'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -112,33 +112,42 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
     }
   }
 
-  const CategoryIcon = getCategoryIcon(pkg.category)
   const relatedPackages = tourPackages
     .filter(p => p.id !== pkg.id && p.category === pkg.category)
     .slice(0, 3)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-kerala-ivory via-white to-kerala-coconut relative overflow-hidden">
-      {/* Animated Background Elements */}
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+      className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 relative overflow-hidden"
+    >
+      {/* Enhanced Animated Background Elements */}
       <div className="fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-teal-50/20 to-cyan-50/30" />
-        <motion.div
-          className="absolute w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -100, 0],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          style={{ top: '10%', left: '10%' }}
+        <motion.div 
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 2, delay: 0.5 }}
+          className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-emerald-400/30 to-teal-400/30 rounded-full blur-3xl animate-pulse" 
         />
-        <motion.div
-          className="absolute w-64 h-64 bg-teal-200/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, -50, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          style={{ bottom: '20%', right: '20%' }}
+        <motion.div 
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 2, delay: 0.8 }}
+          className="absolute top-40 right-20 w-96 h-96 bg-gradient-to-r from-cyan-400/25 to-blue-400/25 rounded-full blur-3xl animate-pulse delay-1000" 
+        />
+        <motion.div 
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 2, delay: 1.1 }}
+          className="absolute bottom-20 left-1/3 w-80 h-80 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse delay-2000" 
+        />
+        <motion.div 
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 2, delay: 1.4 }}
+          className="absolute top-1/2 right-1/4 w-64 h-64 bg-gradient-to-r from-amber-400/15 to-orange-400/15 rounded-full blur-3xl animate-pulse delay-3000" 
         />
       </div>
       
@@ -184,14 +193,26 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
       </div>
 
       <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
-          {/* Main Content */}
-          <div className="lg:col-span-2 space-y-4 lg:space-y-8">
-            {/* Enhanced Hero Image Gallery with Smooth Scrolling */}
-            <Card className="overflow-hidden bg-white/90 backdrop-blur-xl border-2 border-white/50 shadow-2xl shadow-emerald-500/10 rounded-3xl relative group">
-              {/* Glassmorphism overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-emerald-50/10 pointer-events-none rounded-3xl" />
-              <div className="relative aspect-[16/9] sm:aspect-[16/10] group" ref={carouselRef}>
+        <div className="space-y-6 lg:space-y-8">
+          {/* Slideshow and Booking Component Side by Side */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8"
+          >
+            {/* Enhanced Hero Image Gallery - Compact */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:col-span-2"
+            >
+              <Card className="overflow-hidden bg-gradient-to-br from-white/95 via-emerald-50/20 to-teal-50/30 backdrop-blur-xl border-2 border-gradient-to-r from-emerald-200/50 to-teal-200/50 shadow-2xl shadow-emerald-500/20 hover:shadow-3xl hover:shadow-emerald-500/30 rounded-3xl relative group transition-all duration-500">
+                {/* Enhanced Glassmorphism overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/20 via-transparent to-teal-100/20 pointer-events-none rounded-3xl" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-100/10 via-transparent to-blue-100/10 pointer-events-none rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] group" ref={carouselRef}>
                 {/* Main Image with Animation */}
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -257,7 +278,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
                     transition={{ delay: 0.3 }}
                   >
                     <Badge className="bg-white/90 backdrop-blur text-gray-900 border-0 px-3 py-2 shadow-lg">
-                      <CategoryIcon className="w-4 h-4 mr-2" />
+                      {React.createElement(getCategoryIcon(pkg.category), { className: "w-4 h-4 mr-2" })}
                       {pkg.category}
                     </Badge>
                   </motion.div>
@@ -353,9 +374,136 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
                 )}
               </div>
             </Card>
+            </motion.div>
+
+            {/* Booking Component - Moved to Sidebar */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="lg:col-span-1"
+            >
+              <Card className="bg-white/95 backdrop-blur-xl border-2 border-white/50 shadow-2xl shadow-emerald-500/10 rounded-3xl sticky top-24 overflow-hidden">
+                <CardHeader className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white rounded-t-3xl relative p-6">
+                  <CardTitle className="text-xl font-bold flex items-center justify-center">
+                    <Sparkles className="w-6 h-6 mr-3" />
+                    Book This Package
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-6">
+                  {/* Pricing Section */}
+                  {pkg.pricingTiers && pkg.pricingTiers.length > 0 ? (
+                    <div className="space-y-3 mb-6">
+                      <h4 className="font-bold text-gray-900 text-center mb-4">Select Package</h4>
+                      <div className="space-y-3">
+                        {pkg.pricingTiers.map((tier, index) => (
+                          <div
+                            key={index}
+                            className={`p-3 rounded-2xl border-2 cursor-pointer transition-all duration-300 ${
+                              selectedPricingTier === index
+                                ? 'border-emerald-500 bg-gradient-to-br from-emerald-50/80 to-teal-50/60 shadow-lg shadow-emerald-500/20'
+                                : 'border-emerald-200/50 hover:border-emerald-300/70 bg-white/80 hover:bg-emerald-50/30'
+                            } ${
+                              tier.popular ? ' ring-2 ring-emerald-300/50' : ''
+                            }`}
+                            onClick={() => setSelectedPricingTier(index)}
+                          >
+                            <div className="flex flex-col justify-between mb-2">
+                              <h5 className="font-bold text-sm text-gray-900">{tier.name}</h5>
+                              {tier.popular && (
+                                <Badge className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs px-2 py-1 self-start mt-1">
+                                  Most Popular
+                                </Badge>
+                              )}
+                            </div>
+                            <div className="flex flex-col space-y-1">
+                              {tier.originalPrice && (
+                                <span className="text-sm text-gray-500 line-through">₹{tier.originalPrice.toLocaleString()}</span>
+                              )}
+                              <span className="text-lg font-bold text-emerald-600">₹{tier.price.toLocaleString()}</span>
+                              <span className="text-xs text-gray-600">per person</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="p-4 bg-gradient-to-br from-emerald-50/80 to-teal-50/60 rounded-2xl border border-emerald-200/50 text-center mb-6">
+                      <div className="flex flex-col space-y-2">
+                        {pkg.originalPrice && (
+                          <span className="text-lg text-gray-500 line-through">₹{pkg.originalPrice.toLocaleString()}</span>
+                        )}
+                        <span className="text-2xl font-bold text-emerald-600">₹{pkg.price.toLocaleString()}</span>
+                      </div>
+                      <span className="text-sm text-gray-600 font-medium">per person</span>
+                      {getDiscountPercentage() > 0 && (
+                        <div className="mt-3">
+                          <Badge className="bg-red-500 text-white px-3 py-1">
+                            Save {getDiscountPercentage()}%
+                          </Badge>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Action Buttons */}
+                  <div className="space-y-6 mb-8">
+                    <Link href={`/booking/${pkg.id}`}>
+                      <Button className="w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-600 hover:via-teal-600 hover:to-cyan-600 text-white font-bold py-4 px-6 rounded-2xl shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/50 transform hover:scale-110 hover:-translate-y-1 transition-all duration-500 relative overflow-hidden group">
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                        <Sparkles className="w-6 h-6 mr-3 animate-pulse" />
+                        <span className="relative z-10">Book Now</span>
+                      </Button>
+                    </Link>
+                    <Link href="/contact#plan-your-journey" onClick={() => {
+                      if (typeof window !== 'undefined') {
+                        sessionStorage.setItem('selectedTourType', pkg.category.toLowerCase().replace(/\s+/g, '-'))
+                      }
+                    }}>
+                      <Button variant="outline" className="w-full border-3 border-gradient-to-r from-emerald-500 to-teal-500 bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 hover:from-emerald-100 hover:via-teal-100 hover:to-cyan-100 text-emerald-700 hover:text-emerald-800 font-bold py-4 px-6 rounded-2xl shadow-xl shadow-emerald-500/20 hover:shadow-2xl hover:shadow-emerald-500/40 transform hover:scale-110 hover:-translate-y-1 transition-all duration-500 relative overflow-hidden group border-2 border-emerald-500 hover:border-emerald-600">
+                        <div className="absolute inset-0 bg-gradient-to-r from-emerald-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                        <MessageCircle className="w-6 h-6 mr-3 group-hover:animate-bounce" />
+                        <span className="relative z-10">Request Custom Quote</span>
+                      </Button>
+                    </Link>
+                  </div>
+
+                  {/* Contact Info */}
+                  <div className="pt-6 border-t border-gradient-to-r from-emerald-200 via-teal-200 to-cyan-200 space-y-4">
+                    <h4 className="font-bold text-gray-900 text-center mb-4 text-lg">Contact Us</h4>
+                    <a href="tel:+918921384770" className="flex items-center space-x-4 p-4 rounded-2xl bg-gradient-to-r from-emerald-50 to-teal-50 hover:from-emerald-100 hover:to-teal-100 border border-emerald-200 hover:border-emerald-300 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 group">
+                      <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center group-hover:from-emerald-600 group-hover:to-teal-600 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:rotate-12">
+                        <Phone className="w-6 h-6 text-white group-hover:animate-pulse" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-emerald-600 font-medium">Call us</div>
+                        <div className="font-bold text-gray-900 text-base">+91 8921384770</div>
+                      </div>
+                    </a>
+                    <a href="mailto:bookings@tourguidejude.com" className="flex items-center space-x-4 p-4 rounded-2xl bg-gradient-to-r from-blue-50 to-cyan-50 hover:from-blue-100 hover:to-cyan-100 border border-blue-200 hover:border-blue-300 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 group">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center group-hover:from-blue-600 group-hover:to-cyan-600 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:rotate-12">
+                        <Mail className="w-6 h-6 text-white group-hover:animate-pulse" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-blue-600 font-medium">Email us</div>
+                        <div className="font-bold text-gray-900 text-base">bookings@tourguidejude.com</div>
+                      </div>
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </motion.div>
 
             {/* Package Header */}
-            <div className="space-y-4 sm:space-y-6">
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-4 sm:space-y-6"
+            >
               <div>
                 {/* Mobile-specific badges section */}
                 <div className="sm:hidden mb-4">
@@ -367,7 +515,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
                       </Badge>
                     )}
                     <Badge className="bg-white/90 backdrop-blur text-gray-900 border-0 px-2 py-1 text-xs">
-                      <CategoryIcon className="w-3 h-3 mr-1" />
+                      {React.createElement(getCategoryIcon(pkg.category), { className: "w-3 h-3 mr-1" })}
                       {pkg.category}
                     </Badge>
                     {getDiscountPercentage() > 0 && (
@@ -451,10 +599,15 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Main Content Tabs */}
-            <Tabs defaultValue="itinerary" className="space-y-6 lg:space-y-8">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <Tabs defaultValue="itinerary" className="space-y-6 lg:space-y-8">
               <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 bg-white/90 backdrop-blur-xl border border-gray-200 shadow-lg rounded-xl p-1 gap-0 h-auto min-h-[48px]">
                 <TabsTrigger 
                   value="itinerary" 
@@ -674,144 +827,56 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
                   </div>
                 </motion.div>
               </TabsContent>
-            </Tabs>
-          </div>
-
-          {/* Sidebar */}
-          <div className="space-y-4 lg:space-y-6">
-            {/* Pricing Card */}
-            <Card className="bg-white/95 backdrop-blur-xl border-2 border-white/50 shadow-2xl shadow-emerald-500/10 rounded-3xl sticky top-24 overflow-hidden w-full">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-emerald-50/20 pointer-events-none" />
-              <CardHeader className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white rounded-t-3xl relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/90 to-teal-600/90 backdrop-blur-sm" />
-                <CardTitle className="text-lg sm:text-xl font-bold relative z-10 flex items-center">
-                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
-                  Book This Package
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="p-4 sm:p-6">
-                {/* Pricing Tiers */}
-                {pkg.pricingTiers && pkg.pricingTiers.length > 0 ? (
-                  <div className="space-y-3 mb-6 max-w-full">
-                    {pkg.pricingTiers.map((tier, index) => (
-                      <div 
-                        key={index}
-                        className={
-                          `p-3 sm:p-4 border-2 rounded-2xl cursor-pointer transition-all duration-300 relative overflow-hidden ` +
-                          (selectedPricingTier === index 
-                            ? 'border-emerald-500 bg-gradient-to-br from-emerald-50/80 to-teal-50/60 shadow-lg shadow-emerald-500/20' 
-                            : 'border-emerald-200/50 hover:border-emerald-300/70 bg-white/80 hover:bg-emerald-50/30') +
-                          (tier.popular ? ' ring-2 ring-emerald-300/50' : '')
-                        }
-                        onClick={() => setSelectedPricingTier(index)}
-                      >
-                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
-                          <h4 className="font-bold text-base sm:text-lg text-gray-900 mb-1 sm:mb-0">{tier.name}</h4>
-                          {tier.popular && (
-                            <Badge className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs px-2 py-1 self-start">
-                              Most Popular
-                            </Badge>
-                          )}
-                        </div>
-                        <div className="flex flex-col sm:flex-row sm:items-baseline space-y-1 sm:space-y-0 sm:space-x-2 mb-3">
-                          {tier.originalPrice && (
-                            <span className="text-sm text-gray-500 line-through">₹{tier.originalPrice.toLocaleString()}</span>
-                          )}
-                          <span className="text-xl sm:text-2xl font-bold text-emerald-600">₹{tier.price.toLocaleString()}</span>
-                          <span className="text-xs sm:text-sm text-gray-600">per person</span>
-                        </div>
-                        <div className="space-y-2">
-                          {tier.features.map((feature, idx) => (
-                            <div key={idx} className="flex items-start space-x-2 text-xs sm:text-sm text-gray-700">
-                              <CheckCircle className="w-3 h-3 text-emerald-600 flex-shrink-0 mt-0.5" />
-                              <span className="leading-tight">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="mb-6 p-4 bg-gradient-to-br from-emerald-50/80 to-teal-50/60 rounded-2xl border border-emerald-200/50">
-                    <div className="flex flex-col space-y-1 mb-2">
-                      {pkg.originalPrice && (
-                        <span className="text-lg text-gray-500 line-through">₹{pkg.originalPrice.toLocaleString()}</span>
-                      )}
-                      <span className="text-2xl sm:text-3xl font-bold text-emerald-600">₹{pkg.price.toLocaleString()}</span>
-                    </div>
-                    <span className="text-sm text-gray-600">per person</span>
-                  </div>
-                )}
-
-                <div className="space-y-4 sm:space-y-6">
-                  <Link href={`/booking/${pkg.id}`}>
-                    <Button className="w-full bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-700 hover:via-teal-700 hover:to-emerald-800 text-white font-bold text-base sm:text-lg py-4 sm:py-6 rounded-2xl shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/40 transform hover:scale-105 transition-all duration-500 relative overflow-hidden group">
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
-                      Book This Package
-                    </Button>
-                  </Link>
-                  <Link href="/contact#plan-your-journey" onClick={() => {
-                    if (typeof window !== 'undefined') {
-                      sessionStorage.setItem('selectedTourType', pkg.category.toLowerCase().replace(/\s+/g, '-'))
-                    }
-                  }}>
-                    <Button variant="outline" className="w-full border-3 border-emerald-600 text-emerald-600 hover:bg-gradient-to-r hover:from-emerald-50 hover:via-teal-50 hover:to-emerald-50 hover:border-emerald-700 font-semibold text-base sm:text-lg py-4 sm:py-5 rounded-2xl shadow-xl shadow-emerald-500/20 hover:shadow-2xl hover:shadow-emerald-500/30 transform hover:scale-105 transition-all duration-500 relative overflow-hidden group">
-                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
-                      Request Custom Quote
-                    </Button>
-                  </Link>
-                </div>
-
-                <div className="mt-6 pt-6 border-t border-gray-200 space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-emerald-600" />
-                    <span className="text-gray-700">+91 8921384770</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-emerald-600" />
-                    <span className="text-gray-700">bookings@keralatours.com</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+              </Tabs>
+            </motion.div>
 
             {/* Related Packages */}
             {relatedPackages.length > 0 && (
-              <Card className="bg-white/95 backdrop-blur-xl border-2 border-white/50 shadow-2xl shadow-emerald-500/10 rounded-3xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-emerald-50/20 pointer-events-none" />
-                <CardHeader className="relative">
-                  <CardTitle className="text-xl font-bold text-gray-800 flex items-center">
-                    <TrendingUp className="w-5 h-5 mr-2 text-emerald-600" />
-                    Similar Packages
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {relatedPackages.map((relatedPkg) => (
-                      <Link key={relatedPkg.id} href={`/packages/${relatedPkg.id}`}>
-                        <div className="p-4 border-2 border-white/50 bg-white/60 backdrop-blur-sm rounded-2xl hover:border-emerald-300 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 hover:shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer">
-                          <h4 className="font-semibold text-gray-900 mb-2">{relatedPkg.title}</h4>
-                          <div className="flex items-center justify-between text-sm text-gray-600">
-                            <span className="flex items-center">
-                              <Clock className="w-4 h-4 mr-1" />
-                              {relatedPkg.duration}
-                            </span>
-                            <span className="font-semibold text-emerald-600">
-                              ₹{relatedPkg.price.toLocaleString()}
-                            </span>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <Card className="bg-white/95 backdrop-blur-xl border-2 border-white/50 shadow-2xl shadow-emerald-500/10 rounded-3xl overflow-hidden hover:shadow-3xl hover:shadow-emerald-500/20 transition-all duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-emerald-50/20 pointer-events-none" />
+                  <CardHeader className="relative bg-gradient-to-r from-emerald-50 to-teal-50 border-b border-emerald-100">
+                    <CardTitle className="text-2xl font-bold bg-gradient-to-r from-emerald-700 to-teal-700 bg-clip-text text-transparent flex items-center">
+                      <TrendingUp className="w-6 h-6 mr-3 text-emerald-600 animate-pulse" />
+                      Similar Packages
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {relatedPackages.map((relatedPkg, index) => (
+                        <motion.div
+                          key={relatedPkg.id}
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                        >
+                          <Link href={`/packages/${relatedPkg.id}`}>
+                            <div className="p-6 border-2 border-emerald-200/50 bg-gradient-to-br from-white/80 to-emerald-50/30 backdrop-blur-sm rounded-3xl hover:border-emerald-400 hover:bg-gradient-to-br hover:from-emerald-50 hover:to-teal-50 hover:shadow-2xl hover:shadow-emerald-500/20 transform hover:scale-110 hover:-translate-y-2 transition-all duration-500 cursor-pointer group">
+                              <h4 className="font-bold text-gray-900 mb-3 group-hover:text-emerald-700 transition-colors duration-300">{relatedPkg.title}</h4>
+                              <div className="flex items-center justify-between text-sm">
+                                <span className="flex items-center text-gray-600 group-hover:text-emerald-600 transition-colors duration-300">
+                                  <Clock className="w-4 h-4 mr-2 group-hover:animate-spin" />
+                                  {relatedPkg.duration}
+                                </span>
+                                <span className="font-bold text-lg bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                                  ₹{relatedPkg.price.toLocaleString()}
+                                </span>
+                              </div>
+                            </div>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             )}
-          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
