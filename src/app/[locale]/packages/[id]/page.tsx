@@ -50,9 +50,20 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
   }, [params])
   
   if (!resolvedParams) {
-    return <div>Loading...</div>
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading package details...</p>
+        </div>
+      </div>
+    )
   }
   
+  return <PackageContent resolvedParams={resolvedParams} />
+}
+
+function PackageContent({ resolvedParams }: { resolvedParams: { id: string; locale: string } }) {
   const { id } = resolvedParams
   const [selectedPricingTier, setSelectedPricingTier] = useState(0)
   const [isLiked, setIsLiked] = useState(false)
