@@ -420,7 +420,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
                     <div className="space-y-3 mb-6">
                       <h4 className="font-bold text-gray-900 text-center mb-4">Select Package</h4>
                       <div className="space-y-3">
-                        {pkg.pricingTiers.map((tier: any, index: number) => (
+                        {pkg.pricingTiers?.map((tier: any, index: number) => (
                           <div
                             key={index}
                             className={`p-3 rounded-2xl border-2 cursor-pointer transition-all duration-300 ${
@@ -603,7 +603,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Destinations Covered</h3>
                 <div className="flex flex-wrap gap-2">
-                      {pkg.destinations.map((destination: string, index: number) => (
+                      {pkg.destinations?.map((destination: string, index: number) => (
                     <Badge key={index} variant="outline" className="bg-gray-50 px-3 py-2">
                       <MapPin className="w-3 h-3 mr-1" />
                       {destination}
@@ -616,7 +616,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Tour Tags</h3>
                 <div className="flex flex-wrap gap-2">
-                    {pkg.tags.map((tag: string, index: number) => (
+                    {pkg.tags?.map((tag: string, index: number) => (
                     <Badge key={index} variant="secondary" className="px-3 py-2">
                       {tag}
                     </Badge>
@@ -688,7 +688,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
                     </CardHeader>
                     <CardContent className="p-6">
                       <div className="space-y-4">
-                        {pkg.inclusions.map((inclusion: string, index: number) => (
+                        {pkg.inclusions?.map((inclusion: string, index: number) => (
                           <motion.div 
                             key={index} 
                             initial={{ opacity: 0, x: -20 }}
@@ -713,7 +713,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
                     </CardHeader>
                     <CardContent className="p-6">
                       <div className="space-y-4">
-                        {pkg.exclusions.map((exclusion: string, index: number) => (
+                        {pkg.exclusions?.map((exclusion: string, index: number) => (
                           <motion.div 
                             key={index} 
                             initial={{ opacity: 0, x: -20 }}
@@ -746,7 +746,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
                     </CardHeader>
                     <CardContent className="p-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
-                        {pkg.highlights.map((highlight: string, index: number) => (
+                        {pkg.highlights?.map((highlight: string, index: number) => (
                           <motion.div 
                             key={index} 
                             initial={{ opacity: 0, scale: 0.9 }}
@@ -781,7 +781,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
                     </CardHeader>
                     <CardContent className="p-6">
                       <div className="space-y-4">
-                        {pkg.travelInfo.map((info: any, index: number) => (
+                        {pkg.travelInfo?.map((info: any, index: number) => (
                           <motion.p 
                             key={index} 
                             initial={{ opacity: 0, x: -20 }}
