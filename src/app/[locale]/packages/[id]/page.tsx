@@ -52,6 +52,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
   const [isFullscreen, setIsFullscreen] = useState(false)
   const carouselRef = useRef<HTMLDivElement>(null)
   
+  // All useEffect hooks must be at the top level
   React.useEffect(() => {
     params.then(({ id }) => {
       const pkg = getPackageById(id)
@@ -63,6 +64,17 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
       setLoading(false)
     })
   }, [params])
+
+  // Auto-play carousel effect
+  useEffect(() => {
+    if (!isAutoPlaying || !packageData?.images || packageData.images.length <= 1) return
+    
+    const interval = setInterval(() => {
+      setSelectedImageIndex((prev) => (prev + 1) % packageData.images.length)
+    }, 5000) // Change image every 5 seconds
+    
+    return () => clearInterval(interval)
+  }, [isAutoPlaying, packageData?.images])
   
   if (loading) {
     return (
@@ -80,17 +92,6 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
   }
   
   const pkg = packageData
-  
-  // Auto-play carousel
-  useEffect(() => {
-    if (!isAutoPlaying || !pkg.images || pkg.images.length <= 1) return
-    
-    const interval = setInterval(() => {
-      setSelectedImageIndex((prev) => (prev + 1) % pkg.images!.length)
-    }, 5000) // Change image every 5 seconds
-    
-    return () => clearInterval(interval)
-  }, [isAutoPlaying, pkg.images])
 
   const handlePrevImage = () => {
     if (!pkg.images) return
