@@ -42,8 +42,18 @@ import {
   Maximize2
 } from 'lucide-react'
 
-export default function PackageDetailPage({ params }: { params: { id: string; locale: string } }) {
-  const { id } = params
+export default function PackageDetailPage({ params }: { params: Promise<{ id: string; locale: string }> }) {
+  const [resolvedParams, setResolvedParams] = React.useState<{ id: string; locale: string } | null>(null)
+  
+  React.useEffect(() => {
+    params.then(setResolvedParams)
+  }, [params])
+  
+  if (!resolvedParams) {
+    return <div>Loading...</div>
+  }
+  
+  const { id } = resolvedParams
   const [selectedPricingTier, setSelectedPricingTier] = useState(0)
   const [isLiked, setIsLiked] = useState(false)
   const [selectedImageIndex, setSelectedImageIndex] = useState(0)
