@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { Inter, Rajdhani } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
 import '@/styles/glassmorphism.css'
 import FontOptimizer from '@/components/optimization/FontOptimizer'
@@ -240,6 +241,7 @@ export default async function LocaleLayout({
             {children}
           </main>
           <FooterCompact />
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
