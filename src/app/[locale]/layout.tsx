@@ -1,9 +1,12 @@
 import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { Inter, Rajdhani, Poppins } from 'next/font/google';
-import '../globals.css';
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
+import { routing } from '@/i18n/routing'
+import { Inter, Rajdhani } from 'next/font/google'
+import '../globals.css'
+import '@/styles/glassmorphism.css'
+import FontOptimizer from '@/components/optimization/FontOptimizer'
 import { FooterCompact } from '@/components/layout/FooterCompact';
 import MobileOptimizer from '@/components/effects/MobileOptimizer';
 import CriticalCSS from '@/components/optimization/CriticalCSS';
@@ -113,16 +116,35 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Load fonts with proper display swap and preload optimization */}
+        {/* Optimized font loading to prevent layout shifts */}
         <link 
           rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" 
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" 
           as="style"
         />
         <link 
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" 
           rel="stylesheet"
         />
+        
+        {/* Font fallback optimization */}
+        <style>
+          {`
+            @font-face {
+              font-family: 'Inter Fallback';
+              src: local('Arial'), local('Helvetica'), local('sans-serif');
+              font-display: swap;
+              ascent-override: 90.44%;
+              descent-override: 22.52%;
+              line-gap-override: 0.00%;
+              size-adjust: 107.12%;
+            }
+            
+            body {
+              font-family: Inter, 'Inter Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+            }
+          `}
+        </style>
         <noscript>
           <link 
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" 
@@ -208,6 +230,7 @@ export default async function LocaleLayout({
         <MobileOptimizer />
         <CriticalCSS />
         <ImageOptimizer />
+        <FontOptimizer />
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main className="min-h-screen relative z-10" style={{ paddingTop: '4rem' }}>

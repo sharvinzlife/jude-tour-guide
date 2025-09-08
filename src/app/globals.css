@@ -7,14 +7,23 @@
     @apply border-gray-200;
   }
   
+  /* Font loading optimization to prevent layout shifts */
+  html {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
   body {
-    @apply bg-gradient-to-br from-kerala-ivory via-white to-kerala-coconut text-gray-900 font-sans antialiased;
+    @apply bg-gradient-to-br from-kerala-ivory via-white to-kerala-coconut text-gray-900 antialiased;
     min-height: 100vh;
     line-height: 1.7;
     /* Prevent layout shifts during font loading */
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-display: swap;
     /* Ensure stable layout during page load */
     overflow-x: hidden;
+    /* Prevent font-related layout shifts */
+    font-size: 16px;
+    font-weight: 400;
   }
 
   h1, h2, h3, h4, h5, h6 {
