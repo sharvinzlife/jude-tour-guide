@@ -5,6 +5,53 @@ All notable changes to the Jude Tour Guide project will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.1] - 2025-09-07
+
+### 🚀 Critical Vercel Deployment Fix
+
+#### ✨ Production Deployment Resolution
+- **Fixed Source-Map Module Error**: Resolved persistent 500 Internal Server Errors on package and booking pages
+- **Root Cause**: Next.js 15 requires 'source-map' module but it wasn't available in Vercel's serverless environment
+- **Error Message**: `Cannot find module 'next/dist/compiled/source-map'`
+
+#### 🔧 Technical Solutions Applied
+- **Dual Dependency Strategy**: Added source-map to both dependencies AND devDependencies for redundancy
+- **Webpack Fallback Configuration**: Added explicit webpack fallback in next.config.ts to resolve source-map module
+- **Path Configuration Cleanup**: Removed outputFileTracingRoot that was causing path issues in Vercel deployments
+- **Enhanced Next.js 15 Compatibility**: Improved async params handling for production environment
+
+#### 🐛 Bug Fixes
+- **Async Params Issues**: Fixed incompatible async params patterns in package and booking pages
+- **React Hooks Order**: Resolved hooks order violations by moving all hooks to component top level
+- **Optional Chaining**: Added safety checks for undefined properties to prevent runtime errors
+- **Loading States**: Added proper loading indicators while async params resolve
+
+#### 📦 Dependencies Updated
+```json
+{
+  "dependencies": {
+    "source-map": "^0.7.6"
+  },
+  "devDependencies": {
+    "source-map": "^0.7.6"
+  }
+}
+```
+
+#### ⚙️ Configuration Changes
+- **next.config.ts**: Added webpack fallback configuration for source-map resolution
+- **Package Pages**: Converted from React.use() to useEffect patterns for Next.js 15 compatibility
+- **Booking Pages**: Fixed async params handling with proper state management
+
+#### 🎯 Impact
+- ✅ Package detail pages now load correctly in production
+- ✅ Booking pages function without 500 errors
+- ✅ Enhanced user experience with proper loading states
+- ✅ Vercel deployment stability improved
+- ✅ Next.js 15 full compatibility achieved
+
+---
+
 ## [2.1.0] - 2025-01-07
 
 ### 🎬 Enhanced Animation & Visual Experience

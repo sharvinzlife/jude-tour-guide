@@ -375,6 +375,54 @@ Recommended extensions for the best development experience:
 - Tailwind CSS IntelliSense
 - TypeScript Error Lens
 
+## 🚀 Deployment & Troubleshooting
+
+### Vercel Deployment
+
+This project is optimized for Vercel deployment with Next.js 15. If you encounter deployment issues:
+
+#### Common Issues & Solutions
+
+**Source-Map Module Error (500 Internal Server Error)**
+```bash
+Error: Cannot find module 'next/dist/compiled/source-map'
+```
+
+**Solution:**
+1. Add source-map dependency:
+```json
+{
+  "dependencies": {
+    "source-map": "^0.7.6"
+  },
+  "devDependencies": {
+    "source-map": "^0.7.6"
+  }
+}
+```
+
+2. Add webpack fallback in `next.config.ts`:
+```typescript
+webpack: (config: any) => {
+  config.resolve.fallback = {
+    ...config.resolve.fallback,
+    'source-map': require.resolve('source-map'),
+  }
+  return config
+}
+```
+
+**Async Params Issues with Next.js 15**
+- Use `useEffect` and state instead of `React.use()` for async params
+- Add proper loading states and optional chaining for safety
+- Ensure all hooks are called at component top level
+
+### Performance Optimization
+- Images are optimized with Next.js Image component
+- Static generation for better SEO and performance
+- Framer Motion animations are optimized for 60fps
+- Tailwind CSS purging reduces bundle size
+
 ---
 
 ## 🤝 Contributing
