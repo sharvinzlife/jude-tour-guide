@@ -23,6 +23,24 @@ const nextConfig: NextConfig = {
   },
   // Enable source maps for better debugging and Lighthouse performance
   productionBrowserSourceMaps: true,
+  // Fix CSS MIME type issues and encoding
+  async headers() {
+    return [
+      {
+        source: '/_next/static/css/(.*)',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/css; charset=utf-8',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+        ],
+      },
+    ]
+  },
   webpack: (config, { isServer, dev }) => {
     config.resolve.fallback = {
       ...config.resolve.fallback,
