@@ -19,8 +19,9 @@ function WaterRipples() {
     if (!ctx) return
 
     const resizeCanvas = () => {
-      canvas.width = canvas.offsetWidth
-      canvas.height = canvas.offsetHeight
+      const rect = canvas.getBoundingClientRect()
+      canvas.width = rect.width
+      canvas.height = rect.height
     }
 
     resizeCanvas()
