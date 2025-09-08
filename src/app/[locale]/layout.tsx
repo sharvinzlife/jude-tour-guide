@@ -1,13 +1,17 @@
-import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
-import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
-import { notFound } from 'next/navigation'
-import { locales } from '@/i18n'
-import '../globals.css'
-import { Header } from '@/components/layout/Header'
-import { FooterCompact } from '@/components/layout/FooterCompact'
-import { AnimatedBackground } from '@/components/layout/AnimatedBackground'
+import type { Metadata, Viewport } from 'next';
+import { notFound } from 'next/navigation';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { Inter, Rajdhani, Poppins } from 'next/font/google';
+import '../globals.css';
+import { FooterCompact } from '@/components/layout/FooterCompact';
+import MobileOptimizer from '@/components/effects/MobileOptimizer';
+import CriticalCSS from '@/components/optimization/CriticalCSS';
+import ImageOptimizer from '@/components/optimization/ImageOptimizer';
+import { AnimatedBackground } from '@/components/layout/AnimatedBackground';
+import { Header } from '@/components/layout/Header';
+
+const locales = ['en', 'fr', 'de', 'es', 'zh', 'ja'] as const;
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -103,6 +107,10 @@ export default async function LocaleLayout({
         <meta name="theme-color" content="#FFD700" />
         <meta name="msapplication-TileColor" content="#FFD700" />
         
+        {/* Preconnect to Google Fonts for faster loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
         {/* Structured Data for SEO */}
         <script
           type="application/ld+json"
@@ -178,6 +186,9 @@ export default async function LocaleLayout({
       >
         {/* Site-wide animated background behind all content */}
         <AnimatedBackground />
+        <MobileOptimizer />
+        <CriticalCSS />
+        <ImageOptimizer />
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main className="min-h-screen relative z-10" style={{ paddingTop: '4rem' }}>

@@ -28,9 +28,9 @@
     "title": "Discover Authentic Kerala",
     "subtitle": "Your Gateway to God's Own Country",
     "welcomeText": "Welcome to God's Own Country!",
-    "description": "With over a decade of expertise, I transform your Kerala journey into an unforgettable tapestry of authentic experiences. From the tranquil backwaters of Alleppey to the misty peaks of Munnar, from ancient temple rituals to aromatic spice plantations – I curate personalized adventures that reveal Kerala's hidden treasures and timeless traditions.",
+    "description": "With over 12+ years of expertise, I transform your Kerala journey into an unforgettable tapestry of authentic experiences. From the tranquil backwaters of Alleppey to the misty peaks of Munnar, from ancient temple rituals to aromatic spice plantations – I curate personalized adventures that reveal Kerala's hidden treasures and timeless traditions.",
     "stats": {
-      "experience": "10+",
+      "experience": "12+",
       "experienceLabel": "Years Experience",
       "travelers": "500+",
       "travelersLabel": "Happy Travelers",
@@ -175,7 +175,7 @@
       "badge": "Licensed Professional Guide",
       "title": "Your Trusted Kerala Expert",
       "paragraphs": {
-        "greeting": "Namaste! I'm Jude K. Peter, and I've been sharing the magic of Kerala with travelers from around the world for over 12 years. Born and raised in this tropical paradise, I have an intimate understanding of our rich culture, hidden gems, and the stories that make each destination special.",
+        "greeting": "Namaste! I'm Jude K. Peter, and I've been sharing the magic of Kerala with travelers from around the world for over 12+ years. Born and raised in this tropical paradise, I have an intimate understanding of our rich culture, hidden gems, and the stories that make each destination special.",
         "journey": "My journey as a professional guide began with a simple passion: showing visitors not just the famous attractions, but the soul of Kerala. From the gentle whispers of backwater breezes to the aromatic spice gardens of the Western Ghats, I create experiences that connect you with the authentic heart of God's Own Country.",
         "commitment": "What sets me apart is my commitment to sustainable tourism and community engagement. I work directly with local families, artisans, and small businesses to ensure your tourism experience contributes positively to our communities while providing you with genuine, unforgettable memories.",
         "quote": "Every guest becomes family, and every tour becomes a story worth telling."
@@ -187,8 +187,7 @@
           "firstAid": "First Aid & CPR Certified",
           "wilderness": "Wilderness Safety Trained",
           "cultural": "Cultural Heritage Specialist",
-          "photography": "Wildlife Photography Guide",
-          "hospitality": "Hospitality Excellence Award"
+          "photography": "Wildlife Photography Guide"
         }
       },
       "profileCard": {

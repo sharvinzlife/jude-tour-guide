@@ -272,7 +272,7 @@ export function FooterCompact() {
           transition={{ delay: 0.3 }}
         >
           <p className="text-xs text-gray-500">
-            © 2024 Kerala Guide | Reg. No: KTD/2024/001234 | 
+            © {new Date().getFullYear()} Kerala Guide | Reg. No: KTD/2024/001234 | 
             <span className="text-yellow-400 ml-1">★ 4.9/5</span> from 500+ travelers
           </p>
         </motion.div>
@@ -288,12 +288,13 @@ export function FooterCompact() {
             {/* Tropical Icons Row */}
             <div className="flex items-center space-x-4">
               <motion.div
+                className="footer-icon"
                 animate={{ 
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 10, -10, 0] 
+                  scale: [1, 1.1, 1],
+                  rotate: [0, 5, -5, 0] 
                 }}
                 transition={{ 
-                  duration: 3, 
+                  duration: 4, 
                   repeat: Infinity, 
                   ease: "easeInOut" 
                 }}
@@ -302,12 +303,13 @@ export function FooterCompact() {
               </motion.div>
               
               <motion.div
+                className="footer-icon"
                 animate={{ 
                   rotate: [0, 360],
-                  scale: [1, 1.1, 1]
+                  scale: [1, 1.05, 1]
                 }}
                 transition={{ 
-                  duration: 8, 
+                  duration: 12, 
                   repeat: Infinity, 
                   ease: "linear" 
                 }}
@@ -316,12 +318,13 @@ export function FooterCompact() {
               </motion.div>
 
               <motion.div
+                className="footer-icon"
                 animate={{ 
-                  y: [0, -4, 0],
-                  rotate: [0, 2, -2, 0]
+                  y: [0, -2, 0],
+                  rotate: [0, 1, -1, 0]
                 }}
                 transition={{ 
-                  duration: 3.5, 
+                  duration: 5, 
                   repeat: Infinity, 
                   ease: "easeInOut" 
                 }}
@@ -330,12 +333,13 @@ export function FooterCompact() {
               </motion.div>
 
               <motion.div
+                className="footer-icon"
                 animate={{ 
-                  x: [0, 3, -3, 0],
-                  rotate: [0, 2, -2, 0]
+                  x: [0, 2, -2, 0],
+                  rotate: [0, 1, -1, 0]
                 }}
                 transition={{ 
-                  duration: 5, 
+                  duration: 6, 
                   repeat: Infinity, 
                   ease: "easeInOut" 
                 }}
@@ -383,15 +387,15 @@ export function FooterCompact() {
                       }}
                       animate={{
                         opacity: [0, 1, 0],
-                        scale: [0, 1.5, 0],
-                        y: [0, -15, 0],
-                        rotate: [0, 360, 720],
-                        x: [0, Math.sin(i) * 10, 0]
+                        scale: [0, 1.2, 0],
+                        y: [0, -10, 0],
+                        rotate: [0, 180, 360],
+                        x: [0, Math.sin(i) * 8, 0]
                       }}
                       transition={{
-                        duration: 2.5,
+                        duration: 4,
                         repeat: Infinity,
-                        delay: i * 0.2,
+                        delay: i * 0.4,
                         ease: "easeInOut"
                       }}
                     />
@@ -414,14 +418,14 @@ export function FooterCompact() {
                           boxShadow: '0 0 12px rgba(255, 255, 255, 0.8)'
                         }}
                         animate={{
-                          opacity: [0, 1, 0],
-                          scale: [0, 1, 0],
-                          rotate: [0, 360],
+                          opacity: [0, 0.8, 0],
+                          scale: [0, 0.8, 0],
+                          rotate: [0, 180],
                         }}
                         transition={{
-                          duration: 4,
+                          duration: 5,
                           repeat: Infinity,
-                          delay: i * 0.6,
+                          delay: i * 0.8,
                           ease: "easeInOut"
                         }}
                       />

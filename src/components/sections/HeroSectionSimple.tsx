@@ -118,7 +118,7 @@ export function HeroSectionSimple() {
                         <div className="grid grid-cols-2 gap-1 text-xs">
                           <span className="flex items-center text-emerald-600 font-medium">
                             <span className="w-2 h-2 bg-emerald-500 rounded-full mr-1 flex-shrink-0"></span>
-                            <span className="truncate">10+ {t('profileCard.yearsLabel')}</span>
+                            <span className="truncate">12+ {t('profileCard.yearsLabel')}</span>
                           </span>
                           <span className="flex items-center text-amber-600 font-medium">
                             <Star className="w-3 h-3 mr-1 fill-current flex-shrink-0" />
@@ -364,7 +364,7 @@ export function HeroSectionSimple() {
                       <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
                         <span className="flex items-center font-medium">
                           <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2 flex-shrink-0"></span>
-                          <span className="truncate">10+ {t('profileCard.yearsLabel')}</span>
+                          <span className="truncate">12+ {t('profileCard.yearsLabel')}</span>
                         </span>
                         <span className="flex items-center font-medium">
                           <Star className="w-3 h-3 mr-1 text-amber-500 fill-current flex-shrink-0" />

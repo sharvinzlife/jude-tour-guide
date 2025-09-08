@@ -382,15 +382,97 @@
     display: none;
   }
   
-  /* Smooth scroll behavior */
-  .smooth-scroll {
+  /* Smooth scrolling optimized for mobile */
+  html {
     scroll-behavior: smooth;
   }
+
+  /* Chrome mobile scroll optimization */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Mobile performance optimizations */
+  @media screen and (max-width: 768px) {
+    * {
+      will-change: auto !important;
+    }
+    
+    /* Reduce transform complexity on mobile */
+    .motion-reduce {
+      transform: none !important;
+      animation: none !important;
+    }
+  }
   
+  /* Chrome mobile specific optimizations */
+  .mobile-optimized {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    overflow-x: hidden;
+  }
+
+  .mobile-optimized * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Optimize animations for mobile */
+  .mobile-optimized [data-framer-motion] {
+    will-change: transform, opacity;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  /* Reduce footer animation complexity on mobile */
+  @media screen and (max-width: 768px) {
+    .mobile-optimized .footer-sparkle {
+      animation-duration: 8s !important;
+      animation-timing-function: ease-out !important;
+      transform: translateZ(0) !important;
+    }
+  
+    .mobile-optimized .footer-icon {
+      animation-duration: 10s !important;
+      animation-timing-function: ease-in-out !important;
+      transform: translateZ(0) !important;
+    }
+  
+    /* Disable complex animations on mobile for smoother scrolling */
+    .mobile-optimized .footer-sparkle {
+      animation-play-state: paused !important;
+    }
+  
+    /* Simplify footer animations */
+    .mobile-optimized footer {
+      animation: none !important;
+    }
+  
+    .mobile-optimized footer * {
+      animation-duration: 0.5s !important;
+      transition-duration: 0.3s !important;
+    }
+  }
+
   /* Custom carousel transitions */
   .carousel-fade {
     animation: fadeIn 0.5s ease-in-out;
   }
+
   
   @keyframes fadeIn {
     from {

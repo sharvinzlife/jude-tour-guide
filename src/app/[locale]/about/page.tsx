@@ -56,8 +56,7 @@ export default async function AboutPage({ params }: Props) {
     { name: tIntro('certifications.items.firstAid'), icon: Shield, verified: true },
     { name: tIntro('certifications.items.wilderness'), icon: CheckCircle, verified: true },
     { name: tIntro('certifications.items.cultural'), icon: Globe, verified: true },
-    { name: tIntro('certifications.items.photography'), icon: Camera, verified: true },
-    { name: tIntro('certifications.items.hospitality'), icon: Heart, verified: true }
+    { name: tIntro('certifications.items.photography'), icon: Camera, verified: true }
   ]
 
   const expertise = [
@@ -208,7 +207,7 @@ export default async function AboutPage({ params }: Props) {
                         <div className="text-sm text-gray-600">Rating</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-emerald-600">8+</div>
+                        <div className="text-2xl font-bold text-emerald-600">12+</div>
                         <div className="text-sm text-gray-600">Years</div>
                       </div>
                     </div>

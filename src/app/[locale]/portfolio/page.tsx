@@ -67,7 +67,7 @@ export default function PortfolioPage() {
     { number: '500+', label: t('hero.stats.tours'), icon: Calendar },
     { number: '34', label: t('hero.stats.countries'), icon: MapPin },
     { number: '4.9', label: t('hero.stats.rating'), icon: Star },
-    { number: '10+', label: t('hero.stats.experience'), icon: Award }
+    { number: '12+', label: t('hero.stats.experience'), icon: Award }
   ]
 
   const testimonials = [
@@ -494,13 +494,15 @@ export default function PortfolioPage() {
               {t('cta.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-              <Button 
-                size="default" 
-                className="bg-white text-emerald-600 hover:bg-gray-100 px-6 py-2.5 text-sm font-semibold w-full sm:w-auto"
-              >
-                <Users className="w-4 h-4 mr-1.5" />
-                {t('cta.buttons.planTrip')}
-              </Button>
+              <Link href={`/${locale}/contact#plan-your-journey`}>
+                <Button 
+                  size="default" 
+                  className="bg-white text-emerald-600 hover:bg-gray-100 px-6 py-2.5 text-sm font-semibold w-full sm:w-auto"
+                >
+                  <Users className="w-4 h-4 mr-1.5" />
+                  {t('cta.buttons.planTrip')}
+                </Button>
+              </Link>
               <Link href={`/${locale}/contact#plan-your-journey`}>
                 <Button 
                   size="default" 

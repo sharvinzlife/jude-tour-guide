@@ -137,8 +137,10 @@ export function HeroSection() {
                     alt="Jude - Professional Kerala Tour Guide"
                     width={300}
                     height={350}
-                    className="object-cover w-full h-[300px] transition-transform duration-700"
                     priority
+                    fetchPriority="high"
+                    className="object-cover w-full h-[300px] transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   
                   {/* Mobile floating card with better spacing */}
@@ -213,7 +215,7 @@ export function HeroSection() {
               <p 
                 className="text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl"
               >
-                Welcome to <span className="font-bold text-emerald-700">God&apos;s Own Country</span>! With over a decade of expertise, I transform your Kerala journey into an unforgettable tapestry of authentic experiences. From the tranquil <span className="italic text-teal-700 font-semibold">backwaters of Alleppey</span> to the <span className="italic text-teal-700 font-semibold">misty peaks of Munnar</span>, from ancient <span className="italic text-amber-700 font-semibold">temple rituals</span> to aromatic <span className="italic text-green-700 font-semibold">spice plantations</span> – I curate personalized adventures that reveal Kerala&apos;s hidden treasures and timeless traditions.
+                Welcome to <span className="font-bold text-emerald-700">God&apos;s Own Country</span>! With over 12+ years of expertise, I transform your Kerala journey into an unforgettable tapestry of authentic experiences. From the tranquil <span className="italic text-teal-700 font-semibold">backwaters of Alleppey</span> to the <span className="italic text-teal-700 font-semibold">misty peaks of Munnar</span>, from ancient <span className="italic text-amber-700 font-semibold">temple rituals</span> to aromatic <span className="italic text-green-700 font-semibold">spice plantations</span> – I curate personalized adventures that reveal Kerala&apos;s hidden treasures and timeless traditions.
               </p>
             </div>
 
@@ -422,8 +424,10 @@ export function HeroSection() {
                       alt="Jude - Professional Kerala Tour Guide"
                       width={600}
                       height={700}
-                      className="object-cover w-full h-[500px] lg:h-[600px] xl:h-[650px] transition-transform duration-700 group-hover:scale-105"
                       priority
+                      fetchPriority="high"
+                      className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
                   
