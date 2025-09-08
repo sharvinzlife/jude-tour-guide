@@ -21,13 +21,13 @@ const nextConfig: NextConfig = {
     // Remove console logs in production
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  // Enable source maps for better debugging and Lighthouse performance
-  productionBrowserSourceMaps: true,
+  // Disable source maps to prevent errors
+  productionBrowserSourceMaps: false,
   // Fix CSS MIME type issues and encoding
   async headers() {
     return [
       {
-        source: '/_next/static/css/(.*)',
+        source: '/_next/static/css/:path*',
         headers: [
           {
             key: 'Content-Type',
@@ -36,6 +36,15 @@ const nextConfig: NextConfig = {
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/media/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
@@ -104,9 +113,9 @@ const nextConfig: NextConfig = {
       };
     }
     
-    // Enable source map generation in production
+    // Disable source map generation to prevent errors
     if (!dev) {
-      config.devtool = 'source-map';
+      config.devtool = false;
     }
     
     return config;
