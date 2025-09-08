@@ -5,6 +5,40 @@ All notable changes to the Jude Tour Guide project will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.3] - 2025-09-08
+
+### ⚡ Performance Improvements
+- Lazy-mounted site-wide visuals using `LazyMount` to reduce initial JS and main-thread work:
+  - `AnimatedBackground` is mounted on idle in `src/app/[locale]/layout.tsx`.
+  - Footer aquatics (`UnderwaterOceanAnimation`, `WaterRipplesEffect`) are dynamically imported (`next/dynamic`, `ssr: false`) and mounted when near the viewport in `src/components/layout/FooterCompact.tsx`.
+- Added `content-visibility: auto` and `contain-intrinsic-size` utilities (`cv-auto`, `cis-800`) in `src/app/globals.css` and applied to below-the-fold sections on the home page (`src/app/[locale]/page.tsx`).
+
+### 🖼️ LCP Image Optimization
+- Converted hero image to a static import with `placeholder="blur"` and `sizes` in `src/components/sections/HeroSectionSimple.tsx` for more stable LCP and reduced layout shifts.
+
+### 🌐 Networking
+- Added `<link rel="preconnect"/>` and `dns-prefetch` for `cdnjs.cloudflare.com` (used by `TwemojiIcon`) in `src/app/[locale]/layout.tsx`.
+
+### 📦 Version
+- Bumped package version to `2.1.3`.
+
+## [2.1.2] - 2025-09-08
+
+### ⚙️ Runtime Stability Fix
+- Removed custom Webpack `optimization.splitChunks` override in `next.config.ts` to prevent `originalFactory is undefined` runtime errors on the Packages page (App Router + Radix Select on Next.js 15.5.2). Reverted to Next.js defaults for reliable module evaluation order.
+
+### 🧼 Cumulative Layout Shift (CLS) Reductions
+- Hardened `src/components/optimization/CriticalCSS.tsx` to only defer stylesheets explicitly marked with `data-defer="true"`.
+- Added guard to never touch Next.js core CSS at `/_next/static/css/`.
+- Small dev-only logging to help verify behavior during development.
+
+### 🖋️ Font Loading Simplification
+- Removed external Google Fonts `<link>` tags and the custom `FontOptimizer` usage from `src/app/[locale]/layout.tsx`.
+- Now rely solely on `next/font` (`Inter`) for consistent, FOIT/FOUC-free font rendering with a stable fallback face.
+
+### 📦 Version
+- Bumped package version to `2.1.2`.
+
 ## [2.1.1] - 2025-09-07
 
 ### 🚀 Critical Vercel Deployment Fix

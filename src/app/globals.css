@@ -382,6 +382,15 @@
     text-wrap: balance;
   }
   
+  /* Below-the-fold rendering optimizations */
+  .cv-auto {
+    content-visibility: auto;
+  }
+  /* Reserve space to avoid jumps when content-visibility is applied */
+  .cis-800 {
+    contain-intrinsic-size: 800px;
+  }
+  
   /* Hide scrollbar for smooth carousel */
   .scrollbar-hide {
     -ms-overflow-style: none;

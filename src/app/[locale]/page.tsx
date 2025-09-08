@@ -8,8 +8,12 @@ export default function Home() {
     <>
       <HeroSectionSimple />
       <DestinationSearch />
-      <TestimonialsSection />
-      <ReadyToExploreSection />
+      <div className="cv-auto cis-800">
+        <TestimonialsSection />
+      </div>
+      <div className="cv-auto cis-800">
+        <ReadyToExploreSection />
+      </div>
     </>
   )
 }

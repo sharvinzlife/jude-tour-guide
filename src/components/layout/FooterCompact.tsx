@@ -8,10 +8,18 @@ import {
   FaInstagram 
 } from 'react-icons/fa'
 import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
+import LazyMount from '@/components/optimization/LazyMount'
 
-// Import our new aquatic animation
-import { UnderwaterOceanAnimation } from '../ui/UnderwaterOceanAnimation'
-import { WaterRipplesEffect } from '../ui/WaterRipples'
+// Dynamically import aquatic effects (client-only)
+const UnderwaterOceanAnimation = dynamic(() =>
+  import('../ui/UnderwaterOceanAnimation').then(m => m.UnderwaterOceanAnimation),
+  { ssr: false }
+)
+const WaterRipplesEffect = dynamic(() =>
+  import('../ui/WaterRipples').then(m => m.WaterRipplesEffect),
+  { ssr: false }
+)
 import { getSparklePosition, getExtraSparklePosition } from '@/lib/sparkle-positions'
 
 export function FooterCompact() {
@@ -73,10 +81,12 @@ export function FooterCompact() {
 
   return (
     <footer className="relative z-20 overflow-hidden bg-gradient-to-b from-gray-900 via-gray-900 to-black">
-      {/* Vibrant Aquatic Animation Background */}
+      {/* Vibrant Aquatic Animation Background (lazy-mounted near viewport) */}
       <div className="absolute inset-0 opacity-85 pointer-events-none">
-        <UnderwaterOceanAnimation />
-        <WaterRipplesEffect />
+        <LazyMount strategy="in-view" rootMargin="400px" threshold={0}>
+          <UnderwaterOceanAnimation />
+          <WaterRipplesEffect />
+        </LazyMount>
       </div>
       
       {/* Gradient Overlay for better text readability */}

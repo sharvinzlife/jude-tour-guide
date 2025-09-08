@@ -3,17 +3,17 @@ import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
-import { Inter, Rajdhani } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
 import '@/styles/glassmorphism.css'
-import FontOptimizer from '@/components/optimization/FontOptimizer'
 import { FooterCompact } from '@/components/layout/FooterCompact';
 import MobileOptimizer from '@/components/effects/MobileOptimizer';
 import CriticalCSS from '@/components/optimization/CriticalCSS';
 import ImageOptimizer from '@/components/optimization/ImageOptimizer';
 import { AnimatedBackground } from '@/components/layout/AnimatedBackground';
 import { Header } from '@/components/layout/Header';
+import LazyMount from '@/components/optimization/LazyMount';
 
 const locales = ['en', 'fr', 'de', 'es', 'zh', 'ja'] as const;
 
@@ -112,18 +112,11 @@ export default async function LocaleLayout({
         <link rel="canonical" href={`https://keralaguide.com/${locale}`} />
         <meta name="theme-color" content="#FFD700" />
         <meta name="msapplication-TileColor" content="#FFD700" />
+        {/* Preconnect for Twemoji CDN used by AnimatedBackground icons */}
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
         
-        {/* Preconnect to Google Fonts for faster loading */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* Updated font loading to fix glyph bbox errors */}
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap" 
-          rel="stylesheet"
-        />
-        
-        {/* Font fallback optimization */}
+        {/* Font fallback optimization (we rely on next/font for Inter) */}
         <style>
           {`
             @font-face {
@@ -141,12 +134,6 @@ export default async function LocaleLayout({
             }
           `}
         </style>
-        <noscript>
-          <link 
-            href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap" 
-            rel="stylesheet"
-          />
-        </noscript>
         
         {/* Critical CSS to prevent FOUC */}
         <style dangerouslySetInnerHTML={{
@@ -229,12 +216,13 @@ export default async function LocaleLayout({
       <body 
         className={`${inter.className} antialiased bg-gradient-to-br from-kerala-ivory via-white to-kerala-coconut`}
       >
-        {/* Site-wide animated background behind all content */}
-        <AnimatedBackground />
+        {/* Site-wide animated background behind all content (mount on idle) */}
+        <LazyMount strategy="idle" delay={200}>
+          <AnimatedBackground />
+        </LazyMount>
         <MobileOptimizer />
         <CriticalCSS />
         <ImageOptimizer />
-        <FontOptimizer />
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main className="min-h-screen relative z-10" style={{ paddingTop: '4rem' }}>

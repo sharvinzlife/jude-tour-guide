@@ -103,6 +103,7 @@ export function HeroSectionSimple() {
                     alt="Jude - Professional Kerala Tour Guide"
                     width={300}
                     height={350}
+                    sizes="(max-width: 640px) 90vw, 300px"
                     className="object-cover w-full h-[300px] transition-transform duration-700"
                     priority
                   />
@@ -341,6 +342,7 @@ export function HeroSectionSimple() {
                 alt="Jude - Professional Kerala Tour Guide"
                 width={600}
                 height={700}
+                sizes="(min-width: 1024px) 600px, 100vw"
                 className="rounded-2xl shadow-2xl"
                 priority
               />
