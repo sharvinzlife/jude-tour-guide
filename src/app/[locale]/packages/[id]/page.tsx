@@ -232,7 +232,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:col-span-2"
             >
-              <Card className="overflow-hidden bg-gradient-to-br from-white/95 via-emerald-50/20 to-teal-50/30 backdrop-blur-xl border-2 border-gradient-to-r from-emerald-200/50 to-teal-200/50 shadow-2xl shadow-emerald-500/20 hover:shadow-3xl hover:shadow-emerald-500/30 rounded-3xl relative group transition-all duration-500">
+              <Card className="overflow-hidden bg-gradient-to-br from-white/95 via-emerald-50/20 to-teal-50/30 backdrop-blur-xl border-2 border-emerald-200/50 shadow-2xl shadow-emerald-500/20 hover:shadow-3xl hover:shadow-emerald-500/30 rounded-3xl relative group transition-all duration-500">
                 {/* Enhanced Glassmorphism overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/20 via-transparent to-teal-100/20 pointer-events-none rounded-3xl" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-cyan-100/10 via-transparent to-blue-100/10 pointer-events-none rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -485,7 +485,7 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
                         sessionStorage.setItem('selectedTourType', pkg.category.toLowerCase().replace(/\s+/g, '-'))
                       }
                     }}>
-                      <Button variant="outline" className="w-full border-3 border-gradient-to-r from-emerald-500 to-teal-500 bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 hover:from-emerald-100 hover:via-teal-100 hover:to-cyan-100 text-emerald-700 hover:text-emerald-800 font-bold py-4 px-6 rounded-2xl shadow-xl shadow-emerald-500/20 hover:shadow-2xl hover:shadow-emerald-500/40 transform hover:scale-110 hover:-translate-y-1 transition-all duration-500 relative overflow-hidden group border-2 border-emerald-500 hover:border-emerald-600">
+                      <Button variant="outline" className="w-full bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 hover:from-emerald-100 hover:via-teal-100 hover:to-cyan-100 text-emerald-700 hover:text-emerald-800 font-bold py-4 px-6 rounded-2xl shadow-xl shadow-emerald-500/20 hover:shadow-2xl hover:shadow-emerald-500/40 transform hover:scale-110 hover:-translate-y-1 transition-all duration-500 relative overflow-hidden group border-2 border-emerald-500 hover:border-emerald-600">
                         <div className="absolute inset-0 bg-gradient-to-r from-emerald-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                         <MessageCircle className="w-6 h-6 mr-3 group-hover:animate-bounce" />

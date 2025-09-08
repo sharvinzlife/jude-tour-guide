@@ -116,14 +116,9 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Optimized font loading to prevent layout shifts */}
+        {/* Updated font loading to fix glyph bbox errors */}
         <link 
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789" 
-          as="style"
-        />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" 
+          href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap" 
           rel="stylesheet"
         />
         
@@ -147,10 +142,18 @@ export default async function LocaleLayout({
         </style>
         <noscript>
           <link 
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" 
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&display=swap" 
             rel="stylesheet"
           />
         </noscript>
+        
+        {/* Critical CSS to prevent FOUC */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            html { font-family: system-ui, -apple-system, sans-serif; }
+            body { font-family: Inter, system-ui, -apple-system, sans-serif; }
+          `
+        }} />
         
         {/* Structured Data for SEO */}
         <script
