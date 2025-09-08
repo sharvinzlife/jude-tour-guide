@@ -58,30 +58,32 @@ export async function generateMetadata({
       icon: '/media/favicon/favicon.svg'
     },
     alternates: {
-      canonical: `https://keralaguide.com/${locale}`,
+      canonical: `https://www.tourguidejude.com/${locale}`,
       languages: languageAlternates
     },
     openGraph: {
       type: 'website',
       locale: locale === 'en' ? 'en_US' : locale === 'fr' ? 'fr_FR' : locale === 'de' ? 'de_DE' : locale === 'es' ? 'es_ES' : locale === 'zh' ? 'zh_CN' : locale === 'ja' ? 'ja_JP' : 'en_US',
-      url: `https://keralaguide.com/${locale}`,
-      siteName: 'Kerala Guide',
+      url: `https://www.tourguidejude.com/${locale}`,
+      siteName: 'Jude Tour Guide - Kerala',
       title: meta.title,
       description: meta.description,
       images: [{
-        url: '/media/hero/Hero.jpeg',
+        url: 'https://www.tourguidejude.com/media/hero/Hero.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Kerala Tour Guide - Jude'
+        alt: 'Jude - Professional Kerala Tour Guide',
+        type: 'image/jpeg'
       }]
     },
     twitter: {
       card: 'summary_large_image',
       title: meta.title,
       description: meta.description,
-      images: ['/media/hero/Hero.jpeg']
+      images: ['https://www.tourguidejude.com/media/hero/Hero.jpeg'],
+      creator: '@JudeTourGuide'
     },
-    metadataBase: new URL('https://keralaguide.com')
+    metadataBase: new URL('https://www.tourguidejude.com')
   }
 }
 
@@ -120,7 +122,7 @@ export default async function LocaleLayout({
               "@type": "TravelAgent",
               "name": "Kerala Guide - Jude Tour Guide",
               "description": "Professional certified tour guide services in Kerala, India. Authentic backwater, hill station, wildlife and cultural heritage tours.",
-              "url": `https://keralaguide.com/${locale}`,
+              "url": `https://www.tourguidejude.com/${locale}`,
               "telephone": "+91-98765-43210",
               "email": "contact@keralaguide.com",
               "address": {
@@ -142,7 +144,7 @@ export default async function LocaleLayout({
                 "worstRating": "1"
               },
               "priceRange": "$$",
-              "image": "https://keralaguide.com/media/hero/Hero.jpeg",
+              "image": "https://www.tourguidejude.com/media/hero/Hero.jpeg",
               "serviceArea": {
                 "@type": "State",
                 "name": "Kerala, India"

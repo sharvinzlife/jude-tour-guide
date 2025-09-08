@@ -23,7 +23,7 @@ export function ReadyToExploreSection() {
               boxShadow: "0 25px 50px rgba(16, 185, 129, 0.15)"
             }}
           >
-            <h3 className="text-2xl font-bold text-neutral-900 mb-4 drop-shadow-sm">{t('title')}</h3>
+            <h2 className="text-2xl font-bold text-neutral-900 mb-4 drop-shadow-sm">{t('title')}</h2>
             <p className="text-lg text-neutral-600 mb-6 font-medium">
               {t('description')}
             </p>

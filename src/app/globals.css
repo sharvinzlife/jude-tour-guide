@@ -15,6 +15,10 @@
     @apply bg-gradient-to-br from-kerala-ivory via-white to-kerala-coconut text-gray-900 font-sans antialiased;
     min-height: 100vh;
     line-height: 1.7;
+    /* Prevent layout shifts during font loading */
+    font-display: swap;
+    /* Ensure stable layout during page load */
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -461,57 +465,6 @@
     .mobile-optimized footer {
       animation: none !important;
     }
-  
-    .mobile-optimized footer * {
-      animation-duration: 0.5s !important;
-      transition-duration: 0.3s !important;
-    }
-  }
-
-  /* Custom carousel transitions */
-  .carousel-fade {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(1.05);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  
-  /* Custom animation delay utilities */
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
-  .delay-600 { animation-delay: 600ms; }
-  .delay-700 { animation-delay: 700ms; }
-  .delay-800 { animation-delay: 800ms; }
-  .delay-900 { animation-delay: 900ms; }
-  .delay-1000 { animation-delay: 1000ms; }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  /* Coconut Tree Animations */
-  .animate-gentle-sway {
-    animation: gentle-sway 4s ease-in-out infinite;
-  }
-
-  .animate-gentle-pulse {
-    animation: gentle-pulse 3s ease-in-out infinite;
-  }
-
-  .animate-float-slow {
-    animation: float-slow 8s ease-in-out infinite;
   }
 
   /* Kerala Icon Animations */

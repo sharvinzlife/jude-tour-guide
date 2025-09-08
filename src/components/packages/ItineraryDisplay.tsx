@@ -147,9 +147,9 @@ export function ItineraryDisplay({ itinerary, compact = false }: ItineraryDispla
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h3 className="text-3xl font-bold text-gray-900 mb-2">
+        <h2 className="text-3xl font-bold text-gray-900 mb-2">
           Detailed Itinerary
-        </h3>
+        </h2>
         <p className="text-lg text-gray-600">
           Experience Kerala like never before with our carefully crafted {itinerary.length}-day journey
         </p>

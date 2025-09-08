@@ -175,9 +175,9 @@ export function DestinationSearch() {
 
           <form onSubmit={onSearch} className="relative p-8 md:p-10" style={{ zIndex: 50 }}>
             <div className="text-center mb-6">
-              <h3 className="text-2xl md:text-3xl font-bold text-emerald-700">
+              <h2 className="text-2xl md:text-3xl font-bold text-emerald-700">
                 Find your perfect Kerala experience
-              </h3>
+              </h2>
               <p className="text-gray-600 mt-1">Search destinations, tours, or keywords</p>
             </div>
 

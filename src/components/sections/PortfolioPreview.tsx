@@ -227,9 +227,9 @@ export function PortfolioPreview() {
 
                     {/* Enhanced Card content */}
                     <div className="p-6 glassmorphism-card">
-                  <h3 className="font-bold text-xl text-white mb-2 group-hover:text-yellow-300 transition-colors text-glow-subtle">
+                  <h2 className="font-bold text-xl text-white mb-2 group-hover:text-yellow-300 transition-colors text-glow-subtle">
                     {image.title}
-                  </h3>
+                  </h2>
                   <p className="gradient-text-modern font-semibold text-sm mb-3">
                     {image.experience}
                   </p>

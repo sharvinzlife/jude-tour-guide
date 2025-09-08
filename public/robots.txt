@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Allow social media crawlers
+User-agent: facebookexternalhit/1.1
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# Sitemap
+Sitemap: https://www.tourguidejude.com/sitemap.xml

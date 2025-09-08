@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin('./src/i18n.ts')
 
 const nextConfig: NextConfig = {
   experimental: {
-    optimizePackageImports: ['framer-motion', 'lucide-react']
+    optimizePackageImports: ['framer-motion']
   },
   eslint: {
     ignoreDuringBuilds: true,
@@ -21,7 +21,9 @@ const nextConfig: NextConfig = {
     // Remove console logs in production
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  webpack: (config, { isServer }) => {
+  // Enable source maps for better debugging and Lighthouse performance
+  productionBrowserSourceMaps: true,
+  webpack: (config, { isServer, dev }) => {
     config.resolve.fallback = {
       ...config.resolve.fallback,
       'source-map': require.resolve('source-map'),
@@ -37,21 +39,56 @@ const nextConfig: NextConfig = {
       };
     }
     
-    // Optimize chunks for client-side only
+    // Enhanced chunk optimization for better performance
     if (!isServer) {
       config.optimization = {
         ...config.optimization,
         splitChunks: {
           chunks: 'all',
+          minSize: 20000,
+          maxSize: 244000,
           cacheGroups: {
+            default: {
+              minChunks: 2,
+              priority: -20,
+              reuseExistingChunk: true,
+            },
             vendor: {
               test: /[\\/]node_modules[\\/]/,
               name: 'vendors',
+              priority: -10,
               chunks: 'all',
+              enforce: true,
+            },
+            // Separate React and Next.js into their own chunks
+            react: {
+              test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+              name: 'react',
+              chunks: 'all',
+              priority: 20,
+            },
+            // Separate large libraries
+            framerMotion: {
+              test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+              name: 'framer-motion',
+              chunks: 'all',
+              priority: 15,
+            },
+            // Separate lucide-react to fix module resolution
+            lucideReact: {
+              test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
+              name: 'lucide-react',
+              chunks: 'all',
+              priority: 10,
             },
           },
         },
       };
+    }
+    
+    // Enable source map generation in production
+    if (!dev) {
+      config.devtool = 'source-map';
     }
     
     return config;

@@ -97,7 +97,7 @@ export function ServicesSection() {
                 >
                   <IconComponent className={`w-6 h-6 ${service.color} drop-shadow-sm`} />
                 </motion.div>
-                <h3 className="text-xl font-bold text-neutral-900 mb-3 drop-shadow-sm">{service.title}</h3>
+                <h2 className="text-xl font-bold text-neutral-900 mb-3 drop-shadow-sm">{service.title}</h2>
                 <p className="text-neutral-600 leading-relaxed mb-4 font-medium">{service.description}</p>
                 <div className="flex justify-end">
                   <Link href={`/${locale}/contact#plan-your-journey`}>
@@ -130,7 +130,7 @@ export function ServicesSection() {
               boxShadow: "0 25px 50px rgba(16, 185, 129, 0.15)"
             }}
           >
-            <h3 className="text-2xl font-bold text-neutral-900 mb-4 drop-shadow-sm">Ready to Explore Kerala?</h3>
+            <h2 className="text-2xl font-bold text-neutral-900 mb-4 drop-shadow-sm">Ready to Explore Kerala?</h2>
             <p className="text-lg text-neutral-600 mb-6 font-medium">
               Let me create a personalized itinerary that matches your interests and budget. 
               Contact me today to start planning your unforgettable Kerala adventure!

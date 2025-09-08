@@ -150,7 +150,7 @@ export function HeroSection() {
                         <MapPin className="w-4 h-4 text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-bold text-gray-900 text-sm mb-1 truncate">Jude - Kerala Guide</h3>
+                        <p className="font-bold text-gray-900 text-sm mb-1 truncate">Jude - Kerala Guide</p>
                         <div className="grid grid-cols-2 gap-1 text-xs">
                           <span className="flex items-center text-emerald-600 font-medium">
                             <Award className="w-3 h-3 mr-1 flex-shrink-0" />
@@ -184,16 +184,18 @@ export function HeroSection() {
             {/* Main Heading */}
             <div 
               className="space-y-4"
-              
+              style={{ minHeight: '280px' }} // Reserve space to prevent layout shift
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                 <span
                   className="block text-gray-900 mb-2"
+                  style={{ minHeight: '1.2em' }} // Reserve space for text
                 >
                   Hi, I&apos;m Jude
                 </span>
                 <span 
                   className="block relative mb-3"
+                  style={{ minHeight: '1.5em' }} // Reserve space for typewriter text
                 >
                   <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-gray-700" style={{ minHeight: '1.2em', display: 'inline-block' }}>
                     <span style={{ visibility: typewriterText ? 'visible' : 'hidden' }}>
@@ -207,7 +209,10 @@ export function HeroSection() {
                     />
                   </span>
                 </span>
-                <span className="block text-gray-900 text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-2">
+                <span 
+                  className="block text-gray-900 text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-2"
+                  style={{ minHeight: '1.2em' }} // Reserve space for Kerala text
+                >
                   in <span className="gradient-text-modern bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 bg-clip-text text-transparent font-bold">Kerala</span>
                 </span>
               </h1>
@@ -448,7 +453,7 @@ export function HeroSection() {
                         <MapPin className="w-7 h-7 text-white" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-bold text-gray-900 text-lg mb-1">Jude - Your Kerala Guide</h3>
+                        <p className="font-bold text-gray-900 text-lg mb-1">Jude - Your Kerala Guide</p>
                         <div className="flex items-center space-x-3 text-sm">
                           <span className="flex items-center text-emerald-600 font-semibold">
                             <Award className="w-4 h-4 mr-1" />

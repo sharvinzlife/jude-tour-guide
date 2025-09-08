@@ -21,7 +21,11 @@ export function TwemojiIcon({ code, size = 64, alt = '', className, style }: Twe
       loading="lazy"
       decoding="async"
       className={className}
-      style={style}
+      style={{
+        aspectRatio: '1 / 1',
+        objectFit: 'contain',
+        ...style
+      }}
     />
   )
 }

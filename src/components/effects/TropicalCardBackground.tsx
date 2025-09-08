@@ -175,14 +175,14 @@ export function TropicalCardBackground() {
               stroke="currentColor"
               strokeWidth="0.5"
               opacity="0.85"
-              animate={prefersReducedMotion ? undefined : {
+              animate={prefersReducedMotion ? {} : {
                 d: [
                   "M12 12 Q 8 10 5 11 Q 8 12 12 12 M18 12 Q 22 10 25 11 Q 22 12 18 12",
                   "M12 12 Q 7 8 4 9 Q 8 11 12 12 M18 12 Q 23 8 26 9 Q 22 11 18 12",
                   "M12 12 Q 8 10 5 11 Q 8 12 12 12 M18 12 Q 22 10 25 11 Q 22 12 18 12"
                 ]
               }}
-              transition={{ duration: 0.4, repeat: Infinity, ease: 'easeInOut' }}
+              transition={prefersReducedMotion ? {} : { duration: 0.4, repeat: Infinity, ease: 'easeInOut' }}
             />
             {/* Tail */}
             <path d="M13 13 L11 14 L13 14 Z" fill="currentColor" opacity="0.6"/>
@@ -218,14 +218,14 @@ export function TropicalCardBackground() {
               stroke="currentColor"
               strokeWidth="0.4"
               opacity="0.8"
-              animate={prefersReducedMotion ? undefined : {
+              animate={prefersReducedMotion ? {} : {
                 d: [
                   "M13 11 Q 9 9 6 10 Q 9 11 13 11 M17 11 Q 21 9 24 10 Q 21 11 17 11",
                   "M13 11 Q 8 7 5 8 Q 9 10 13 11 M17 11 Q 22 7 25 8 Q 21 10 17 11",
                   "M13 11 Q 9 9 6 10 Q 9 11 13 11 M17 11 Q 21 9 24 10 Q 21 11 17 11"
                 ]
               }}
-              transition={{ duration: 0.5, repeat: Infinity, ease: 'easeInOut', delay: 0.1 }}
+              transition={prefersReducedMotion ? {} : { duration: 0.5, repeat: Infinity, ease: 'easeInOut', delay: 0.1 }}
             />
           </motion.g>
         </motion.svg>
@@ -257,14 +257,14 @@ export function TropicalCardBackground() {
               stroke="currentColor"
               strokeWidth="0.3"
               opacity="0.75"
-              animate={prefersReducedMotion ? undefined : {
+              animate={prefersReducedMotion ? {} : {
                 d: [
                   "M10 8 Q 7 6 4 7 Q 7 8 10 8 M14 8 Q 17 6 20 7 Q 17 8 14 8",
                   "M10 8 Q 6 5 3 6 Q 7 7 10 8 M14 8 Q 18 5 21 6 Q 17 7 14 8",
                   "M10 8 Q 7 6 4 7 Q 7 8 10 8 M14 8 Q 17 6 20 7 Q 17 8 14 8"
                 ]
               }}
-              transition={{ duration: 0.35, repeat: Infinity, ease: 'easeInOut', delay: 0.2 }}
+              transition={prefersReducedMotion ? {} : { duration: 0.35, repeat: Infinity, ease: 'easeInOut', delay: 0.2 }}
             />
           </motion.g>
         </motion.svg>
@@ -317,7 +317,7 @@ export function TropicalCardBackground() {
         <motion.path 
           d="M0,200 C150,180 300,220 450,200 C600,180 750,220 900,200 C1050,180 1200,220 1350,200 L1350,300 L0,300 Z" 
           fill="currentColor"
-          animate={prefersReducedMotion ? undefined : { 
+          animate={prefersReducedMotion ? {} : { 
             d: [
               "M0,200 C150,180 300,220 450,200 C600,180 750,220 900,200 C1050,180 1200,220 1350,200 L1350,300 L0,300 Z",
               "M0,185 C150,215 300,185 450,215 C600,185 750,215 900,185 C1050,215 1200,185 1350,215 L1350,300 L0,300 Z",
@@ -325,7 +325,7 @@ export function TropicalCardBackground() {
               "M0,200 C150,180 300,220 450,200 C600,180 750,220 900,200 C1050,180 1200,220 1350,200 L1350,300 L0,300 Z"
             ]
           }}
-          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+          transition={prefersReducedMotion ? {} : { duration: 3, repeat: Infinity, ease: 'easeInOut' }}
         />
       </motion.svg>
       <motion.svg
@@ -339,7 +339,7 @@ export function TropicalCardBackground() {
         <motion.path 
           d="M0,190 C180,170 360,210 540,190 C720,170 900,210 1080,190 C1260,170 1440,210 1620,190 L1620,280 L0,280 Z" 
           fill="currentColor"
-          animate={prefersReducedMotion ? undefined : { 
+          animate={prefersReducedMotion ? {} : { 
             d: [
               "M0,190 C180,170 360,210 540,190 C720,170 900,210 1080,190 C1260,170 1440,210 1620,190 L1620,280 L0,280 Z",
               "M0,175 C180,205 360,175 540,205 C720,175 900,205 1080,175 C1260,205 1440,175 1620,205 L1620,280 L0,280 Z",
@@ -347,7 +347,7 @@ export function TropicalCardBackground() {
               "M0,190 C180,170 360,210 540,190 C720,170 900,210 1080,190 C1260,170 1440,210 1620,190 L1620,280 L0,280 Z"
             ]
           }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+          transition={prefersReducedMotion ? {} : { duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
         />
       </motion.svg>
       <motion.svg
@@ -361,7 +361,7 @@ export function TropicalCardBackground() {
         <motion.path 
           d="M0,170 C200,160 400,190 600,170 C800,160 1000,190 1200,170 L1200,260 L0,260 Z" 
           fill="currentColor"
-          animate={prefersReducedMotion ? undefined : { 
+          animate={prefersReducedMotion ? {} : { 
             d: [
               "M0,170 C200,160 400,190 600,170 C800,160 1000,190 1200,170 L1200,260 L0,260 Z",
               "M0,160 C200,190 400,160 600,190 C800,160 1000,190 1200,160 L1200,260 L0,260 Z",
@@ -369,7 +369,7 @@ export function TropicalCardBackground() {
               "M0,170 C200,160 400,190 600,170 C800,160 1000,190 1200,170 L1200,260 L0,260 Z"
             ]
           }}
-          transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+          transition={prefersReducedMotion ? {} : { duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
         />
       </motion.svg>
       {/* Extra far wave layer for depth */}
@@ -384,14 +384,14 @@ export function TropicalCardBackground() {
         <motion.path 
           d="M0,150 C220,140 440,170 660,150 C880,140 1100,170 1320,150 L1320,240 L0,240 Z" 
           fill="currentColor"
-          animate={prefersReducedMotion ? undefined : { 
+          animate={prefersReducedMotion ? {} : { 
             d: [
               "M0,150 C220,140 440,170 660,150 C880,140 1100,170 1320,150 L1320,240 L0,240 Z",
               "M0,145 C220,165 440,145 660,165 C880,145 1100,165 1320,145 L1320,240 L0,240 Z",
               "M0,150 C220,140 440,170 660,150 C880,140 1100,170 1320,150 L1320,240 L0,240 Z"
             ]
           }}
-          transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+          transition={prefersReducedMotion ? {} : { duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
         />
       </motion.svg>
       {/* Foam crest highlight */}
