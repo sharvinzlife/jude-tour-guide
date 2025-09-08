@@ -66,52 +66,9 @@ const nextConfig: NextConfig = {
       };
     }
     
-    // Enhanced chunk optimization for better performance
-    if (!isServer) {
-      config.optimization = {
-        ...config.optimization,
-        splitChunks: {
-          chunks: 'all',
-          minSize: 20000,
-          maxSize: 244000,
-          cacheGroups: {
-            default: {
-              minChunks: 2,
-              priority: -20,
-              reuseExistingChunk: true,
-            },
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
-              priority: -10,
-              chunks: 'all',
-              enforce: true,
-            },
-            // Separate React and Next.js into their own chunks
-            react: {
-              test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-              name: 'react',
-              chunks: 'all',
-              priority: 20,
-            },
-            // Separate large libraries
-            framerMotion: {
-              test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
-              name: 'framer-motion',
-              chunks: 'all',
-              priority: 15,
-            },
-            // Separate lucide-react to fix module resolution
-            lucideReact: {
-              test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
-              name: 'lucide-react',
-              chunks: 'all',
-              priority: 10,
-            },
-          },
-        },
-      };
-    }
+    // Use Next.js default chunk splitting to ensure stable module evaluation order
+    // in the App Router. Overriding splitChunks can cause runtime factory errors in
+    // some routes and should be avoided unless absolutely necessary.
     
     // Disable source map generation to prevent errors
     if (!dev) {
