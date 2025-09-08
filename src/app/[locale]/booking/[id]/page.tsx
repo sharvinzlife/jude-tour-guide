@@ -645,7 +645,7 @@ export default function BookingPage({ params }: { params: Promise<{ id: string; 
               <CardContent className="p-4 sm:p-6 space-y-2 sm:space-y-3">
                 <div className="flex items-center space-x-3">
                   <Phone className="w-4 h-4 text-emerald-600" />
-                  <span className="text-sm">+91 8921384770</span>
+                  <span className="text-sm">+91 9633475056</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-4 h-4 text-emerald-600" />

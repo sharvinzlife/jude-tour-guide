@@ -46,7 +46,7 @@ export function Footer() {
     {
       icon: Phone,
       title: 'Phone',
-      primary: '+91 8921384770',
+      primary: '+91 9633475056',
       secondary: 'Available 24/7',
       color: 'text-blue-400'
     },

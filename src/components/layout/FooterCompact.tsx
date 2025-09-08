@@ -26,7 +26,7 @@ export function FooterCompact() {
     },
     { 
       name: 'WhatsApp', 
-      href: 'https://wa.me/918921384770', 
+      href: 'https://wa.me/919633475056', 
       icon: FaWhatsapp,
       gradient: 'from-green-500 to-green-400',
       hoverScale: 1.2,
@@ -111,12 +111,12 @@ export function FooterCompact() {
             {/* Compact Contact Info */}
             <div className="space-y-2">
               <motion.a 
-                href="tel:+918921384770" 
+                href="tel:+919633475056" 
                 className="flex items-center space-x-2 text-sm text-gray-300 hover:text-emerald-400 transition-colors"
                 whileHover={{ x: 5 }}
               >
                 <Phone className="w-4 h-4" />
-                <span>+91 8921384770</span>
+                <span>+91 9633475056</span>
               </motion.a>
               <motion.a 
                 href="mailto:contact@tourguidejude.com"

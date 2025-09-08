@@ -47,15 +47,15 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Call Us',
-    details: ['+91 8921384770'],
-    action: 'tel:+918921384770',
+    details: ['+91 9633475056'],
+    action: 'tel:+919633475056',
     color: 'from-blue-500 to-cyan-500'
   },
   {
     icon: MessageCircle,
     title: 'WhatsApp',
     details: ['Quick Response'],
-    action: 'https://wa.me/918921384770',
+    action: 'https://wa.me/919633475056',
     color: 'from-green-500 to-emerald-500'
   },
   {
@@ -170,7 +170,7 @@ export default function ContactPage() {
     <>
       {/* Floating WhatsApp Button */}
       <motion.a
-        href="https://wa.me/918921384770"
+        href="https://wa.me/919633475056"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 text-white rounded-full p-4 shadow-2xl hover:bg-green-600 transition-all duration-300"
@@ -520,7 +520,7 @@ export default function ContactPage() {
                     <Badge className="bg-red-100 text-red-700 text-xs">Emergency</Badge>
                   </div>
                   <a
-                    href="tel:+918921384770"
+                    href="tel:+919633475056"
                     className="block w-full bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-xl text-center transition-colors duration-300"
                   >
                     <Phone className="inline mr-2 w-4 h-4" />
@@ -542,7 +542,7 @@ export default function ContactPage() {
                     ].map((item, index) => (
                       <motion.a
                         key={index}
-                        href={`https://wa.me/918921384770?text=Hi! I'm interested in ${item.text}`}
+                        href={`https://wa.me/919633475056?text=Hi! I'm interested in ${item.text}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block w-full bg-white hover:bg-emerald-100 border border-emerald-200 py-2 px-3 rounded-xl text-sm font-medium text-gray-700 transition-all duration-300"

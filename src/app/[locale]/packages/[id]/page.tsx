@@ -497,13 +497,13 @@ export default function PackageDetailPage({ params }: { params: Promise<{ id: st
                   {/* Contact Info */}
                   <div className="pt-6 border-t border-gradient-to-r from-emerald-200 via-teal-200 to-cyan-200 space-y-4">
                     <h4 className="font-bold text-gray-900 text-center mb-4 text-lg">Contact Us</h4>
-                    <a href="tel:+918921384770" className="flex items-center space-x-4 p-4 rounded-2xl bg-gradient-to-r from-emerald-50 to-teal-50 hover:from-emerald-100 hover:to-teal-100 border border-emerald-200 hover:border-emerald-300 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 group">
+                    <a href="tel:+919633475056" className="flex items-center space-x-4 p-4 rounded-2xl bg-gradient-to-r from-emerald-50 to-teal-50 hover:from-emerald-100 hover:to-teal-100 border border-emerald-200 hover:border-emerald-300 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 group">
                       <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center group-hover:from-emerald-600 group-hover:to-teal-600 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:rotate-12">
                         <Phone className="w-6 h-6 text-white group-hover:animate-pulse" />
                       </div>
                       <div>
                         <div className="text-sm text-emerald-600 font-medium">Call us</div>
-                        <div className="font-bold text-gray-900 text-base">+91 8921384770</div>
+                        <div className="font-bold text-gray-900 text-base">+91 9633475056</div>
                       </div>
                     </a>
                     <a href="mailto:bookings@tourguidejude.com" className="flex items-center space-x-4 p-4 rounded-2xl bg-gradient-to-r from-blue-50 to-cyan-50 hover:from-blue-100 hover:to-cyan-100 border border-blue-200 hover:border-blue-300 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 group">
