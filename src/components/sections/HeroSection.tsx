@@ -193,12 +193,15 @@ export function HeroSection() {
                 <span 
                   className="block relative mb-3"
                 >
-                  <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-gray-700">
-                    {typewriterText}
+                  <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium text-gray-700" style={{ minHeight: '1.2em', display: 'inline-block' }}>
+                    <span style={{ visibility: typewriterText ? 'visible' : 'hidden' }}>
+                      {typewriterText || '\u00A0'}
+                    </span>
                     <motion.span
                       className="inline-block w-1 h-8 md:h-10 lg:h-12 bg-emerald-600 ml-1"
                       animate={{ opacity: [1, 0] }}
                       transition={{ duration: 0.5, repeat: Infinity }}
+                      style={{ verticalAlign: 'baseline' }}
                     />
                   </span>
                 </span>

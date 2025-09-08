@@ -48,6 +48,22 @@
     @apply shadow-xl transform -translate-y-1;
   }
 
+  /* Chrome/Webkit compatibility for gradient text */
+  .gradient-text-webkit {
+    background: linear-gradient(to right, #059669, #0d9488, #0891b2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Fallback for browsers that don't support gradient text */
+  @supports not (-webkit-background-clip: text) {
+    .gradient-text-webkit {
+      color: #059669;
+    }
+  }
+
   .card-body {
     @apply p-6;
   }

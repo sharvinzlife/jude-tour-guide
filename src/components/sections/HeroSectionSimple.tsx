@@ -149,9 +149,11 @@ export function HeroSectionSimple() {
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 <span className="block text-gray-900 mb-2">{t('greeting')}</span>
-                <span className="block text-2xl md:text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text mb-3 tracking-wide min-h-[2.5rem] md:min-h-[3rem] lg:min-h-[4rem]">
-                  <span className="inline-block drop-shadow-lg transition-all duration-100 ease-out">
-                    {typewriterText}
+                <span className="block text-2xl md:text-3xl lg:text-4xl font-bold mb-3 tracking-wide min-h-[2.5rem] md:min-h-[3rem] lg:min-h-[4rem]">
+                  <span className="inline-block drop-shadow-lg transition-all duration-100 ease-out gradient-text-webkit">
+                    <span style={{ visibility: typewriterText ? 'visible' : 'hidden' }}>
+                      {typewriterText || '\u00A0'}
+                    </span>
                   </span>
                   <motion.span
                     className="inline-block w-1 h-8 md:h-10 lg:h-12 bg-gradient-to-b from-emerald-500 to-teal-600 ml-2 rounded-full shadow-lg"
