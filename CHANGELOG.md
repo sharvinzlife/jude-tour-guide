@@ -5,6 +5,19 @@ All notable changes to the Jude Tour Guide project will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.4] - 2025-09-08
+
+### 🧭 SEO
+- Unified canonical URLs to `https://www.tourguidejude.com` and removed manual `<link rel="canonical">` from `src/app/[locale]/layout.tsx` to avoid conflicting canonicals reported by PSI.
+- Updated `languageAlternates` to the same canonical domain.
+
+### ⚡ Performance
+- Modernized `browserslist` production targets in `package.json` to reduce legacy JavaScript transforms (addresses PSI "Legacy JavaScript" waste on desktop).
+- Set `fetchPriority="high"` for the LCP hero image in `src/components/sections/HeroSectionSimple.tsx` to reinforce LCP stability.
+
+### 📦 Version
+- Bumped package version to `2.1.4`.
+
 ## [2.1.3] - 2025-09-08
 
 ### ⚡ Performance Improvements

@@ -1,13 +1,13 @@
 {
   "name": "jude-tour-guide",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "",
   "browserslist": {
     "production": [
-      "> 1%",
-      "last 2 versions",
-      "not dead",
-      "not ie <= 11"
+      "Chrome >= 109",
+      "Edge >= 109",
+      "Safari >= 16.4",
+      "Firefox >= 102"
     ],
     "development": [
       "last 1 chrome version",

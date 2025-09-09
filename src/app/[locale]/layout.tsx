@@ -46,7 +46,7 @@ export async function generateMetadata({
   const meta = messages.meta as Record<string, string>
 
   const languageAlternates = locales.reduce((acc, loc) => {
-    acc[loc] = `https://keralaguide.com/${loc}`
+    acc[loc] = `https://www.tourguidejude.com/${loc}`
     return acc
   }, {} as Record<string, string>)
 
@@ -109,7 +109,6 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <head>
         <link rel="icon" type="image/svg+xml" href="/media/favicon/favicon.svg" />
-        <link rel="canonical" href={`https://keralaguide.com/${locale}`} />
         <meta name="theme-color" content="#FFD700" />
         <meta name="msapplication-TileColor" content="#FFD700" />
         {/* Preconnect for Twemoji CDN used by AnimatedBackground icons */}

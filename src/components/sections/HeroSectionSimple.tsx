@@ -106,6 +106,7 @@ export function HeroSectionSimple() {
                     sizes="(max-width: 640px) 90vw, 300px"
                     className="object-cover w-full h-[300px] transition-transform duration-700"
                     priority
+                    fetchPriority="high"
                   />
                   
                   {/* Mobile floating card with better spacing */}
@@ -345,6 +346,7 @@ export function HeroSectionSimple() {
                 sizes="(min-width: 1024px) 600px, 100vw"
                 className="rounded-2xl shadow-2xl"
                 priority
+                fetchPriority="high"
               />
               
               {/* Enhanced Floating Info Card */}
