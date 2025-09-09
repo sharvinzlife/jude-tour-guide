@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/TypeScript-5.9.2-blue?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
     <img src="https://img.shields.io/badge/Tailwind_CSS-4.1.12-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind"/>
     <img src="https://img.shields.io/badge/Framer_Motion-12.23-FF0055?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion"/>
-    <img src="https://img.shields.io/badge/Version-2.1.5-success?style=for-the-badge" alt="Version"/>
+    <img src="https://img.shields.io/badge/Version-2.1.4-success?style=for-the-badge" alt="Version"/>
     <img src="https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=for-the-badge" alt="Status"/>
   </p>
 
@@ -28,14 +28,7 @@
 
 ## 🎯 About
 
-**Jude Tour Guide v2.1.5** is a modern, multilingual web application showcasing professional tour guide services in Kerala, India. Built with cutting-edge technologies, it features stunning glassmorphism design, smooth animations, comprehensive portfolio system, and support for 6 languages. 
-
-### 📱 What's New in v2.1.5 (Mobile)
-- Decorative coconut tree images switched to native `<img>` with lazy loading, async decoding, and low fetch priority to avoid LCP misclassification.
-- Twemoji icons explicitly set to `fetchPriority="low"`.
-- Removed a global `requestAnimationFrame` override to prevent forced reflows and unintended frame throttling on mobile.
-- Tuned hero image delivery: slightly smaller `sizes` on mobile and `quality={60}`.
-- TypeScript target modernized to `ES2022` to align with modern browserslist and reduce legacy JS.
+**Jude Tour Guide v2.1.4** is a modern, multilingual web application showcasing professional tour guide services in Kerala, India. Built with cutting-edge technologies, it features stunning glassmorphism design, smooth animations, comprehensive portfolio system, and support for 6 languages. 
 
 ### 🚀 What's New in v2.1.4
 - Canonical URLs unified to `https://www.tourguidejude.com` and removed legacy manual `<link rel="canonical">` to resolve PSI canonical conflicts.

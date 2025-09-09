@@ -5,18 +5,6 @@ All notable changes to the Jude Tour Guide project will be documented in this fi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.1.5] - 2025-09-08
-
-### 📱 Mobile Performance (PSI)
-- Prevented LCP misclassification by converting decorative coconut tree images to native `<img>` with `loading="lazy"`, `decoding="async"`, and `fetchPriority="low"` in `src/components/ui/StaticCoconutTree.tsx`.
-- Ensured CDN icons are low priority by adding `fetchPriority="low"` to `TwemojiIcon`.
-- Removed global `requestAnimationFrame` override in `src/components/effects/MobileOptimizer.tsx` to avoid forced reflows and unintended throttling.
-- Tuned hero image delivery on mobile: reduced `sizes` and set `quality={60}` (also for desktop hero) in `src/components/sections/HeroSectionSimple.tsx`.
-- Modernized TypeScript compile target to `ES2022` in `tsconfig.json` to complement modern browserslist and reduce legacy JS.
-
-### 📦 Version
-- Bumped package version to `2.1.5`.
-
 ## [2.1.4] - 2025-09-08
 
 ### 🧭 SEO
