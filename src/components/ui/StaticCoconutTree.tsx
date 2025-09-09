@@ -1,6 +1,6 @@
 'use client'
 
-import Image from 'next/image'
+import React from 'react'
 
 interface StaticCoconutTreeProps {
   size?: number
@@ -21,13 +21,17 @@ export function StaticCoconutTree({ size = 48, className = '', variant = 'small'
 
   return (
     <div className={`inline-block ${className}`} style={{ width: size, height: size }}>
-      <Image
+      <img
         src={getImageSrc()}
-        alt="Coconut Tree"
+        alt=""
         width={size}
         height={size}
-        className="w-full h-full object-contain"
-        priority={false}
+        loading="lazy"
+        decoding="async"
+        fetchPriority="low"
+        aria-hidden="true"
+        role="presentation"
+        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
       />
     </div>
   )

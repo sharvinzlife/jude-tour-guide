@@ -20,6 +20,7 @@ export function TwemojiIcon({ code, size = 64, alt = '', className, style }: Twe
       height={size}
       loading="lazy"
       decoding="async"
+      fetchPriority="low"
       className={className}
       style={{
         aspectRatio: '1 / 1',
