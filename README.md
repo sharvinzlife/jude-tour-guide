@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/TypeScript-5.9.2-blue?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
     <img src="https://img.shields.io/badge/Tailwind_CSS-4.1.12-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind"/>
     <img src="https://img.shields.io/badge/Framer_Motion-12.23-FF0055?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion"/>
-<img src="https://img.shields.io/badge/Version-2.1.0-success?style=for-the-badge" alt="Version"/>
+    <img src="https://img.shields.io/badge/Version-2.1.4-success?style=for-the-badge" alt="Version"/>
     <img src="https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=for-the-badge" alt="Status"/>
   </p>
 
@@ -28,7 +28,18 @@
 
 ## 🎯 About
 
-**Jude Tour Guide v2.1.0** is a modern, multilingual web application showcasing professional tour guide services in Kerala, India. Built with cutting-edge technologies, it features stunning glassmorphism design, smooth animations, comprehensive portfolio system, and support for 6 languages. 
+**Jude Tour Guide v2.1.4** is a modern, multilingual web application showcasing professional tour guide services in Kerala, India. Built with cutting-edge technologies, it features stunning glassmorphism design, smooth animations, comprehensive portfolio system, and support for 6 languages. 
+
+### 🚀 What's New in v2.1.4
+- Canonical URLs unified to `https://www.tourguidejude.com` and removed legacy manual `<link rel="canonical">` to resolve PSI canonical conflicts.
+- Modernized `browserslist` production targets to reduce legacy JavaScript transforms and improve desktop performance scoring.
+- LCP hero image now uses `fetchPriority="high"` for more consistent LCP.
+
+### ⚡ Recently in v2.1.3
+- Lazy-mounted heavy visuals using a new `LazyMount` utility to reduce initial JS and main-thread work.
+- Deferred site-wide `AnimatedBackground` until browser idle; dynamically imported footer aquatics on viewport approach.
+- Added `content-visibility: auto` and `contain-intrinsic-size` utilities for below-the-fold sections.
+- Preconnected to cdnjs for Twemoji resources.
 
 ### 🎉 What's New in v2.1.0
 - **🎬 Enhanced Page Animations**: Smooth page loading animations with staggered element entrance
