@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/TypeScript-5.9.2-blue?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
     <img src="https://img.shields.io/badge/Tailwind_CSS-4.1.12-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind"/>
     <img src="https://img.shields.io/badge/Framer_Motion-12.23-FF0055?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion"/>
-    <img src="https://img.shields.io/badge/Version-2.1.4-success?style=for-the-badge" alt="Version"/>
+    <img src="https://img.shields.io/badge/Version-2.2.0-success?style=for-the-badge" alt="Version"/>
     <img src="https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=for-the-badge" alt="Status"/>
   </p>
 
@@ -28,7 +28,14 @@
 
 ## 🎯 About
 
-**Jude Tour Guide v2.1.4** is a modern, multilingual web application showcasing professional tour guide services in Kerala, India. Built with cutting-edge technologies, it features stunning glassmorphism design, smooth animations, comprehensive portfolio system, and support for 6 languages. 
+**Jude Tour Guide v2.2.0** is a modern, multilingual web application showcasing professional tour guide services in Kerala, India. Built with cutting-edge technologies, it features stunning glassmorphism design, smooth animations, comprehensive portfolio system, and support for 6 languages. 
+
+### 🚀 What's New in v2.2.0
+- Hidden Packages pages across all locales via middleware 404 with `X-Robots-Tag: noindex, nofollow` (reversible setup)
+- Dynamic `sitemap.xml` excluding packages with full `hreflang` alternates for all languages
+- Dynamic `robots.txt` disallowing `/packages` and localized variants; points to canonical sitemap URL
+- Navigation and CTAs updated to route to Contact instead of Packages, avoiding dead links
+- `SITE_CONFIG.url` set to `https://www.tourguidejude.com` for correct canonical generation in sitemap
 
 ### 🚀 What's New in v2.1.4
 - Canonical URLs unified to `https://www.tourguidejude.com` and removed legacy manual `<link rel="canonical">` to resolve PSI canonical conflicts.
@@ -385,6 +392,31 @@ Recommended extensions for the best development experience:
 - Prettier
 - Tailwind CSS IntelliSense
 - TypeScript Error Lens
+
+## 🔒 Hidden Packages (Reversible) Setup
+
+This project supports temporarily hiding the Packages pages and all their subpages without deleting code. The setup is fully reversible.
+
+What’s enforced when hidden:
+- Middleware at `src/middleware.ts` returns 404 with `X-Robots-Tag: noindex, nofollow` for `/packages` and `/[locale]/packages`.
+- Dynamic `src/app/robots.ts` disallows crawling of packages paths.
+- Dynamic `src/app/sitemap.ts` excludes packages from the sitemap but includes hreflang alternates for public pages.
+- UI links to packages are removed from header/footer and CTAs to avoid dead links.
+
+Restore Packages (re-enable):
+1. Edit `src/middleware.ts`: remove or comment the regex block that returns 404 for packages.
+2. Re-add UI links in:
+   - `src/components/layout/Header.tsx`
+   - `src/components/layout/Footer.tsx` and/or `FooterCompact.tsx`
+   - CTAs in `HeroSectionSimple.tsx`, `ReadyToExploreSection.tsx`, `ServicesSection.tsx`, About page CTAs.
+3. Update SEO:
+   - `src/app/robots.ts`: remove `Disallow` entries for `/packages`.
+   - `src/app/sitemap.ts`: include packages paths (e.g., add `'packages'` to the static paths or generate from data).
+   - Optional: adjust `public/robots.txt` if relying on static robots.
+4. Rebuild and deploy: `pnpm build && pnpm start`.
+5. Submit `https://www.tourguidejude.com/sitemap.xml` to Google/Bing. Old packages URLs will reindex; use Search Console to expedite.
+
+Hide again (turn-off): re-apply step 1, remove UI links, and ensure robots/sitemap exclude packages.
 
 ## 🚀 Deployment & Troubleshooting
 
