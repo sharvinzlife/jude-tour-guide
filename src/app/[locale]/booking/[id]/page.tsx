@@ -14,6 +14,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Separator } from '@/components/ui/separator'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLocale } from 'next-intl'
 import { 
   ArrowLeft,
   Calendar,
@@ -55,6 +56,7 @@ interface BookingFormData {
 }
 
 export default function BookingPage({ params }: { params: Promise<{ id: string; locale: string }> }) {
+  const locale = useLocale()
   const [packageData, setPackageData] = React.useState<any>(null)
   const [loading, setLoading] = React.useState(true)
   const [formData, setFormData] = useState<BookingFormData>({
@@ -200,11 +202,11 @@ export default function BookingPage({ params }: { params: Promise<{ id: string; 
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Link 
-              href={`/packages/${pkg.id}`}
+              href={`/${locale}/contact#plan-your-journey`}
               className="flex items-center space-x-2 text-gray-600 hover:text-emerald-600 transition-colors"
             >
               <ArrowLeft className="w-5 h-5" />
-              <span className="font-medium">Back to Package</span>
+              <span className="font-medium">Back to Contact</span>
             </Link>
             
             <div className="flex items-center space-x-4">

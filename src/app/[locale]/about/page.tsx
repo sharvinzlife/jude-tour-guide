@@ -436,9 +436,9 @@ export default async function AboutPage({ params }: Props) {
                       Contact Jude
                     </Button>
                   </Link>
-                  <Link href="/packages">
+                  <Link href="/contact#plan-your-journey">
                     <Button variant="outline" size="lg" className="border-emerald-600 text-emerald-600 hover:bg-emerald-50 font-semibold px-8 py-4 w-full sm:w-auto">
-                      View Tour Packages
+                      Plan Custom Trip
                     </Button>
                   </Link>
                 </div>

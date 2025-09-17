@@ -20,7 +20,6 @@ import { WaterRipplesEffect } from '../ui/WaterRipples'
 export function Footer() {
   const quickLinks = [
     { name: 'About Us', href: '/about', icon: Heart },
-    { name: 'Tour Packages', href: '/packages', icon: MapPin },
     { name: 'Portfolio', href: '/portfolio', icon: Star },
     { name: 'Contact', href: '/contact', icon: Mail },
   ]
@@ -215,7 +214,7 @@ export function Footer() {
               {['Privacy Policy', 'Terms of Service', 'Sitemap'].map((text) => (
                 <Link 
                   key={text}
-                  href={`/${text.toLowerCase().replace(/\s+/g, '-')}`} 
+                  href={text === 'Sitemap' ? '/sitemap.xml' : `/${text.toLowerCase().replace(/\s+/g, '-')}`} 
                   className="footer-link hover:text-emerald-400 relative group"
                 >
                   {text}

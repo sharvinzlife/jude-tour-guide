@@ -142,7 +142,7 @@ export function ServicesSection() {
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  View All Packages
+                  Plan Custom Trip
                 </motion.button>
               </Link>
               <Link href={`/${locale}/contact#plan-your-journey`}>

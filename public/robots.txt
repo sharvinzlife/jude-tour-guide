@@ -1,6 +1,22 @@
 User-agent: *
 Allow: /
 
+# Disallow tour packages pages (hidden from app)
+Disallow: /packages
+Disallow: /packages/
+Disallow: /en/packages
+Disallow: /en/packages/
+Disallow: /fr/packages
+Disallow: /fr/packages/
+Disallow: /de/packages
+Disallow: /de/packages/
+Disallow: /es/packages
+Disallow: /es/packages/
+Disallow: /zh/packages
+Disallow: /zh/packages/
+Disallow: /ja/packages
+Disallow: /ja/packages/
+
 # Allow social media crawlers
 User-agent: facebookexternalhit/1.1
 Allow: /

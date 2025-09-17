@@ -28,18 +28,9 @@ export function ReadyToExploreSection() {
               {t('description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={`/${locale}/packages`}>
-                <motion.button 
-                  className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm border border-emerald-500/20"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {t('buttons.packages')}
-                </motion.button>
-              </Link>
               <Link href={`/${locale}/contact#plan-your-journey`}>
                 <motion.button 
-                  className="bg-white/90 hover:bg-white text-emerald-600 hover:text-emerald-700 font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm border-2 border-emerald-200 hover:border-emerald-300"
+                  className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm border border-emerald-500/20"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >

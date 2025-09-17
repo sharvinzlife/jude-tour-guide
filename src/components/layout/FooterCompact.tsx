@@ -52,7 +52,6 @@ export function FooterCompact() {
 
   const quickLinks = [
     { name: 'About', href: '/about' },
-    { name: 'Packages', href: '/packages' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Contact', href: '/contact' },
   ]
@@ -183,7 +182,7 @@ export function FooterCompact() {
                 <Link href="/terms" className="hover:text-emerald-400 transition-colors">
                   Terms
                 </Link>
-                <Link href="/sitemap" className="hover:text-emerald-400 transition-colors">
+                <Link href="/sitemap.xml" className="hover:text-emerald-400 transition-colors">
                   Sitemap
                 </Link>
               </div>

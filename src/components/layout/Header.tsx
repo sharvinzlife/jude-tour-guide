@@ -47,7 +47,6 @@ export function Header() {
   const navigation: NavigationItem[] = [
     { name: t('home'), href: `/${currentLocale}`, icon: Home },
     { name: t('about'), href: `/${currentLocale}/about`, icon: User },
-    { name: t('packages'), href: `/${currentLocale}/packages`, icon: Compass },
     { name: t('portfolio'), href: `/${currentLocale}/portfolio`, icon: Camera },
     { name: t('contact'), href: `/${currentLocale}/contact`, icon: Mail },
   ]

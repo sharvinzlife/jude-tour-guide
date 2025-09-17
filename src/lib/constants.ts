@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: 'Kerala Tours',
   description: 'Experience God\'s Own Country with our expert tour guide services',
-  url: 'https://keralatours.com',
+  url: 'https://www.tourguidejude.com',
   ogImage: '/media/hero/Hero.jpeg',
   contact: {
     email: 'info@keralatours.com',
@@ -18,7 +18,6 @@ export const SITE_CONFIG = {
 export const NAV_ITEMS = [
   { name: 'Home', href: '/' },
   { name: 'Portfolio', href: '/portfolio' },
-  { name: 'Packages', href: '/packages' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' }
 ]

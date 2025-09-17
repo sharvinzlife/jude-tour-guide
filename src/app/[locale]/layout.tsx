@@ -213,7 +213,7 @@ export default async function LocaleLayout({
         />
       </head>
       <body 
-        className={`${inter.className} antialiased bg-gradient-to-br from-kerala-ivory via-white to-kerala-coconut`}
+        className={`${inter.className} antialiased bg-gradient-to-br from-kerala-ivory via-white to-kerala-coconut overflow-x-clip`}
       >
         {/* Site-wide animated background behind all content (mount on idle) */}
         <LazyMount strategy="idle" delay={200}>
